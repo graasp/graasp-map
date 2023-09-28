@@ -726,6 +726,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@googlemaps/js-api-loader@npm:^1.14.3":
+  version: 1.16.2
+  resolution: "@googlemaps/js-api-loader@npm:1.16.2"
+  dependencies:
+    fast-deep-equal: ^3.1.3
+  checksum: 122ee57cc6a936e50358aedc4e79042353590467210e901fb42d4e7d9123c248c4db5cd5407a350cb5bea6de9e9ef1a508c08ba593475285d90bc4b93db42f51
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.11":
   version: 0.11.11
   resolution: "@humanwhocodes/config-array@npm:0.11.11"
@@ -2968,6 +2977,9 @@ __metadata:
     eslint-plugin-react-hooks: 4.6.0
     eslint-plugin-react-refresh: ^0.4.3
     leaflet: ^1.9.4
+    leaflet-control-geocoder: 2.4.0
+    leaflet-easybutton: 2.4.0
+    leaflet-geosearch: 3.9.0
     prettier: 3.0.2
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -3667,7 +3679,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leaflet@npm:^1.9.4":
+"leaflet-control-geocoder@npm:2.4.0":
+  version: 2.4.0
+  resolution: "leaflet-control-geocoder@npm:2.4.0"
+  dependencies:
+    open-location-code: ^1.0.0
+  peerDependencies:
+    leaflet: ^1.6.0
+  dependenciesMeta:
+    open-location-code:
+      optional: true
+  checksum: ccb5a30e1a34c63ca4c9fb3b68db1cbb4754d141a34c0ef7694b2b3eb4d412654dfbc427e3d745cd84b8d70870023aa89b6233a952ce7678d9f3710cd7da7ac4
+  languageName: node
+  linkType: hard
+
+"leaflet-easybutton@npm:2.4.0":
+  version: 2.4.0
+  resolution: "leaflet-easybutton@npm:2.4.0"
+  dependencies:
+    leaflet: ^1.0.1
+  checksum: cab9f59152be5c36f25a505bd61917bdf6db0ae0e509b346fd1cc23ef5e778d332b9d64037bdb9a706e2d17b78b0451d1dd11b2a07c0497a44ea586581d59695
+  languageName: node
+  linkType: hard
+
+"leaflet-geosearch@npm:3.9.0":
+  version: 3.9.0
+  resolution: "leaflet-geosearch@npm:3.9.0"
+  dependencies:
+    "@googlemaps/js-api-loader": ^1.14.3
+    leaflet: ^1.6.0
+  dependenciesMeta:
+    "@googlemaps/js-api-loader":
+      optional: true
+    leaflet:
+      optional: true
+  checksum: 116e4f27ac55d4f74bf7f5b6f0d6e39ed3bc5434157abd7a726b50903bd5991ec62aa4fc7974f5a23ecb40f756bf3becf66f9d856954ec9164a527abe6913e8d
+  languageName: node
+  linkType: hard
+
+"leaflet@npm:^1.0.1, leaflet@npm:^1.6.0, leaflet@npm:^1.9.4":
   version: 1.9.4
   resolution: "leaflet@npm:1.9.4"
   checksum: bfc79f17a247b37b92d84b3c78702501603392d6589fde606de4a825d11f1609d90225388834f2e0709dac327e52dcd4b4b9cc9fd3d590060c5b1e53b84fa6c6
@@ -4283,6 +4333,13 @@ __metadata:
   dependencies:
     mimic-fn: ^2.1.0
   checksum: 2478859ef817fc5d4e9c2f9e5728512ddd1dbc9fb7829ad263765bb6d3b91ce699d6e2332eef6b7dff183c2f490bd3349f1666427eaba4469fba0ac38dfd0d34
+  languageName: node
+  linkType: hard
+
+"open-location-code@npm:^1.0.0":
+  version: 1.0.3
+  resolution: "open-location-code@npm:1.0.3"
+  checksum: 351108a1582e18672bbf0ccb83fe10d1fe3e9ad1ddfb1d192bd558e87cda06ef0226d7dc7ab9a7fdfc08914825597603d0b20c7f033d4e1d764e2ccf2394bcb1
   languageName: node
   linkType: hard
 

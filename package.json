@@ -27,6 +27,9 @@
   },
   "dependencies": {
     "leaflet": "^1.9.4",
+    "leaflet-control-geocoder": "2.4.0",
+    "leaflet-easybutton": "2.4.0",
+    "leaflet-geosearch": "3.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1"
