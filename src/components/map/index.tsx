@@ -2,16 +2,17 @@
 
 /* eslint-disable import/no-extraneous-dependencies */
 
-/* eslint-disable react/no-unused-prop-types */
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+
+import { TextField } from '@mui/material';
 
 import L from 'leaflet';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 
 import markerPinPerson from '../../location.svg';
 import AddItemModal from '../addModal';
-import DropDown from '../dropdown';
+import AutoCompleteInput from '../autocomplete';
 import CustomSearch from './CustomSearchMenu';
 import AddSearchControlToMap from './ResearchControl';
 import { countries, markers } from './data';
@@ -24,10 +25,8 @@ const iconPerson = new L.Icon({
 });
 
 export { iconPerson };
-type Props = {
-  name: string;
-};
 
+// eslint-disable-next-line react/no-unused-prop-types
 interface MarkerProps {
   lat: number;
   lng: number;
@@ -38,9 +37,12 @@ interface MarkerProps {
 const Map = (): JSX.Element => {
   const [items, setItems] = useState<any>(markers);
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
-  const [dropdownState, setDropdownState] = useState(false);
+
+  const [isItemSearchDialogOpen, setIsItemSearchDialogOpen] = useState(false);
+  const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
   const [markerSearch, setMarkerSearch] = useState('');
   const [itemsList, setItemsList] = useState(markers);
+
   const [selectedItem, setSelectedItem] = useState<null | MarkerProps>(null);
   const [selectedTags, setSelectedTags] = useState<null | MarkerProps>([]);
   const [isChecked, setIsChecked] = useState({
@@ -51,16 +53,9 @@ const Map = (): JSX.Element => {
   // countries search if not able to geolocalize user
   const [showCountryForm, setShowCountryForm] = useState<boolean>(false);
   const [selectedCountry, setSelectedCountry] = useState<any>(null);
-  const [isCountryMenuOpen, setIsCountryMenuOpen] = useState<boolean>(false);
-  const [countrySearch, setCountrySearch] = useState('');
 
   // click on pint at the map
   const [clickedPoint, setClickedPoint] = useState([]);
-
-  const countrySearchHandler = (e: any) => {
-    setIsCountryMenuOpen(true);
-    setCountrySearch(e.target.value);
-  };
 
   useEffect(() => {
     // Use the Geolocation API to get the user's current position
@@ -79,16 +74,6 @@ const Map = (): JSX.Element => {
     }
   }, []);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    setDropdownState(!dropdownState);
-  };
-
-  const markerSearchHandler = (e: any) => {
-    setDropdownState(true);
-    setMarkerSearch(e.target.value);
-  };
-
   useEffect(() => {
     const list = items.filter(({ title }: MarkerProps) =>
       title.toLowerCase().includes(markerSearch.toLowerCase()),
@@ -106,9 +91,8 @@ const Map = (): JSX.Element => {
 
   useEffect(() => {
     if (selectedCountry) {
-      const { latitude, longitude, title } = selectedCountry;
+      const { latitude, longitude } = selectedCountry;
       setCenter([latitude, longitude]);
-      setCountrySearch(title);
       setShowCountryForm(false);
     }
   }, [selectedCountry]);
@@ -138,31 +122,40 @@ const Map = (): JSX.Element => {
   //   'common',
   // );
 
-  const toggleTag = (tag: any) => {
-    setSelectedTags((prev: any) => {
-      const isFound = prev.find((ele: any) => ele.name === tag.name);
-      if (isFound) {
-        return prev.filter((ele: any) => ele.name !== tag.name);
-      }
-      return [...prev, tag];
-    });
-  };
-
   const handleClick = (e: any) => {
     const { lat, lng } = e.latlng;
-    setClickedPoint([lat, lng]);
+    if (!isItemSearchDialogOpen) {
+      setClickedPoint([lat, lng]);
+    }
   };
 
   const submitNewItem = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const { title, description } = Object.fromEntries(formData);
+    c
     setItems([
       ...items,
       { lat: clickedPoint[0], lng: clickedPoint[1], title, description },
     ]);
     setClickedPoint([]);
   };
+
+  console.log(selectedTags, 'selectedTags');
+
+  const handleInputClick = (e: any) => {
+    setIsItemSearchDialogOpen(true);
+    setAnchor(e.currentTarget);
+  };
+
+  const handleDialogClose = () => {
+    setIsItemSearchDialogOpen(false);
+  };
+
+  const handleInputChange = (e: any) => {
+    setMarkerSearch(e.target.value);
+  };
+
   return (
     <>
       {clickedPoint.length === 2 && (
@@ -170,55 +163,45 @@ const Map = (): JSX.Element => {
           handleSubmit={submitNewItem}
           closeModal={() => setClickedPoint([])}
           clickedPoint={clickedPoint}
+          open={Boolean(clickedPoint.length)}
         />
       )}
+
       {showCountryForm && (
-        <form className="custom-search-input country-form">
-          <input
-            name="country-search"
-            value={countrySearch}
-            onChange={countrySearchHandler}
-            placeholder="Search About Country"
+        <div className="p-absolute abs-center top-30">
+          <AutoCompleteInput
+            items={countries}
+            label="Country"
+            value={selectedCountry}
+            setValue={setSelectedCountry}
           />
-          <div
-            className={`text-start dropdown-items ${
-              isCountryMenuOpen ? 'isVisible' : 'isHidden'
-            }`}
-          >
-            <DropDown
-              dropdownState={isCountryMenuOpen}
-              itemsList={countries.filter((ele) =>
-                ele.title.includes(countrySearch),
-              )}
-              setSelectedItem={setSelectedCountry}
-              closeMenu={() => setIsCountryMenuOpen(false)}
-            />
-          </div>
-        </form>
+        </div>
       )}
 
       <div className="map-container">
         {!showCountryForm && (
           <form className="custom-search-input">
-            <input
-              name="marker-search"
-              value={markerSearch}
-              onChange={markerSearchHandler}
+            <TextField
               placeholder="Search About an Item"
+              variant="outlined"
+              onClick={handleInputClick}
+              value={markerSearch}
+              onChange={handleInputChange}
+              sx={{ background: 'white' }}
             />
-            <button type="button" onClick={handleSubmit}>
-              Submit
-            </button>
-            <CustomSearch
-              dropdownState={dropdownState}
-              itemsList={itemsList}
-              setSelectedItem={setSelectedItem}
-              closeMenu={() => setDropdownState(false)}
-              toggleTag={toggleTag}
-              selectedTags={selectedTags}
-              isChecked={isChecked}
-              setIsChecked={setIsChecked}
-            />
+            {isItemSearchDialogOpen && (
+              <CustomSearch
+                isItemSearchDialogOpen={isItemSearchDialogOpen}
+                itemsList={itemsList}
+                setSelectedItem={setSelectedItem}
+                closeMenu={handleDialogClose}
+                selectedTags={selectedTags}
+                isChecked={isChecked}
+                setIsChecked={setIsChecked}
+                setSelectedTags={setSelectedTags}
+                anchorEl={anchor}
+              />
+            )}
           </form>
         )}
 

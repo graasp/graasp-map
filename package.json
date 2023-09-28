@@ -26,6 +26,9 @@
     "check": "yarn prettier:check && yarn lint && yarn type-check"
   },
   "dependencies": {
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
+    "@mui/material": "5.14.11",
     "leaflet": "^1.9.4",
     "leaflet-control-geocoder": "2.4.0",
     "leaflet-easybutton": "2.4.0",

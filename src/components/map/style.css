@@ -15,7 +15,26 @@
   background: none;
 }
 
-.country-form {
-  left: 45%;
-  top: 40%;
+.p-absolute {
+  position: absolute;
+  z-index: 9999;
+  background-color: white;
+}
+
+.abs-center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-30 {
+  top: 30%;
+}
+
+.search-menu {
+  background-color: white;
+  display: flex;
+  padding: 8px;
+  width: 350px;
+  max-height: 400px;
+  overflow-y: scroll;
 }

@@ -1,17 +1,12 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import './style.css';
 
 interface Props {
-  dropdownState: boolean;
   itemsList: any;
   setSelectedItem: (val: any) => void;
   closeMenu: () => void;
 }
 
 const DropDown = ({
-  dropdownState,
   itemsList,
   setSelectedItem,
   closeMenu,
@@ -22,17 +17,16 @@ const DropDown = ({
   };
 
   return (
-    <div
-      // className={`dropdown-items ${dropdownState ? 'isVisible' : 'isHidden'}`}
-    >
+    <div>
       {itemsList.map((ele: any) => (
         <div className="dropdown-item" key={ele.title}>
-          <div
+          <button
             className="dropdown__link"
             onClick={() => handleSetDropdownValue(ele)}
+            type="button"
           >
             {ele.title}
-          </div>
+          </button>
         </div>
       ))}
     </div>

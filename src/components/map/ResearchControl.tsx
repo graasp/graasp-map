@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import { useMap, useMapEvents } from 'react-leaflet';
 
@@ -24,17 +25,13 @@ const AddSearchControlToMap = ({ lat, lng, onClick }: Props): null => {
 
   const searchControl = new GeoSearchControl({
     provider,
-    // autoComplete: true,
-    // showPopup: false,
-    // retainZoomLevel: false,
-    // animateZoom: true,
-    // autoClose: false,
-    // style: 'bar',
   });
 
   useEffect(() => {
     map.addControl(searchControl);
-    return () => map.removeControl(searchControl);
+    return () => {
+      map.removeControl(searchControl);
+    };
   }, []);
 
   useEffect(() => {
@@ -53,12 +50,6 @@ const AddSearchControlToMap = ({ lat, lng, onClick }: Props): null => {
       },
       'current',
     ).addTo(map);
-
-    // const helloPopup = L.popup().setContent('Hello World!');
-
-    // helloPopup.setLatLng({lat: 40, lng: 50}).openOn(map);
-    // L.easyButton('fa-globe', (btn, map1) => {
-    // }).addTo(map);
   }, [map]);
   return null;
 };

@@ -1,4 +1,11 @@
-import { useState } from 'react';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from '@mui/material';
 
 import './style.css';
 
@@ -6,25 +13,49 @@ type Props = {
   handleSubmit: any;
   closeModal: () => void;
   clickedPoint: any;
+  open: boolean;
 };
-const AddItemModal = ({ handleSubmit, closeModal, clickedPoint }: Props): JSX.Element => {
-    console.log(clickedPoint)
-  return (
-    <div className="add-modal">
-      <p>Add New Location</p>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input name="title" placeholder="Title" />
-        </div>
-        <div>
-          <input name="description" placeholder="Description" />
-        </div>
-        <p>Point: X: {clickedPoint[0]}, Y:{clickedPoint[1]}</p>
-        <button type="button" onClick={closeModal}>Cancel</button>
-        <button type="submit">Confirm</button>
-      </form>
-    </div>
-  );
-};
+const AddItemModal = ({
+  open,
+  handleSubmit,
+  closeModal,
+  clickedPoint,
+}: Props): JSX.Element => (
+  <Dialog open={open} onClose={closeModal}>
+    <DialogTitle>Add New Location</DialogTitle>
+    <form onSubmit={handleSubmit}>
+      <DialogContent>
+        <TextField
+          autoFocus
+          margin="dense"
+          id="title"
+          label="Title"
+          fullWidth
+          name="title"
+          variant="standard"
+        />
+        <TextField
+          autoFocus
+          margin="dense"
+          id="description"
+          label="Description"
+          fullWidth
+          name="description"
+          variant="standard"
+        />
+
+        <p>
+          Point: X: {clickedPoint[0]}, Y:{clickedPoint[1]}
+        </p>
+      </DialogContent>
+      <DialogActions>
+        <Button autoFocus onClick={closeModal}>
+          Cancel
+        </Button>
+        <Button type="submit">Confirm</Button>
+      </DialogActions>
+    </form>
+  </Dialog>
+);
 
 export default AddItemModal;

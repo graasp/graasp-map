@@ -1,77 +1,73 @@
-import Checkbox from '../checkbox';
+import { Popover } from '@mui/material';
+
+import CheckboxGroup from '../checkbox';
 import DropDown from '../dropdown';
+import ToggleButtonsMultiple from '../tags';
 import { tags } from './data';
 import './style.css';
 
+const list = [{ label: 'Own' }, { label: 'Shared' }, { label: 'Published' }];
 interface Props {
-  dropdownState: boolean;
+  isItemSearchDialogOpen: boolean;
   itemsList: any;
   setSelectedItem: (val: any) => void;
   closeMenu: () => void;
-  toggleTag: (ele: any) => void;
   selectedTags: any;
   setIsChecked: any;
   isChecked: any;
+  setSelectedTags: any;
+  anchorEl: any;
 }
 const CustomSearch = ({
-  dropdownState,
+  isItemSearchDialogOpen,
   itemsList,
   setSelectedItem,
   closeMenu,
-  toggleTag,
   selectedTags,
   setIsChecked,
   isChecked,
+  setSelectedTags,
+  anchorEl,
 }: Props): JSX.Element => {
   const handleCheck = (e: any) => {
     const { name } = e.target;
-    setIsChecked((prev) => ({ ...prev, [name]: !prev[name] }));
+    setIsChecked((prev: any) => ({ ...prev, [name]: !prev[name] }));
   };
+
   return (
-    <div
-      className={`dropdown-items ${dropdownState ? 'isVisible' : 'isHidden'}`}
+    <Popover
+      open={isItemSearchDialogOpen}
+      onClose={closeMenu}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'left',
+      }}
+      anchorEl={anchorEl}
     >
-      <div className="text-start">
-        <div>
-          {tags.map((tag) => (
-            <button
-              key={tag.name}
-              className={`item-tag ${
-                selectedTags.find((ele: any) => ele.name === tag.name) &&
-                'active-tag'
-              }`}
-              type="button"
-              onClick={() => toggleTag(tag)}
-            >
-              {tag.name}
-            </button>
-          ))}
+      <div className="search-menu">
+        <div className="text-start">
+          <div>
+            <ToggleButtonsMultiple
+              items={tags}
+              value={selectedTags}
+              setValue={setSelectedTags}
+            />
+          </div>
+          <DropDown
+            itemsList={itemsList}
+            setSelectedItem={setSelectedItem}
+            closeMenu={closeMenu}
+          />
         </div>
-        <DropDown
-          dropdownState={dropdownState}
-          itemsList={itemsList}
-          setSelectedItem={setSelectedItem}
-          closeMenu={closeMenu}
-        />
+        <div>
+          <CheckboxGroup
+            list={list}
+            checked={isChecked}
+            handleChange={handleCheck}
+          />
+        </div>
       </div>
-      <div className="side-menu">
-        <Checkbox
-          label="Own"
-          isChecked={isChecked.Own}
-          toggleCheckboxChange={handleCheck}
-        />
-        <Checkbox
-          label="Shared"
-          isChecked={isChecked.Shared}
-          toggleCheckboxChange={handleCheck}
-        />
-        <Checkbox
-          label="Published"
-          isChecked={isChecked.Published}
-          toggleCheckboxChange={handleCheck}
-        />
-      </div>
-    </div>
+    </Popover>
   );
 };
 

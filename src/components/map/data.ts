@@ -129,7 +129,7 @@ const markers = [
 
 const countries = [
   {
-    title: 'Albania',
+    label: 'Albania',
     alpha2: 'AL',
     alpha3: 'ALB',
     numeric: 8,
@@ -137,7 +137,7 @@ const countries = [
     longitude: 20,
   },
   {
-    title: 'Algeria',
+    label: 'Algeria',
     alpha2: 'DZ',
     alpha3: 'DZA',
     numeric: 12,
@@ -145,7 +145,7 @@ const countries = [
     longitude: 3,
   },
   {
-    title: 'American Samoa',
+    label: 'American Samoa',
     alpha2: 'AS',
     alpha3: 'ASM',
     numeric: 16,
@@ -153,7 +153,7 @@ const countries = [
     longitude: -170,
   },
   {
-    title: 'Andorra',
+    label: 'Andorra',
     alpha2: 'AD',
     alpha3: 'AND',
     numeric: 20,
@@ -161,7 +161,7 @@ const countries = [
     longitude: 1.6,
   },
   {
-    title: 'Angola',
+    label: 'Angola',
     alpha2: 'AO',
     alpha3: 'AGO',
     numeric: 24,
@@ -169,7 +169,7 @@ const countries = [
     longitude: 18.5,
   },
   {
-    title: 'Anguilla',
+    label: 'Anguilla',
     alpha2: 'AI',
     alpha3: 'AIA',
     numeric: 660,
@@ -177,7 +177,7 @@ const countries = [
     longitude: -63.1667,
   },
   {
-    title: 'Antarctica',
+    label: 'Antarctica',
     alpha2: 'AQ',
     alpha3: 'ATA',
     numeric: 10,
@@ -185,7 +185,7 @@ const countries = [
     longitude: 0,
   },
   {
-    title: 'Antigua and Barbuda',
+    label: 'Antigua and Barbuda',
     alpha2: 'AG',
     alpha3: 'ATG',
     numeric: 28,
@@ -193,7 +193,7 @@ const countries = [
     longitude: -61.8,
   },
   {
-    title: 'Argentina',
+    label: 'Argentina',
     alpha2: 'AR',
     alpha3: 'ARG',
     numeric: 32,
@@ -201,7 +201,7 @@ const countries = [
     longitude: -64,
   },
   {
-    title: 'Armenia',
+    label: 'Armenia',
     alpha2: 'AM',
     alpha3: 'ARM',
     numeric: 51,
@@ -209,7 +209,7 @@ const countries = [
     longitude: 45,
   },
   {
-    title: 'Aruba',
+    label: 'Aruba',
     alpha2: 'AW',
     alpha3: 'ABW',
     numeric: 533,
@@ -217,7 +217,7 @@ const countries = [
     longitude: -69.9667,
   },
   {
-    title: 'Australia',
+    label: 'Australia',
     alpha2: 'AU',
     alpha3: 'AUS',
     numeric: 36,
@@ -225,7 +225,7 @@ const countries = [
     longitude: 133,
   },
   {
-    title: 'Austria',
+    label: 'Austria',
     alpha2: 'AT',
     alpha3: 'AUT',
     numeric: 40,
@@ -233,7 +233,7 @@ const countries = [
     longitude: 13.3333,
   },
   {
-    title: 'Azerbaijan',
+    label: 'Azerbaijan',
     alpha2: 'AZ',
     alpha3: 'AZE',
     numeric: 31,
@@ -241,7 +241,7 @@ const countries = [
     longitude: 47.5,
   },
   {
-    title: 'Bahamas',
+    label: 'Bahamas',
     alpha2: 'BS',
     alpha3: 'BHS',
     numeric: 44,
@@ -249,7 +249,7 @@ const countries = [
     longitude: -76,
   },
   {
-    title: 'Bahrain',
+    label: 'Bahrain',
     alpha2: 'BH',
     alpha3: 'BHR',
     numeric: 48,
@@ -257,7 +257,7 @@ const countries = [
     longitude: 50.55,
   },
   {
-    title: 'Bangladesh',
+    label: 'Bangladesh',
     alpha2: 'BD',
     alpha3: 'BGD',
     numeric: 50,
@@ -265,7 +265,7 @@ const countries = [
     longitude: 90,
   },
   {
-    title: 'Barbados',
+    label: 'Barbados',
     alpha2: 'BB',
     alpha3: 'BRB',
     numeric: 52,
@@ -273,7 +273,7 @@ const countries = [
     longitude: -59.5333,
   },
   {
-    title: 'Belarus',
+    label: 'Belarus',
     alpha2: 'BY',
     alpha3: 'BLR',
     numeric: 112,
@@ -281,7 +281,7 @@ const countries = [
     longitude: 28,
   },
   {
-    title: 'Belgium',
+    label: 'Belgium',
     alpha2: 'BE',
     alpha3: 'BEL',
     numeric: 56,
@@ -289,7 +289,7 @@ const countries = [
     longitude: 4,
   },
   {
-    title: 'Belize',
+    label: 'Belize',
     alpha2: 'BZ',
     alpha3: 'BLZ',
     numeric: 84,
@@ -297,7 +297,7 @@ const countries = [
     longitude: -88.75,
   },
   {
-    title: 'Benin',
+    label: 'Benin',
     alpha2: 'BJ',
     alpha3: 'BEN',
     numeric: 204,
@@ -305,7 +305,7 @@ const countries = [
     longitude: 2.25,
   },
   {
-    title: 'Bermuda',
+    label: 'Bermuda',
     alpha2: 'BM',
     alpha3: 'BMU',
     numeric: 60,
@@ -313,7 +313,7 @@ const countries = [
     longitude: -64.75,
   },
   {
-    title: 'Bhutan',
+    label: 'Bhutan',
     alpha2: 'BT',
     alpha3: 'BTN',
     numeric: 64,
@@ -321,7 +321,7 @@ const countries = [
     longitude: 90.5,
   },
   {
-    title: 'Bolivia, Plurinational State of',
+    label: 'Bolivia, Plurinational State of',
     alpha2: 'BO',
     alpha3: 'BOL',
     numeric: 68,
@@ -329,7 +329,7 @@ const countries = [
     longitude: -65,
   },
   {
-    title: 'Bosnia and Herzegovina',
+    label: 'Bosnia and Herzegovina',
     alpha2: 'BA',
     alpha3: 'BIH',
     numeric: 70,
@@ -337,7 +337,7 @@ const countries = [
     longitude: 18,
   },
   {
-    title: 'Botswana',
+    label: 'Botswana',
     alpha2: 'BW',
     alpha3: 'BWA',
     numeric: 72,
@@ -345,7 +345,7 @@ const countries = [
     longitude: 24,
   },
   {
-    title: 'Bouvet Island',
+    label: 'Bouvet Island',
     alpha2: 'BV',
     alpha3: 'BVT',
     numeric: 74,
@@ -353,7 +353,7 @@ const countries = [
     longitude: 3.4,
   },
   {
-    title: 'Brazil',
+    label: 'Brazil',
     alpha2: 'BR',
     alpha3: 'BRA',
     numeric: 76,
@@ -361,7 +361,7 @@ const countries = [
     longitude: -55,
   },
   {
-    title: 'British Indian Ocean Territory',
+    label: 'British Indian Ocean Territory',
     alpha2: 'IO',
     alpha3: 'IOT',
     numeric: 86,
@@ -369,7 +369,7 @@ const countries = [
     longitude: 71.5,
   },
   {
-    title: 'Brunei Darussalam',
+    label: 'Brunei Darussalam',
     alpha2: 'BN',
     alpha3: 'BRN',
     numeric: 96,
@@ -377,7 +377,7 @@ const countries = [
     longitude: 114.6667,
   },
   {
-    title: 'Bulgaria',
+    label: 'Bulgaria',
     alpha2: 'BG',
     alpha3: 'BGR',
     numeric: 100,
@@ -385,7 +385,7 @@ const countries = [
     longitude: 25,
   },
   {
-    title: 'Burkina Faso',
+    label: 'Burkina Faso',
     alpha2: 'BF',
     alpha3: 'BFA',
     numeric: 854,
@@ -393,7 +393,7 @@ const countries = [
     longitude: -2,
   },
   {
-    title: 'Burundi',
+    label: 'Burundi',
     alpha2: 'BI',
     alpha3: 'BDI',
     numeric: 108,
@@ -401,7 +401,7 @@ const countries = [
     longitude: 30,
   },
   {
-    title: 'Cambodia',
+    label: 'Cambodia',
     alpha2: 'KH',
     alpha3: 'KHM',
     numeric: 116,
@@ -409,7 +409,7 @@ const countries = [
     longitude: 105,
   },
   {
-    title: 'Cameroon',
+    label: 'Cameroon',
     alpha2: 'CM',
     alpha3: 'CMR',
     numeric: 120,
@@ -417,7 +417,7 @@ const countries = [
     longitude: 12,
   },
   {
-    title: 'Canada',
+    label: 'Canada',
     alpha2: 'CA',
     alpha3: 'CAN',
     numeric: 124,
@@ -425,7 +425,7 @@ const countries = [
     longitude: -95,
   },
   {
-    title: 'Cape Verde',
+    label: 'Cape Verde',
     alpha2: 'CV',
     alpha3: 'CPV',
     numeric: 132,
@@ -433,7 +433,7 @@ const countries = [
     longitude: -24,
   },
   {
-    title: 'Cayman Islands',
+    label: 'Cayman Islands',
     alpha2: 'KY',
     alpha3: 'CYM',
     numeric: 136,
@@ -441,7 +441,7 @@ const countries = [
     longitude: -80.5,
   },
   {
-    title: 'Central African Republic',
+    label: 'Central African Republic',
     alpha2: 'CF',
     alpha3: 'CAF',
     numeric: 140,
@@ -449,7 +449,7 @@ const countries = [
     longitude: 21,
   },
   {
-    title: 'Chad',
+    label: 'Chad',
     alpha2: 'TD',
     alpha3: 'TCD',
     numeric: 148,
@@ -457,7 +457,7 @@ const countries = [
     longitude: 19,
   },
   {
-    title: 'Chile',
+    label: 'Chile',
     alpha2: 'CL',
     alpha3: 'CHL',
     numeric: 152,
@@ -465,7 +465,7 @@ const countries = [
     longitude: -71,
   },
   {
-    title: 'China',
+    label: 'China',
     alpha2: 'CN',
     alpha3: 'CHN',
     numeric: 156,
@@ -473,7 +473,7 @@ const countries = [
     longitude: 105,
   },
   {
-    title: 'Christmas Island',
+    label: 'Christmas Island',
     alpha2: 'CX',
     alpha3: 'CXR',
     numeric: 162,
@@ -481,7 +481,7 @@ const countries = [
     longitude: 105.6667,
   },
   {
-    title: 'Cocos (Keeling) Islands',
+    label: 'Cocos (Keeling) Islands',
     alpha2: 'CC',
     alpha3: 'CCK',
     numeric: 166,
@@ -489,7 +489,7 @@ const countries = [
     longitude: 96.8333,
   },
   {
-    title: 'Colombia',
+    label: 'Colombia',
     alpha2: 'CO',
     alpha3: 'COL',
     numeric: 170,
@@ -497,7 +497,7 @@ const countries = [
     longitude: -72,
   },
   {
-    title: 'Comoros',
+    label: 'Comoros',
     alpha2: 'KM',
     alpha3: 'COM',
     numeric: 174,
@@ -505,7 +505,7 @@ const countries = [
     longitude: 44.25,
   },
   {
-    title: 'Congo',
+    label: 'Congo',
     alpha2: 'CG',
     alpha3: 'COG',
     numeric: 178,
@@ -513,7 +513,7 @@ const countries = [
     longitude: 15,
   },
   {
-    title: 'Congo, the Democratic Republic of the',
+    label: 'Congo, the Democratic Republic of the',
     alpha2: 'CD',
     alpha3: 'COD',
     numeric: 180,
@@ -521,7 +521,7 @@ const countries = [
     longitude: 25,
   },
   {
-    title: 'Cook Islands',
+    label: 'Cook Islands',
     alpha2: 'CK',
     alpha3: 'COK',
     numeric: 184,
@@ -529,7 +529,7 @@ const countries = [
     longitude: -159.7667,
   },
   {
-    title: 'Costa Rica',
+    label: 'Costa Rica',
     alpha2: 'CR',
     alpha3: 'CRI',
     numeric: 188,
@@ -537,7 +537,7 @@ const countries = [
     longitude: -84,
   },
   {
-    title: "Côte d'Ivoire",
+    label: "Côte d'Ivoire",
     alpha2: 'CI',
     alpha3: 'CIV',
     numeric: 384,
@@ -545,7 +545,7 @@ const countries = [
     longitude: -5,
   },
   {
-    title: 'Croatia',
+    label: 'Croatia',
     alpha2: 'HR',
     alpha3: 'HRV',
     numeric: 191,
@@ -553,7 +553,7 @@ const countries = [
     longitude: 15.5,
   },
   {
-    title: 'Cuba',
+    label: 'Cuba',
     alpha2: 'CU',
     alpha3: 'CUB',
     numeric: 192,
@@ -561,7 +561,7 @@ const countries = [
     longitude: -80,
   },
   {
-    title: 'Cyprus',
+    label: 'Cyprus',
     alpha2: 'CY',
     alpha3: 'CYP',
     numeric: 196,
@@ -569,7 +569,7 @@ const countries = [
     longitude: 33,
   },
   {
-    title: 'Czech Republic',
+    label: 'Czech Republic',
     alpha2: 'CZ',
     alpha3: 'CZE',
     numeric: 203,
@@ -577,7 +577,7 @@ const countries = [
     longitude: 15.5,
   },
   {
-    title: 'Denmark',
+    label: 'Denmark',
     alpha2: 'DK',
     alpha3: 'DNK',
     numeric: 208,
@@ -585,7 +585,7 @@ const countries = [
     longitude: 10,
   },
   {
-    title: 'Djibouti',
+    label: 'Djibouti',
     alpha2: 'DJ',
     alpha3: 'DJI',
     numeric: 262,
@@ -593,7 +593,7 @@ const countries = [
     longitude: 43,
   },
   {
-    title: 'Dominica',
+    label: 'Dominica',
     alpha2: 'DM',
     alpha3: 'DMA',
     numeric: 212,
@@ -601,7 +601,7 @@ const countries = [
     longitude: -61.3333,
   },
   {
-    title: 'Dominican Republic',
+    label: 'Dominican Republic',
     alpha2: 'DO',
     alpha3: 'DOM',
     numeric: 214,
@@ -609,7 +609,7 @@ const countries = [
     longitude: -70.6667,
   },
   {
-    title: 'Ecuador',
+    label: 'Ecuador',
     alpha2: 'EC',
     alpha3: 'ECU',
     numeric: 218,
@@ -617,7 +617,7 @@ const countries = [
     longitude: -77.5,
   },
   {
-    title: 'Egypt',
+    label: 'Egypt',
     alpha2: 'EG',
     alpha3: 'EGY',
     numeric: 818,
@@ -625,7 +625,7 @@ const countries = [
     longitude: 30,
   },
   {
-    title: 'El Salvador',
+    label: 'El Salvador',
     alpha2: 'SV',
     alpha3: 'SLV',
     numeric: 222,
@@ -633,7 +633,7 @@ const countries = [
     longitude: -88.9167,
   },
   {
-    title: 'Equatorial Guinea',
+    label: 'Equatorial Guinea',
     alpha2: 'GQ',
     alpha3: 'GNQ',
     numeric: 226,
@@ -641,7 +641,7 @@ const countries = [
     longitude: 10,
   },
   {
-    title: 'Eritrea',
+    label: 'Eritrea',
     alpha2: 'ER',
     alpha3: 'ERI',
     numeric: 232,
@@ -649,7 +649,7 @@ const countries = [
     longitude: 39,
   },
   {
-    title: 'Estonia',
+    label: 'Estonia',
     alpha2: 'EE',
     alpha3: 'EST',
     numeric: 233,
@@ -657,7 +657,7 @@ const countries = [
     longitude: 26,
   },
   {
-    title: 'Ethiopia',
+    label: 'Ethiopia',
     alpha2: 'ET',
     alpha3: 'ETH',
     numeric: 231,
@@ -665,7 +665,7 @@ const countries = [
     longitude: 38,
   },
   {
-    title: 'Falkland Islands (Malvinas)',
+    label: 'Falkland Islands (Malvinas)',
     alpha2: 'FK',
     alpha3: 'FLK',
     numeric: 238,
@@ -673,7 +673,7 @@ const countries = [
     longitude: -59,
   },
   {
-    title: 'Faroe Islands',
+    label: 'Faroe Islands',
     alpha2: 'FO',
     alpha3: 'FRO',
     numeric: 234,
@@ -681,7 +681,7 @@ const countries = [
     longitude: -7,
   },
   {
-    title: 'Fiji',
+    label: 'Fiji',
     alpha2: 'FJ',
     alpha3: 'FJI',
     numeric: 242,
@@ -689,7 +689,7 @@ const countries = [
     longitude: 175,
   },
   {
-    title: 'Finland',
+    label: 'Finland',
     alpha2: 'FI',
     alpha3: 'FIN',
     numeric: 246,
@@ -697,7 +697,7 @@ const countries = [
     longitude: 26,
   },
   {
-    title: 'France',
+    label: 'France',
     alpha2: 'FR',
     alpha3: 'FRA',
     numeric: 250,
@@ -705,7 +705,7 @@ const countries = [
     longitude: 2,
   },
   {
-    title: 'French Guiana',
+    label: 'French Guiana',
     alpha2: 'GF',
     alpha3: 'GUF',
     numeric: 254,
@@ -713,7 +713,7 @@ const countries = [
     longitude: -53,
   },
   {
-    title: 'French Polynesia',
+    label: 'French Polynesia',
     alpha2: 'PF',
     alpha3: 'PYF',
     numeric: 258,
@@ -721,7 +721,7 @@ const countries = [
     longitude: -140,
   },
   {
-    title: 'French Southern Territories',
+    label: 'French Southern Territories',
     alpha2: 'TF',
     alpha3: 'ATF',
     numeric: 260,
@@ -729,7 +729,7 @@ const countries = [
     longitude: 67,
   },
   {
-    title: 'Gabon',
+    label: 'Gabon',
     alpha2: 'GA',
     alpha3: 'GAB',
     numeric: 266,
@@ -737,7 +737,7 @@ const countries = [
     longitude: 11.75,
   },
   {
-    title: 'Gambia',
+    label: 'Gambia',
     alpha2: 'GM',
     alpha3: 'GMB',
     numeric: 270,
@@ -745,7 +745,7 @@ const countries = [
     longitude: -16.5667,
   },
   {
-    title: 'Georgia',
+    label: 'Georgia',
     alpha2: 'GE',
     alpha3: 'GEO',
     numeric: 268,
@@ -753,7 +753,7 @@ const countries = [
     longitude: 43.5,
   },
   {
-    title: 'Germany',
+    label: 'Germany',
     alpha2: 'DE',
     alpha3: 'DEU',
     numeric: 276,
@@ -761,7 +761,7 @@ const countries = [
     longitude: 9,
   },
   {
-    title: 'Ghana',
+    label: 'Ghana',
     alpha2: 'GH',
     alpha3: 'GHA',
     numeric: 288,
@@ -769,7 +769,7 @@ const countries = [
     longitude: -2,
   },
   {
-    title: 'Gibraltar',
+    label: 'Gibraltar',
     alpha2: 'GI',
     alpha3: 'GIB',
     numeric: 292,
@@ -777,7 +777,7 @@ const countries = [
     longitude: -5.3667,
   },
   {
-    title: 'Greece',
+    label: 'Greece',
     alpha2: 'GR',
     alpha3: 'GRC',
     numeric: 300,
@@ -785,7 +785,7 @@ const countries = [
     longitude: 22,
   },
   {
-    title: 'Greenland',
+    label: 'Greenland',
     alpha2: 'GL',
     alpha3: 'GRL',
     numeric: 304,
@@ -793,7 +793,7 @@ const countries = [
     longitude: -40,
   },
   {
-    title: 'Grenada',
+    label: 'Grenada',
     alpha2: 'GD',
     alpha3: 'GRD',
     numeric: 308,
@@ -801,7 +801,7 @@ const countries = [
     longitude: -61.6667,
   },
   {
-    title: 'Guadeloupe',
+    label: 'Guadeloupe',
     alpha2: 'GP',
     alpha3: 'GLP',
     numeric: 312,
@@ -809,7 +809,7 @@ const countries = [
     longitude: -61.5833,
   },
   {
-    title: 'Guam',
+    label: 'Guam',
     alpha2: 'GU',
     alpha3: 'GUM',
     numeric: 316,
@@ -817,7 +817,7 @@ const countries = [
     longitude: 144.7833,
   },
   {
-    title: 'Guatemala',
+    label: 'Guatemala',
     alpha2: 'GT',
     alpha3: 'GTM',
     numeric: 320,
@@ -825,7 +825,7 @@ const countries = [
     longitude: -90.25,
   },
   {
-    title: 'Guernsey',
+    label: 'Guernsey',
     alpha2: 'GG',
     alpha3: 'GGY',
     numeric: 831,
@@ -833,7 +833,7 @@ const countries = [
     longitude: -2.56,
   },
   {
-    title: 'Guinea',
+    label: 'Guinea',
     alpha2: 'GN',
     alpha3: 'GIN',
     numeric: 324,
@@ -841,7 +841,7 @@ const countries = [
     longitude: -10,
   },
   {
-    title: 'Guinea-Bissau',
+    label: 'Guinea-Bissau',
     alpha2: 'GW',
     alpha3: 'GNB',
     numeric: 624,
@@ -849,7 +849,7 @@ const countries = [
     longitude: -15,
   },
   {
-    title: 'Guyana',
+    label: 'Guyana',
     alpha2: 'GY',
     alpha3: 'GUY',
     numeric: 328,
@@ -857,7 +857,7 @@ const countries = [
     longitude: -59,
   },
   {
-    title: 'Haiti',
+    label: 'Haiti',
     alpha2: 'HT',
     alpha3: 'HTI',
     numeric: 332,
@@ -865,7 +865,7 @@ const countries = [
     longitude: -72.4167,
   },
   {
-    title: 'Heard Island and McDonald Islands',
+    label: 'Heard Island and McDonald Islands',
     alpha2: 'HM',
     alpha3: 'HMD',
     numeric: 334,
@@ -873,7 +873,7 @@ const countries = [
     longitude: 72.5167,
   },
   {
-    title: 'Holy See (Vatican City State)',
+    label: 'Holy See (Vatican City State)',
     alpha2: 'VA',
     alpha3: 'VAT',
     numeric: 336,
@@ -881,7 +881,7 @@ const countries = [
     longitude: 12.45,
   },
   {
-    title: 'Honduras',
+    label: 'Honduras',
     alpha2: 'HN',
     alpha3: 'HND',
     numeric: 340,
@@ -889,7 +889,7 @@ const countries = [
     longitude: -86.5,
   },
   {
-    title: 'Hong Kong',
+    label: 'Hong Kong',
     alpha2: 'HK',
     alpha3: 'HKG',
     numeric: 344,
@@ -897,7 +897,7 @@ const countries = [
     longitude: 114.1667,
   },
   {
-    title: 'Hungary',
+    label: 'Hungary',
     alpha2: 'HU',
     alpha3: 'HUN',
     numeric: 348,
@@ -905,7 +905,7 @@ const countries = [
     longitude: 20,
   },
   {
-    title: 'Iceland',
+    label: 'Iceland',
     alpha2: 'IS',
     alpha3: 'ISL',
     numeric: 352,
@@ -913,7 +913,7 @@ const countries = [
     longitude: -18,
   },
   {
-    title: 'India',
+    label: 'India',
     alpha2: 'IN',
     alpha3: 'IND',
     numeric: 356,
@@ -921,7 +921,7 @@ const countries = [
     longitude: 77,
   },
   {
-    title: 'Indonesia',
+    label: 'Indonesia',
     alpha2: 'ID',
     alpha3: 'IDN',
     numeric: 360,
@@ -929,7 +929,7 @@ const countries = [
     longitude: 120,
   },
   {
-    title: 'Iran, Islamic Republic of',
+    label: 'Iran, Islamic Republic of',
     alpha2: 'IR',
     alpha3: 'IRN',
     numeric: 364,
@@ -937,7 +937,7 @@ const countries = [
     longitude: 53,
   },
   {
-    title: 'Iraq',
+    label: 'Iraq',
     alpha2: 'IQ',
     alpha3: 'IRQ',
     numeric: 368,
@@ -945,7 +945,7 @@ const countries = [
     longitude: 44,
   },
   {
-    title: 'Ireland',
+    label: 'Ireland',
     alpha2: 'IE',
     alpha3: 'IRL',
     numeric: 372,
@@ -953,7 +953,7 @@ const countries = [
     longitude: -8,
   },
   {
-    title: 'Isle of Man',
+    label: 'Isle of Man',
     alpha2: 'IM',
     alpha3: 'IMN',
     numeric: 833,
@@ -961,7 +961,7 @@ const countries = [
     longitude: -4.55,
   },
   {
-    title: 'Israel',
+    label: 'Israel',
     alpha2: 'IL',
     alpha3: 'ISR',
     numeric: 376,
@@ -969,7 +969,7 @@ const countries = [
     longitude: 34.75,
   },
   {
-    title: 'Italy',
+    label: 'Italy',
     alpha2: 'IT',
     alpha3: 'ITA',
     numeric: 380,
@@ -977,7 +977,7 @@ const countries = [
     longitude: 12.8333,
   },
   {
-    title: 'Jamaica',
+    label: 'Jamaica',
     alpha2: 'JM',
     alpha3: 'JAM',
     numeric: 388,
@@ -985,7 +985,7 @@ const countries = [
     longitude: -77.5,
   },
   {
-    title: 'Japan',
+    label: 'Japan',
     alpha2: 'JP',
     alpha3: 'JPN',
     numeric: 392,
@@ -993,7 +993,7 @@ const countries = [
     longitude: 138,
   },
   {
-    title: 'Jersey',
+    label: 'Jersey',
     alpha2: 'JE',
     alpha3: 'JEY',
     numeric: 832,
@@ -1001,7 +1001,7 @@ const countries = [
     longitude: -2.13,
   },
   {
-    title: 'Jordan',
+    label: 'Jordan',
     alpha2: 'JO',
     alpha3: 'JOR',
     numeric: 400,
@@ -1009,7 +1009,7 @@ const countries = [
     longitude: 36,
   },
   {
-    title: 'Kazakhstan',
+    label: 'Kazakhstan',
     alpha2: 'KZ',
     alpha3: 'KAZ',
     numeric: 398,
@@ -1017,7 +1017,7 @@ const countries = [
     longitude: 68,
   },
   {
-    title: 'Kenya',
+    label: 'Kenya',
     alpha2: 'KE',
     alpha3: 'KEN',
     numeric: 404,
@@ -1025,7 +1025,7 @@ const countries = [
     longitude: 38,
   },
   {
-    title: 'Kiribati',
+    label: 'Kiribati',
     alpha2: 'KI',
     alpha3: 'KIR',
     numeric: 296,
@@ -1033,7 +1033,7 @@ const countries = [
     longitude: 173,
   },
   {
-    title: "Korea, Democratic People's Republic of",
+    label: "Korea, Democratic People's Republic of",
     alpha2: 'KP',
     alpha3: 'PRK',
     numeric: 408,
@@ -1041,7 +1041,7 @@ const countries = [
     longitude: 127,
   },
   {
-    title: 'Korea, Republic of',
+    label: 'Korea, Republic of',
     alpha2: 'KR',
     alpha3: 'KOR',
     numeric: 410,
@@ -1049,7 +1049,7 @@ const countries = [
     longitude: 127.5,
   },
   {
-    title: 'Kuwait',
+    label: 'Kuwait',
     alpha2: 'KW',
     alpha3: 'KWT',
     numeric: 414,
@@ -1057,7 +1057,7 @@ const countries = [
     longitude: 47.6581,
   },
   {
-    title: 'Kyrgyzstan',
+    label: 'Kyrgyzstan',
     alpha2: 'KG',
     alpha3: 'KGZ',
     numeric: 417,
@@ -1065,7 +1065,7 @@ const countries = [
     longitude: 75,
   },
   {
-    title: "Lao People's Democratic Republic",
+    label: "Lao People's Democratic Republic",
     alpha2: 'LA',
     alpha3: 'LAO',
     numeric: 418,
@@ -1073,7 +1073,7 @@ const countries = [
     longitude: 105,
   },
   {
-    title: 'Latvia',
+    label: 'Latvia',
     alpha2: 'LV',
     alpha3: 'LVA',
     numeric: 428,
@@ -1081,7 +1081,7 @@ const countries = [
     longitude: 25,
   },
   {
-    title: 'Lebanon',
+    label: 'Lebanon',
     alpha2: 'LB',
     alpha3: 'LBN',
     numeric: 422,
@@ -1089,7 +1089,7 @@ const countries = [
     longitude: 35.8333,
   },
   {
-    title: 'Lesotho',
+    label: 'Lesotho',
     alpha2: 'LS',
     alpha3: 'LSO',
     numeric: 426,
@@ -1097,7 +1097,7 @@ const countries = [
     longitude: 28.5,
   },
   {
-    title: 'Liberia',
+    label: 'Liberia',
     alpha2: 'LR',
     alpha3: 'LBR',
     numeric: 430,
@@ -1105,7 +1105,7 @@ const countries = [
     longitude: -9.5,
   },
   {
-    title: 'Libyan Arab Jamahiriya',
+    label: 'Libyan Arab Jamahiriya',
     alpha2: 'LY',
     alpha3: 'LBY',
     numeric: 434,
@@ -1113,7 +1113,7 @@ const countries = [
     longitude: 17,
   },
   {
-    title: 'Liechtenstein',
+    label: 'Liechtenstein',
     alpha2: 'LI',
     alpha3: 'LIE',
     numeric: 438,
@@ -1121,7 +1121,7 @@ const countries = [
     longitude: 9.5333,
   },
   {
-    title: 'Lithuania',
+    label: 'Lithuania',
     alpha2: 'LT',
     alpha3: 'LTU',
     numeric: 440,
@@ -1129,7 +1129,7 @@ const countries = [
     longitude: 24,
   },
   {
-    title: 'Luxembourg',
+    label: 'Luxembourg',
     alpha2: 'LU',
     alpha3: 'LUX',
     numeric: 442,
@@ -1137,7 +1137,7 @@ const countries = [
     longitude: 6.1667,
   },
   {
-    title: 'Macao',
+    label: 'Macao',
     alpha2: 'MO',
     alpha3: 'MAC',
     numeric: 446,
@@ -1145,7 +1145,7 @@ const countries = [
     longitude: 113.55,
   },
   {
-    title: 'Macedonia, the former Yugoslav Republic of',
+    label: 'Macedonia, the former Yugoslav Republic of',
     alpha2: 'MK',
     alpha3: 'MKD',
     numeric: 807,
@@ -1153,7 +1153,7 @@ const countries = [
     longitude: 22,
   },
   {
-    title: 'Madagascar',
+    label: 'Madagascar',
     alpha2: 'MG',
     alpha3: 'MDG',
     numeric: 450,
@@ -1161,7 +1161,7 @@ const countries = [
     longitude: 47,
   },
   {
-    title: 'Malawi',
+    label: 'Malawi',
     alpha2: 'MW',
     alpha3: 'MWI',
     numeric: 454,
@@ -1169,7 +1169,7 @@ const countries = [
     longitude: 34,
   },
   {
-    title: 'Malaysia',
+    label: 'Malaysia',
     alpha2: 'MY',
     alpha3: 'MYS',
     numeric: 458,
@@ -1177,7 +1177,7 @@ const countries = [
     longitude: 112.5,
   },
   {
-    title: 'Maldives',
+    label: 'Maldives',
     alpha2: 'MV',
     alpha3: 'MDV',
     numeric: 462,
@@ -1185,7 +1185,7 @@ const countries = [
     longitude: 73,
   },
   {
-    title: 'Mali',
+    label: 'Mali',
     alpha2: 'ML',
     alpha3: 'MLI',
     numeric: 466,
@@ -1193,7 +1193,7 @@ const countries = [
     longitude: -4,
   },
   {
-    title: 'Malta',
+    label: 'Malta',
     alpha2: 'MT',
     alpha3: 'MLT',
     numeric: 470,
@@ -1201,7 +1201,7 @@ const countries = [
     longitude: 14.5833,
   },
   {
-    title: 'Marshall Islands',
+    label: 'Marshall Islands',
     alpha2: 'MH',
     alpha3: 'MHL',
     numeric: 584,
@@ -1209,7 +1209,7 @@ const countries = [
     longitude: 168,
   },
   {
-    title: 'Martinique',
+    label: 'Martinique',
     alpha2: 'MQ',
     alpha3: 'MTQ',
     numeric: 474,
@@ -1217,7 +1217,7 @@ const countries = [
     longitude: -61,
   },
   {
-    title: 'Mauritania',
+    label: 'Mauritania',
     alpha2: 'MR',
     alpha3: 'MRT',
     numeric: 478,
@@ -1225,7 +1225,7 @@ const countries = [
     longitude: -12,
   },
   {
-    title: 'Mauritius',
+    label: 'Mauritius',
     alpha2: 'MU',
     alpha3: 'MUS',
     numeric: 480,
@@ -1233,7 +1233,7 @@ const countries = [
     longitude: 57.55,
   },
   {
-    title: 'Mayotte',
+    label: 'Mayotte',
     alpha2: 'YT',
     alpha3: 'MYT',
     numeric: 175,
@@ -1241,7 +1241,7 @@ const countries = [
     longitude: 45.1667,
   },
   {
-    title: 'Mexico',
+    label: 'Mexico',
     alpha2: 'MX',
     alpha3: 'MEX',
     numeric: 484,
@@ -1249,7 +1249,7 @@ const countries = [
     longitude: -102,
   },
   {
-    title: 'Micronesia, Federated States of',
+    label: 'Micronesia, Federated States of',
     alpha2: 'FM',
     alpha3: 'FSM',
     numeric: 583,
@@ -1257,7 +1257,7 @@ const countries = [
     longitude: 158.25,
   },
   {
-    title: 'Moldova, Republic of',
+    label: 'Moldova, Republic of',
     alpha2: 'MD',
     alpha3: 'MDA',
     numeric: 498,
@@ -1265,7 +1265,7 @@ const countries = [
     longitude: 29,
   },
   {
-    title: 'Monaco',
+    label: 'Monaco',
     alpha2: 'MC',
     alpha3: 'MCO',
     numeric: 492,
@@ -1273,7 +1273,7 @@ const countries = [
     longitude: 7.4,
   },
   {
-    title: 'Mongolia',
+    label: 'Mongolia',
     alpha2: 'MN',
     alpha3: 'MNG',
     numeric: 496,
@@ -1281,7 +1281,7 @@ const countries = [
     longitude: 105,
   },
   {
-    title: 'Montenegro',
+    label: 'Montenegro',
     alpha2: 'ME',
     alpha3: 'MNE',
     numeric: 499,
@@ -1289,7 +1289,7 @@ const countries = [
     longitude: 19,
   },
   {
-    title: 'Montserrat',
+    label: 'Montserrat',
     alpha2: 'MS',
     alpha3: 'MSR',
     numeric: 500,
@@ -1297,7 +1297,7 @@ const countries = [
     longitude: -62.2,
   },
   {
-    title: 'Morocco',
+    label: 'Morocco',
     alpha2: 'MA',
     alpha3: 'MAR',
     numeric: 504,
@@ -1305,7 +1305,7 @@ const countries = [
     longitude: -5,
   },
   {
-    title: 'Mozambique',
+    label: 'Mozambique',
     alpha2: 'MZ',
     alpha3: 'MOZ',
     numeric: 508,
@@ -1313,7 +1313,7 @@ const countries = [
     longitude: 35,
   },
   {
-    title: 'Myanmar',
+    label: 'Myanmar',
     alpha2: 'MM',
     alpha3: 'MMR',
     numeric: 104,
@@ -1321,7 +1321,7 @@ const countries = [
     longitude: 98,
   },
   {
-    title: 'Namibia',
+    label: 'Namibia',
     alpha2: 'NA',
     alpha3: 'NAM',
     numeric: 516,
@@ -1329,7 +1329,7 @@ const countries = [
     longitude: 17,
   },
   {
-    title: 'Nauru',
+    label: 'Nauru',
     alpha2: 'NR',
     alpha3: 'NRU',
     numeric: 520,
@@ -1337,7 +1337,7 @@ const countries = [
     longitude: 166.9167,
   },
   {
-    title: 'Nepal',
+    label: 'Nepal',
     alpha2: 'NP',
     alpha3: 'NPL',
     numeric: 524,
@@ -1345,7 +1345,7 @@ const countries = [
     longitude: 84,
   },
   {
-    title: 'Netherlands',
+    label: 'Netherlands',
     alpha2: 'NL',
     alpha3: 'NLD',
     numeric: 528,
@@ -1353,7 +1353,7 @@ const countries = [
     longitude: 5.75,
   },
   {
-    title: 'Netherlands Antilles',
+    label: 'Netherlands Antilles',
     alpha2: 'AN',
     alpha3: 'ANT',
     numeric: 530,
@@ -1361,7 +1361,7 @@ const countries = [
     longitude: -68.75,
   },
   {
-    title: 'New Caledonia',
+    label: 'New Caledonia',
     alpha2: 'NC',
     alpha3: 'NCL',
     numeric: 540,
@@ -1369,7 +1369,7 @@ const countries = [
     longitude: 165.5,
   },
   {
-    title: 'New Zealand',
+    label: 'New Zealand',
     alpha2: 'NZ',
     alpha3: 'NZL',
     numeric: 554,
@@ -1377,7 +1377,7 @@ const countries = [
     longitude: 174,
   },
   {
-    title: 'Nicaragua',
+    label: 'Nicaragua',
     alpha2: 'NI',
     alpha3: 'NIC',
     numeric: 558,
@@ -1385,7 +1385,7 @@ const countries = [
     longitude: -85,
   },
   {
-    title: 'Niger',
+    label: 'Niger',
     alpha2: 'NE',
     alpha3: 'NER',
     numeric: 562,
@@ -1393,7 +1393,7 @@ const countries = [
     longitude: 8,
   },
   {
-    title: 'Nigeria',
+    label: 'Nigeria',
     alpha2: 'NG',
     alpha3: 'NGA',
     numeric: 566,
@@ -1401,7 +1401,7 @@ const countries = [
     longitude: 8,
   },
   {
-    title: 'Niue',
+    label: 'Niue',
     alpha2: 'NU',
     alpha3: 'NIU',
     numeric: 570,
@@ -1409,7 +1409,7 @@ const countries = [
     longitude: -169.8667,
   },
   {
-    title: 'Norfolk Island',
+    label: 'Norfolk Island',
     alpha2: 'NF',
     alpha3: 'NFK',
     numeric: 574,
@@ -1417,7 +1417,7 @@ const countries = [
     longitude: 167.95,
   },
   {
-    title: 'Northern Mariana Islands',
+    label: 'Northern Mariana Islands',
     alpha2: 'MP',
     alpha3: 'MNP',
     numeric: 580,
@@ -1425,7 +1425,7 @@ const countries = [
     longitude: 145.75,
   },
   {
-    title: 'Norway',
+    label: 'Norway',
     alpha2: 'NO',
     alpha3: 'NOR',
     numeric: 578,
@@ -1433,7 +1433,7 @@ const countries = [
     longitude: 10,
   },
   {
-    title: 'Oman',
+    label: 'Oman',
     alpha2: 'OM',
     alpha3: 'OMN',
     numeric: 512,
@@ -1441,7 +1441,7 @@ const countries = [
     longitude: 57,
   },
   {
-    title: 'Pakistan',
+    label: 'Pakistan',
     alpha2: 'PK',
     alpha3: 'PAK',
     numeric: 586,
@@ -1449,7 +1449,7 @@ const countries = [
     longitude: 70,
   },
   {
-    title: 'Palau',
+    label: 'Palau',
     alpha2: 'PW',
     alpha3: 'PLW',
     numeric: 585,
@@ -1457,7 +1457,7 @@ const countries = [
     longitude: 134.5,
   },
   {
-    title: 'Palestinian Territory, Occupied',
+    label: 'Palestinian Territory, Occupied',
     alpha2: 'PS',
     alpha3: 'PSE',
     numeric: 275,
@@ -1465,7 +1465,7 @@ const countries = [
     longitude: 35.25,
   },
   {
-    title: 'Panama',
+    label: 'Panama',
     alpha2: 'PA',
     alpha3: 'PAN',
     numeric: 591,
@@ -1473,7 +1473,7 @@ const countries = [
     longitude: -80,
   },
   {
-    title: 'Papua New Guinea',
+    label: 'Papua New Guinea',
     alpha2: 'PG',
     alpha3: 'PNG',
     numeric: 598,
@@ -1481,7 +1481,7 @@ const countries = [
     longitude: 147,
   },
   {
-    title: 'Paraguay',
+    label: 'Paraguay',
     alpha2: 'PY',
     alpha3: 'PRY',
     numeric: 600,
@@ -1489,7 +1489,7 @@ const countries = [
     longitude: -58,
   },
   {
-    title: 'Peru',
+    label: 'Peru',
     alpha2: 'PE',
     alpha3: 'PER',
     numeric: 604,
@@ -1497,7 +1497,7 @@ const countries = [
     longitude: -76,
   },
   {
-    title: 'Philippines',
+    label: 'Philippines',
     alpha2: 'PH',
     alpha3: 'PHL',
     numeric: 608,
@@ -1505,7 +1505,7 @@ const countries = [
     longitude: 122,
   },
   {
-    title: 'Pitcairn',
+    label: 'Pitcairn',
     alpha2: 'PN',
     alpha3: 'PCN',
     numeric: 612,
@@ -1513,7 +1513,7 @@ const countries = [
     longitude: -127.4,
   },
   {
-    title: 'Poland',
+    label: 'Poland',
     alpha2: 'PL',
     alpha3: 'POL',
     numeric: 616,
@@ -1521,7 +1521,7 @@ const countries = [
     longitude: 20,
   },
   {
-    title: 'Portugal',
+    label: 'Portugal',
     alpha2: 'PT',
     alpha3: 'PRT',
     numeric: 620,
@@ -1529,7 +1529,7 @@ const countries = [
     longitude: -8,
   },
   {
-    title: 'Puerto Rico',
+    label: 'Puerto Rico',
     alpha2: 'PR',
     alpha3: 'PRI',
     numeric: 630,
@@ -1537,7 +1537,7 @@ const countries = [
     longitude: -66.5,
   },
   {
-    title: 'Qatar',
+    label: 'Qatar',
     alpha2: 'QA',
     alpha3: 'QAT',
     numeric: 634,
@@ -1545,7 +1545,7 @@ const countries = [
     longitude: 51.25,
   },
   {
-    title: 'Réunion',
+    label: 'Réunion',
     alpha2: 'RE',
     alpha3: 'REU',
     numeric: 638,
@@ -1553,7 +1553,7 @@ const countries = [
     longitude: 55.6,
   },
   {
-    title: 'Romania',
+    label: 'Romania',
     alpha2: 'RO',
     alpha3: 'ROU',
     numeric: 642,
@@ -1561,7 +1561,7 @@ const countries = [
     longitude: 25,
   },
   {
-    title: 'Russian Federation',
+    label: 'Russian Federation',
     alpha2: 'RU',
     alpha3: 'RUS',
     numeric: 643,
@@ -1569,7 +1569,7 @@ const countries = [
     longitude: 100,
   },
   {
-    title: 'Rwanda',
+    label: 'Rwanda',
     alpha2: 'RW',
     alpha3: 'RWA',
     numeric: 646,
@@ -1577,7 +1577,7 @@ const countries = [
     longitude: 30,
   },
   {
-    title: 'Saint Helena, Ascension and Tristan da Cunha',
+    label: 'Saint Helena, Ascension and Tristan da Cunha',
     alpha2: 'SH',
     alpha3: 'SHN',
     numeric: 654,
@@ -1585,7 +1585,7 @@ const countries = [
     longitude: -5.7,
   },
   {
-    title: 'Saint Kitts and Nevis',
+    label: 'Saint Kitts and Nevis',
     alpha2: 'KN',
     alpha3: 'KNA',
     numeric: 659,
@@ -1593,7 +1593,7 @@ const countries = [
     longitude: -62.75,
   },
   {
-    title: 'Saint Lucia',
+    label: 'Saint Lucia',
     alpha2: 'LC',
     alpha3: 'LCA',
     numeric: 662,
@@ -1601,7 +1601,7 @@ const countries = [
     longitude: -61.1333,
   },
   {
-    title: 'Saint Pierre and Miquelon',
+    label: 'Saint Pierre and Miquelon',
     alpha2: 'PM',
     alpha3: 'SPM',
     numeric: 666,
@@ -1609,7 +1609,7 @@ const countries = [
     longitude: -56.3333,
   },
   {
-    title: 'Saint Vincent and the Grenadines',
+    label: 'Saint Vincent and the Grenadines',
     alpha2: 'VC',
     alpha3: 'VCT',
     numeric: 670,
@@ -1617,7 +1617,7 @@ const countries = [
     longitude: -61.2,
   },
   {
-    title: 'Samoa',
+    label: 'Samoa',
     alpha2: 'WS',
     alpha3: 'WSM',
     numeric: 882,
@@ -1625,7 +1625,7 @@ const countries = [
     longitude: -172.3333,
   },
   {
-    title: 'San Marino',
+    label: 'San Marino',
     alpha2: 'SM',
     alpha3: 'SMR',
     numeric: 674,
@@ -1633,7 +1633,7 @@ const countries = [
     longitude: 12.4167,
   },
   {
-    title: 'Sao Tome and Principe',
+    label: 'Sao Tome and Principe',
     alpha2: 'ST',
     alpha3: 'STP',
     numeric: 678,
@@ -1641,7 +1641,7 @@ const countries = [
     longitude: 7,
   },
   {
-    title: 'Saudi Arabia',
+    label: 'Saudi Arabia',
     alpha2: 'SA',
     alpha3: 'SAU',
     numeric: 682,
@@ -1649,7 +1649,7 @@ const countries = [
     longitude: 45,
   },
   {
-    title: 'Senegal',
+    label: 'Senegal',
     alpha2: 'SN',
     alpha3: 'SEN',
     numeric: 686,
@@ -1657,7 +1657,7 @@ const countries = [
     longitude: -14,
   },
   {
-    title: 'Serbia',
+    label: 'Serbia',
     alpha2: 'RS',
     alpha3: 'SRB',
     numeric: 688,
@@ -1665,7 +1665,7 @@ const countries = [
     longitude: 21,
   },
   {
-    title: 'Seychelles',
+    label: 'Seychelles',
     alpha2: 'SC',
     alpha3: 'SYC',
     numeric: 690,
@@ -1673,7 +1673,7 @@ const countries = [
     longitude: 55.6667,
   },
   {
-    title: 'Sierra Leone',
+    label: 'Sierra Leone',
     alpha2: 'SL',
     alpha3: 'SLE',
     numeric: 694,
@@ -1681,7 +1681,7 @@ const countries = [
     longitude: -11.5,
   },
   {
-    title: 'Singapore',
+    label: 'Singapore',
     alpha2: 'SG',
     alpha3: 'SGP',
     numeric: 702,
@@ -1689,7 +1689,7 @@ const countries = [
     longitude: 103.8,
   },
   {
-    title: 'Slovakia',
+    label: 'Slovakia',
     alpha2: 'SK',
     alpha3: 'SVK',
     numeric: 703,
@@ -1697,7 +1697,7 @@ const countries = [
     longitude: 19.5,
   },
   {
-    title: 'Slovenia',
+    label: 'Slovenia',
     alpha2: 'SI',
     alpha3: 'SVN',
     numeric: 705,
@@ -1705,7 +1705,7 @@ const countries = [
     longitude: 15,
   },
   {
-    title: 'Solomon Islands',
+    label: 'Solomon Islands',
     alpha2: 'SB',
     alpha3: 'SLB',
     numeric: 90,
@@ -1713,7 +1713,7 @@ const countries = [
     longitude: 159,
   },
   {
-    title: 'Somalia',
+    label: 'Somalia',
     alpha2: 'SO',
     alpha3: 'SOM',
     numeric: 706,
@@ -1721,7 +1721,7 @@ const countries = [
     longitude: 49,
   },
   {
-    title: 'South Africa',
+    label: 'South Africa',
     alpha2: 'ZA',
     alpha3: 'ZAF',
     numeric: 710,
@@ -1729,7 +1729,7 @@ const countries = [
     longitude: 24,
   },
   {
-    title: 'South Georgia and the South Sandwich Islands',
+    label: 'South Georgia and the South Sandwich Islands',
     alpha2: 'GS',
     alpha3: 'SGS',
     numeric: 239,
@@ -1737,7 +1737,7 @@ const countries = [
     longitude: -37,
   },
   {
-    title: 'Spain',
+    label: 'Spain',
     alpha2: 'ES',
     alpha3: 'ESP',
     numeric: 724,
@@ -1745,7 +1745,7 @@ const countries = [
     longitude: -4,
   },
   {
-    title: 'Sri Lanka',
+    label: 'Sri Lanka',
     alpha2: 'LK',
     alpha3: 'LKA',
     numeric: 144,
@@ -1753,7 +1753,7 @@ const countries = [
     longitude: 81,
   },
   {
-    title: 'Sudan',
+    label: 'Sudan',
     alpha2: 'SD',
     alpha3: 'SDN',
     numeric: 736,
@@ -1761,7 +1761,7 @@ const countries = [
     longitude: 30,
   },
   {
-    title: 'Suriname',
+    label: 'Suriname',
     alpha2: 'SR',
     alpha3: 'SUR',
     numeric: 740,
@@ -1769,7 +1769,7 @@ const countries = [
     longitude: -56,
   },
   {
-    title: 'Svalbard and Jan Mayen',
+    label: 'Svalbard and Jan Mayen',
     alpha2: 'SJ',
     alpha3: 'SJM',
     numeric: 744,
@@ -1777,7 +1777,7 @@ const countries = [
     longitude: 20,
   },
   {
-    title: 'Swaziland',
+    label: 'Swaziland',
     alpha2: 'SZ',
     alpha3: 'SWZ',
     numeric: 748,
@@ -1785,7 +1785,7 @@ const countries = [
     longitude: 31.5,
   },
   {
-    title: 'Sweden',
+    label: 'Sweden',
     alpha2: 'SE',
     alpha3: 'SWE',
     numeric: 752,
@@ -1793,7 +1793,7 @@ const countries = [
     longitude: 15,
   },
   {
-    title: 'Switzerland',
+    label: 'Switzerland',
     alpha2: 'CH',
     alpha3: 'CHE',
     numeric: 756,
@@ -1801,7 +1801,7 @@ const countries = [
     longitude: 8,
   },
   {
-    title: 'Syrian Arab Republic',
+    label: 'Syrian Arab Republic',
     alpha2: 'SY',
     alpha3: 'SYR',
     numeric: 760,
@@ -1809,7 +1809,7 @@ const countries = [
     longitude: 38,
   },
   {
-    title: 'Taiwan, Province of China',
+    label: 'Taiwan, Province of China',
     alpha2: 'TW',
     alpha3: 'TWN',
     numeric: 158,
@@ -1817,7 +1817,7 @@ const countries = [
     longitude: 121,
   },
   {
-    title: 'Tajikistan',
+    label: 'Tajikistan',
     alpha2: 'TJ',
     alpha3: 'TJK',
     numeric: 762,
@@ -1825,7 +1825,7 @@ const countries = [
     longitude: 71,
   },
   {
-    title: 'Tanzania, United Republic of',
+    label: 'Tanzania, United Republic of',
     alpha2: 'TZ',
     alpha3: 'TZA',
     numeric: 834,
@@ -1833,7 +1833,7 @@ const countries = [
     longitude: 35,
   },
   {
-    title: 'Thailand',
+    label: 'Thailand',
     alpha2: 'TH',
     alpha3: 'THA',
     numeric: 764,
