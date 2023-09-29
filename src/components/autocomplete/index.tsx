@@ -17,6 +17,8 @@ const AutoCompleteInput = ({ items, label, value, setValue }: Props): JSX.Elemen
       options={items}
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label={label} />}
+      size="small"
+
     />
   );
 
