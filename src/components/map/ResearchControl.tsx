@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useMap, useMapEvents } from 'react-leaflet';
 
-import L from 'leaflet';
+import L, { LatLng } from 'leaflet';
 import 'leaflet-easybutton';
 import 'leaflet-easybutton/src/easy-button.css';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
@@ -12,7 +12,7 @@ import markerPinPerson from '../../location.svg';
 type Props = {
   lat: number;
   lng: number;
-  onClick: any;
+  onClick: (e: { latlng: LatLng }) => void;
 };
 
 const AddSearchControlToMap = ({ lat, lng, onClick }: Props): null => {

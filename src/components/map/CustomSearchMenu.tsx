@@ -1,22 +1,29 @@
+import React, { Dispatch, SetStateAction } from 'react';
+
 import { Popover } from '@mui/material';
 
+import { Item, MarkerProps, Parent, ParentCheck } from '../../types';
 import CheckboxGroup from '../checkbox';
 import DropDown from '../dropdown';
 import ToggleButtonsMultiple from '../tags';
 import { tags } from './data';
 import './style.css';
 
-const list = [{ label: 'Own' }, { label: 'Shared' }, { label: 'Published' }];
+const list: Item[] = [
+  { label: 'Own' },
+  { label: 'Shared' },
+  { label: 'Published' },
+];
 interface Props {
   isItemSearchDialogOpen: boolean;
-  itemsList: any;
-  setSelectedItem: (val: any) => void;
+  itemsList: MarkerProps[];
+  setSelectedItem: (val: MarkerProps) => void;
   closeMenu: () => void;
-  selectedTags: any;
-  setIsChecked: any;
-  isChecked: any;
-  setSelectedTags: any;
-  anchorEl: any;
+  selectedTags: string[];
+  setIsChecked: Dispatch<SetStateAction<ParentCheck>>;
+  isChecked: ParentCheck;
+  setSelectedTags: Dispatch<SetStateAction<string[]>>;
+  anchorEl: HTMLInputElement | null;
 }
 const CustomSearch = ({
   isItemSearchDialogOpen,
@@ -29,9 +36,13 @@ const CustomSearch = ({
   setSelectedTags,
   anchorEl,
 }: Props): JSX.Element => {
-  const handleCheck = (e: any) => {
-    const { name } = e.target;
-    setIsChecked((prev: any) => ({ ...prev, [name]: !prev[name] }));
+  const handleCheck = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const { name }: { name: string } = e.target;
+    setIsChecked(
+      (prev: ParentCheck): ParentCheck => ({ ...prev, [name]: !prev[name as Parent] }),
+    );
   };
 
   return (

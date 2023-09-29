@@ -1,8 +1,9 @@
+import { MarkerProps } from '../../types';
 import './style.css';
 
 interface Props {
-  itemsList: any;
-  setSelectedItem: (val: any) => void;
+  itemsList: MarkerProps[];
+  setSelectedItem: (val: MarkerProps) => void;
   closeMenu: () => void;
 }
 
@@ -11,14 +12,14 @@ const DropDown = ({
   setSelectedItem,
   closeMenu,
 }: Props): JSX.Element => {
-  const handleSetDropdownValue = (value: string) => {
+  const handleSetDropdownValue = (value: MarkerProps) => {
     setSelectedItem(value);
     closeMenu();
   };
 
   return (
     <div>
-      {itemsList.map((ele: any) => (
+      {itemsList.map((ele: MarkerProps) => (
         <div className="dropdown-item" key={ele.title}>
           <button
             className="dropdown__link"

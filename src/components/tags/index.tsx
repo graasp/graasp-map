@@ -4,28 +4,32 @@ import { styled } from '@mui/material';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
+import { Tag } from '../../types';
+
 const StyledTagGroup = styled(ToggleButtonGroup)(() => ({
-    display: 'flex',
-    flexWrap: 'wrap',
+  display: 'flex',
+  flexWrap: 'wrap',
 }));
 const StyledTagButton = styled(ToggleButton)(() => ({
-  padding: '5px 5px', // Adjust padding as needed
-  margin: '2px 5px', // Add some spacing between tags
+  padding: '5px 5px',
+  margin: '2px 5px',
   fontSize: '10px',
-
 }));
 
 type Props = {
-  items: any;
-  value: any;
-  setValue: any;
+  items: Tag[];
+  value: string[];
+  setValue: (ele: string[]) => void;
 };
 
 type Item = {
   name: string;
 };
-const ToggleButtonsMultiple = ({ items, value, setValue }: Props): JSX.Element => {
-
+const ToggleButtonsMultiple = ({
+  items,
+  value,
+  setValue,
+}: Props): JSX.Element => {
   const handleSelect = (
     event: React.MouseEvent<HTMLElement>,
     ele: string[],
@@ -38,7 +42,7 @@ const ToggleButtonsMultiple = ({ items, value, setValue }: Props): JSX.Element =
       value={value}
       onChange={handleSelect}
       aria-label="text formatting"
-      size="small" 
+      size="small"
     >
       {items.map((item: Item) => (
         <StyledTagButton

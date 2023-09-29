@@ -1,13 +1,12 @@
-/* eslint-disable no-restricted-syntax */
-
-/* eslint-disable import/no-extraneous-dependencies */
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import { TextField } from '@mui/material';
 
+import { LatLng } from 'leaflet';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 
+import { Country, MarkerProps, Point, Tag } from '../../types';
 import AddItemModal from '../addModal';
 import AutoCompleteInput from '../autocomplete';
 import CustomSearch from './CustomSearchMenu';
@@ -17,30 +16,22 @@ import { iconPerson, iconsPerParent } from './icons';
 import Legend from './legend';
 import './style.css';
 
-interface MarkerProps {
-  lat: number;
-  lng: number;
-  title: string;
-  description: string;
-  parent: string;
-}
-
 const legends = [
   { title: 'Own', color: '#2A81CB' },
   { title: 'Shared', color: '#CB2B3E' },
   { title: 'Published', color: '#2AAD27' },
 ];
 const Map = (): JSX.Element => {
-  const [items, setItems] = useState<any>(markers);
+  const [items, setItems] = useState<MarkerProps[]>(markers);
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
 
   const [isItemSearchDialogOpen, setIsItemSearchDialogOpen] = useState(false);
-  const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
+  const [anchor, setAnchor] = useState<HTMLInputElement | null>(null);
   const [markerSearch, setMarkerSearch] = useState('');
   const [itemsList, setItemsList] = useState(markers);
 
   const [selectedItem, setSelectedItem] = useState<null | MarkerProps>(null);
-  const [selectedTags, setSelectedTags] = useState<any>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isChecked, setIsChecked] = useState({
     Own: true,
     Shared: true,
@@ -48,10 +39,10 @@ const Map = (): JSX.Element => {
   });
   // countries search if not able to geolocalize user
   const [showCountryForm, setShowCountryForm] = useState<boolean>(false);
-  const [selectedCountry, setSelectedCountry] = useState<any>(null);
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
 
   // click on pint at the map
-  const [clickedPoint, setClickedPoint] = useState([]);
+  const [clickedPoint, setClickedPoint] = useState<Point>([]);
 
   useEffect(() => {
     // Use the Geolocation API to get the user's current position
@@ -88,8 +79,8 @@ const Map = (): JSX.Element => {
 
   const filteredItems = useMemo(() => {
     const selectedTagsSet = new Set(selectedTags);
-    const selectedParentKeys = Object.keys(isChecked).filter(
-      (key) => isChecked[key],
+    const selectedParentKeys: string[] = Object.keys(isChecked).filter(
+      (key) => isChecked[key as keyof typeof isChecked],
     );
 
     return items.filter((ele) => {
@@ -102,7 +93,7 @@ const Map = (): JSX.Element => {
       ) {
         if (
           hasCommonTags ||
-          tags.some((tag) => selectedTagsSet.has(tag.name))
+          tags.some((tag: Tag) => selectedTagsSet.has(tag.name))
         ) {
           return true;
         }
@@ -119,32 +110,34 @@ const Map = (): JSX.Element => {
     setItemsList(list);
   }, [filteredItems, markerSearch]);
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: { latlng: LatLng }) => {
     const { lat, lng } = e.latlng;
     if (!isItemSearchDialogOpen) {
       setClickedPoint([lat, lng]);
     }
   };
 
-  const submitNewItem = (e: any) => {
+  const submitNewItem = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const { title, description } = Object.fromEntries(formData);
-    setItems([
-      ...items,
-      {
-        lat: clickedPoint[0],
-        lng: clickedPoint[1],
-        title,
-        description,
-        parent: 'Own',
-        tags: [],
-      },
-    ]);
-    setClickedPoint([]);
+    const formData = new FormData(e.currentTarget);
+    const { title, description }: any = Object.fromEntries(formData);
+    if (clickedPoint.length && title && description) {
+      setItems([
+        ...items,
+        {
+          lat: clickedPoint[0],
+          lng: clickedPoint[1],
+          title,
+          description,
+          parent: 'Own',
+          tags: [],
+        },
+      ]);
+      setClickedPoint([]);
+    }
   };
 
-  const handleInputClick = (e: any) => {
+  const handleInputClick = (e: React.MouseEvent<HTMLInputElement>) => {
     setIsItemSearchDialogOpen(true);
     setAnchor(e.currentTarget);
   };
@@ -153,7 +146,7 @@ const Map = (): JSX.Element => {
     setIsItemSearchDialogOpen(false);
   };
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMarkerSearch(e.target.value);
   };
 
@@ -221,7 +214,10 @@ const Map = (): JSX.Element => {
           </Marker>
           {filteredItems.map(
             ({ lat, lng, title, description, parent }: MarkerProps) => (
-              <Marker icon={iconsPerParent[parent]} position={[lat, lng]}>
+              <Marker
+                icon={iconsPerParent[parent]}
+                position={[lat, lng]}
+              >
                 <Popup>
                   {' '}
                   {title} <br /> {description}

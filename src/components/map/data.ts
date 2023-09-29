@@ -1,3 +1,5 @@
+import { MarkerProps } from '../../types';
+
 const tags = [
   { name: 'cafe' },
   { name: 'water' },
@@ -7,7 +9,7 @@ const tags = [
   { name: 'insurance' },
 ];
 
-const markers = [
+const markers: MarkerProps[] = [
   {
     lat: 51,
     lng: 0,

@@ -1,9 +1,13 @@
+interface LegendProps {
+  title: string;
+  color: string;
+}
 type Props = {
-  legends: any;
+  legends: LegendProps[];
 };
 const Legend = ({ legends }: Props): JSX.Element => (
   <div className="legend">
-    {legends.map(({ title, color }: any) => (
+    {legends.map(({ title, color }: LegendProps) => (
       <div key={title} className="legend-item d-flex">
         <div className="legend-icon" style={{ backgroundColor: color }} />
         {title}

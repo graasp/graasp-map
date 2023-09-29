@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   Button,
   Dialog,
@@ -7,10 +9,12 @@ import {
   TextField,
 } from '@mui/material';
 
+import { Point } from '../../types';
+
 type Props = {
-  handleSubmit: any;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   closeModal: () => void;
-  clickedPoint: any;
+  clickedPoint: Point;
   open: boolean;
 };
 const AddItemModal = ({

@@ -132,6 +132,7 @@
         "devDependencies": true
       }
     ],
+    "react/no-unused-prop-types": "off",
   },
   "overrides": [
     {
