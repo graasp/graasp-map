@@ -1,39 +1,35 @@
 /* eslint-disable no-restricted-syntax */
 
 /* eslint-disable import/no-extraneous-dependencies */
-
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import { TextField } from '@mui/material';
 
-import L from 'leaflet';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 
-import markerPinPerson from '../../location.svg';
 import AddItemModal from '../addModal';
 import AutoCompleteInput from '../autocomplete';
 import CustomSearch from './CustomSearchMenu';
 import AddSearchControlToMap from './ResearchControl';
 import { countries, markers } from './data';
+import { iconPerson, iconsPerParent } from './icons';
+import Legend from './legend';
 import './style.css';
 
-const iconPerson = new L.Icon({
-  iconUrl: markerPinPerson,
-  iconSize: new L.Point(30, 30),
-  className: 'leaflet-div-icon',
-});
-
-export { iconPerson };
-
-// eslint-disable-next-line react/no-unused-prop-types
 interface MarkerProps {
   lat: number;
   lng: number;
   title: string;
   description: string;
+  parent: string;
 }
 
+const legends = [
+  { title: 'Own', color: '#2A81CB' },
+  { title: 'Shared', color: '#CB2B3E' },
+  { title: 'Published', color: '#2AAD27' },
+];
 const Map = (): JSX.Element => {
   const [items, setItems] = useState<any>(markers);
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
@@ -44,10 +40,10 @@ const Map = (): JSX.Element => {
   const [itemsList, setItemsList] = useState(markers);
 
   const [selectedItem, setSelectedItem] = useState<null | MarkerProps>(null);
-  const [selectedTags, setSelectedTags] = useState<null | MarkerProps>([]);
+  const [selectedTags, setSelectedTags] = useState<any>([]);
   const [isChecked, setIsChecked] = useState({
-    Own: false,
-    Shared: false,
+    Own: true,
+    Shared: true,
     Published: false,
   });
   // countries search if not able to geolocalize user
@@ -75,13 +71,6 @@ const Map = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    const list = items.filter(({ title }: MarkerProps) =>
-      title.toLowerCase().includes(markerSearch.toLowerCase()),
-    );
-    setItemsList(list);
-  }, [markerSearch]);
-
-  useEffect(() => {
     if (selectedItem) {
       const { lat, lng, title } = selectedItem;
       setCenter([lat, lng]);
@@ -97,30 +86,38 @@ const Map = (): JSX.Element => {
     }
   }, [selectedCountry]);
 
-  // const set1 = new Set(selectedTags.map((item) => item.name));
-  // const count = Object.values(isChecked).filter(Boolean).length;
-  //
-  // console.log(
-  //   markers.filter((ele: ele) => {
-  //     const { tags, parent } = ele;
-  //     const set2 = new Set(tags.map((item: any) => item.name));
-  //     let hasCommonElements = false;
+  const filteredItems = useMemo(() => {
+    const selectedTagsSet = new Set(selectedTags);
+    const selectedParentKeys = Object.keys(isChecked).filter(
+      (key) => isChecked[key],
+    );
 
-  //     if (set1.size) {
-  //       // Iterate through set1 and check if each element exists in set2
-  //       for (const element of set1) {
-  //         if (set2.has(element)) {
-  //           hasCommonElements = true;
-  //           break; // Exit the loop as soon as a common element is found
-  //         }
-  //       }
-  //     } else {
-  //       hasCommonElements = true;
-  //     }
-  //     return (count ? isChecked[parent] : true) && hasCommonElements;
-  //   }),
-  //   'common',
-  // );
+    return items.filter((ele) => {
+      const { tags, parent } = ele;
+      const hasCommonTags = selectedTagsSet.size === 0;
+
+      if (
+        selectedParentKeys.length === 0 ||
+        selectedParentKeys.includes(parent)
+      ) {
+        if (
+          hasCommonTags ||
+          tags.some((tag) => selectedTagsSet.has(tag.name))
+        ) {
+          return true;
+        }
+      }
+
+      return false;
+    });
+  }, [items, selectedTags, isChecked]);
+
+  useEffect(() => {
+    const list = filteredItems.filter(({ title }: MarkerProps) =>
+      title.toLowerCase().includes(markerSearch.toLowerCase()),
+    );
+    setItemsList(list);
+  }, [filteredItems, markerSearch]);
 
   const handleClick = (e: any) => {
     const { lat, lng } = e.latlng;
@@ -133,15 +130,19 @@ const Map = (): JSX.Element => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const { title, description } = Object.fromEntries(formData);
-    c
     setItems([
       ...items,
-      { lat: clickedPoint[0], lng: clickedPoint[1], title, description },
+      {
+        lat: clickedPoint[0],
+        lng: clickedPoint[1],
+        title,
+        description,
+        parent: 'Own',
+        tags: [],
+      },
     ]);
     setClickedPoint([]);
   };
-
-  console.log(selectedTags, 'selectedTags');
 
   const handleInputClick = (e: any) => {
     setIsItemSearchDialogOpen(true);
@@ -218,14 +219,16 @@ const Map = (): JSX.Element => {
           <Marker icon={iconPerson} position={center}>
             <Popup>Current location</Popup>
           </Marker>
-          {items.map(({ lat, lng, title, description }: MarkerProps) => (
-            <Marker position={[lat, lng]}>
-              <Popup>
-                {' '}
-                {title} <br /> {description}
-              </Popup>
-            </Marker>
-          ))}
+          {filteredItems.map(
+            ({ lat, lng, title, description, parent }: MarkerProps) => (
+              <Marker icon={iconsPerParent[parent]} position={[lat, lng]}>
+                <Popup>
+                  {' '}
+                  {title} <br /> {description}
+                </Popup>
+              </Marker>
+            ),
+          )}
 
           <AddSearchControlToMap
             onClick={handleClick}
@@ -233,6 +236,7 @@ const Map = (): JSX.Element => {
             lng={center[1]}
           />
         </MapContainer>
+        <Legend legends={legends} />
       </div>
     </>
   );

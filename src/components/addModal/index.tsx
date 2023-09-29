@@ -7,8 +7,6 @@ import {
   TextField,
 } from '@mui/material';
 
-import './style.css';
-
 type Props = {
   handleSubmit: any;
   closeModal: () => void;

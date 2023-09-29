@@ -38,3 +38,21 @@
   max-height: 400px;
   overflow-y: scroll;
 }
+
+.d-flex {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.legend {
+  position: absolute;
+  z-index: 9999;
+  bottom: 0%;
+  font-size: 12px;
+}
+
+.legend-icon{
+  width: 20px;
+  height: 20px;
+}
