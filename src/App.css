@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -40,7 +39,16 @@
 .read-the-docs {
   color: #888;
 }
-.leaflet-container {
-  height: 300px;
-  width: 400px;
+
+/* .leaflet-geosearch-bar input{
+  background-color: white;
+  color: black;
+}
+.leaflet-geosearch-bar .results{
+  color: black;
+  
+} */
+.leaflet-geosearch-bar .results div{
+  text-align: start;
+
 }
