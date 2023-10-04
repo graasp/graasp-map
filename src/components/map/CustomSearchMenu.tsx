@@ -54,6 +54,8 @@ const CustomSearch = ({
         horizontal: 'left',
       }}
       anchorEl={anchorEl}
+      disableAutoFocus
+      disableEnforceFocus
     >
       <div className="search-menu">
         <div className="text-start">

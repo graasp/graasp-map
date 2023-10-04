@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import { TextField } from '@mui/material';
@@ -21,7 +21,17 @@ const legends = [
   { title: 'Shared', color: '#CB2B3E' },
   { title: 'Published', color: '#2AAD27' },
 ];
+
+const ACCESS_TOKEN =
+  '5Ppv0FR2wDVhmlPvFpkY99YuUxTOi5Py4qMVgZSwfuXMSznkU0SOcsvyaYmaY8bg';
+
+const supportedLanguages = ['en', 'fr', 'it', 'es', 'de', 'nl', 'zh']; // English, French, Italian, Spanish, German, Dutch, and Chinese
+
 const Map = (): JSX.Element => {
+  // get language as url search params
+  const searchParams = new URLSearchParams(document.location.search);
+  const lang = searchParams.get('lang');
+
   const [items, setItems] = useState<MarkerProps[]>(markers);
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
 
@@ -149,6 +159,13 @@ const Map = (): JSX.Element => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMarkerSearch(e.target.value);
   };
+  const inputRef: any = useRef(null);
+
+    useEffect(() => {
+        if (isItemSearchDialogOpen) {
+            inputRef.current?.focus();
+        }
+    }, [isItemSearchDialogOpen]);
 
   return (
     <>
@@ -206,18 +223,19 @@ const Map = (): JSX.Element => {
           style={{ width: '100%', height: '100%' }}
         >
           <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url={`https://tile.jawg.io/{z}/{x}/{y}.png?${
+              lang && supportedLanguages.indexOf(lang) > -1
+                ? `lang=${lang}&`
+                : ''
+            }access-token=${ACCESS_TOKEN}`}
+            attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>'
           />
           <Marker icon={iconPerson} position={center}>
             <Popup>Current location</Popup>
           </Marker>
           {filteredItems.map(
             ({ lat, lng, title, description, parent }: MarkerProps) => (
-              <Marker
-                icon={iconsPerParent[parent]}
-                position={[lat, lng]}
-              >
+              <Marker icon={iconsPerParent[parent]} position={[lat, lng]}>
                 <Popup>
                   {' '}
                   {title} <br /> {description}
