@@ -1,30 +1,25 @@
-type Tag = { name: string };
+export type Tag = { name: string };
 
-type Point = [number, number] | [];
+export type Point = [number, number] | [];
 
-type Parent = 'Own' | 'Published' | 'Shared';
+export type MarkerParent = 'MyItems' | 'Published';
 
-interface MarkerProps {
+export interface MarkerProps {
   lat: number;
   lng: number;
   title: string;
   description: string;
-  parent: Parent;
+  parent: MarkerParent;
   tags: Tag[];
 }
 
-type Country = {
+export type Country = {
   label: string;
   latitude: number;
   longitude: number;
 };
 
-type ParentCheck = {
-  Own: boolean;
+export type ParentCheck = {
   Published: boolean;
-  Shared: boolean;
+  MyItems: boolean;
 };
-
-type Item = { label: Parent };
-
-export type { Tag, MarkerProps, Point, Parent, Country, ParentCheck, Item };

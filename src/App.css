@@ -1,6 +1,5 @@
 #root {
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -48,7 +47,6 @@
   color: black;
   
 } */
-.leaflet-geosearch-bar .results div{
+.leaflet-geosearch-bar .results div {
   text-align: start;
-
 }

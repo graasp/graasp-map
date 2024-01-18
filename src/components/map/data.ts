@@ -17,7 +17,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'cafe' }, { name: 'water' }],
-    parent: 'Own',
+    parent: 'MyItems',
   },
   {
     lat: 30,
@@ -26,7 +26,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'hospital' }, { name: 'police' }],
-    parent: 'Shared',
+    parent: 'MyItems',
   },
   {
     lat: 40,
@@ -44,7 +44,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'police' }, { name: 'bureau' }],
-    parent: 'Own',
+    parent: 'MyItems',
   },
   {
     lat: 34,
@@ -53,7 +53,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'cafe' }, { name: 'food' }],
-    parent: 'Shared',
+    parent: 'MyItems',
   },
   {
     lat: 43,
@@ -71,7 +71,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'water' }, { name: 'hospital' }],
-    parent: 'Own',
+    parent: 'MyItems',
   },
   {
     lat: 37,
@@ -80,7 +80,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'police' }, { name: 'insurance' }],
-    parent: 'Shared',
+    parent: 'MyItems',
   },
   {
     lat: 50,
@@ -98,7 +98,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'cafe' }, { name: 'insurance' }],
-    parent: 'Own',
+    parent: 'MyItems',
   },
   {
     lat: 44,
@@ -107,7 +107,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'police' }, { name: 'bureau' }],
-    parent: 'Shared',
+    parent: 'MyItems',
   },
   {
     lat: 44.8,
@@ -125,7 +125,7 @@ const markers: MarkerProps[] = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dicta eaque, iste deserunt tenetur cumque neque perspiciatis non iure maiores!',
     tags: [{ name: 'bureau' }, { name: 'water' }],
-    parent: 'Own',
+    parent: 'MyItems',
   },
 ];
 

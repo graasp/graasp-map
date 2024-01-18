@@ -2,16 +2,15 @@ import React, { Dispatch, SetStateAction } from 'react';
 
 import { Popover } from '@mui/material';
 
-import { Item, MarkerProps, Parent, ParentCheck } from '../../types';
+import { MarkerParent, MarkerProps, ParentCheck } from '../../types';
 import CheckboxGroup from '../checkbox';
 import DropDown from '../dropdown';
 import ToggleButtonsMultiple from '../tags';
 import { tags } from './data';
 import './style.css';
 
-const list: Item[] = [
-  { label: 'Own' },
-  { label: 'Shared' },
+const list: { label: MarkerParent }[] = [
+  { label: 'MyItems' },
   { label: 'Published' },
 ];
 interface Props {
@@ -36,12 +35,13 @@ const CustomSearch = ({
   setSelectedTags,
   anchorEl,
 }: Props): JSX.Element => {
-  const handleCheck = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name }: { name: string } = e.target;
     setIsChecked(
-      (prev: ParentCheck): ParentCheck => ({ ...prev, [name]: !prev[name as Parent] }),
+      (prev: ParentCheck): ParentCheck => ({
+        ...prev,
+        [name]: !prev[name as MarkerParent],
+      }),
     );
   };
 

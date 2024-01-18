@@ -5,7 +5,7 @@ import { Map } from './components';
 import './index.css';
 
 const App = (): JSX.Element => (
-  <div style={{ width: '70vw', height: '70vh' }}>
+  <div style={{ width: '100vw', height: '100vh' }}>
     <Map />
   </div>
 );

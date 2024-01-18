@@ -17,8 +17,7 @@ import Legend from './legend';
 import './style.css';
 
 const legends = [
-  { title: 'Own', color: '#2A81CB' },
-  { title: 'Shared', color: '#CB2B3E' },
+  { title: 'MyItems', color: '#2A81CB' },
   { title: 'Published', color: '#2AAD27' },
 ];
 const Map = (): JSX.Element => {
@@ -33,8 +32,7 @@ const Map = (): JSX.Element => {
   const [selectedItem, setSelectedItem] = useState<null | MarkerProps>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isChecked, setIsChecked] = useState({
-    Own: true,
-    Shared: true,
+    Accessible: true,
     Published: false,
   });
   // countries search if not able to geolocalize user
@@ -129,7 +127,7 @@ const Map = (): JSX.Element => {
           lng: clickedPoint[1],
           title,
           description,
-          parent: 'Own',
+          parent: 'MyItems',
           tags: [],
         },
       ]);
@@ -190,8 +188,8 @@ const Map = (): JSX.Element => {
                 setSelectedItem={setSelectedItem}
                 closeMenu={handleDialogClose}
                 selectedTags={selectedTags}
-                isChecked={isChecked}
-                setIsChecked={setIsChecked}
+                isChecked={isChecked as any}
+                setIsChecked={setIsChecked as any}
                 setSelectedTags={setSelectedTags}
                 anchorEl={anchor}
               />
@@ -214,12 +212,8 @@ const Map = (): JSX.Element => {
           </Marker>
           {filteredItems.map(
             ({ lat, lng, title, description, parent }: MarkerProps) => (
-              <Marker
-                icon={iconsPerParent[parent]}
-                position={[lat, lng]}
-              >
+              <Marker icon={iconsPerParent[parent]} position={[lat, lng]}>
                 <Popup>
-                  {' '}
                   {title} <br /> {description}
                 </Popup>
               </Marker>
