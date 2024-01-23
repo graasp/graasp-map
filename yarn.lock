@@ -1001,11 +1001,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/query-client@npm:2.2.3":
-  version: 2.2.3
-  resolution: "@graasp/query-client@npm:2.2.3"
+"@graasp/query-client@github:graasp/graasp-query-client#588-geolocation":
+  version: 2.3.2
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=23b7910aa29152845d8cbbf1b2efb5fdad415565"
   dependencies:
-    "@graasp/sdk": "npm:3.4.1"
+    "@graasp/sdk": "github:graasp/graasp-sdk#item-geolocation"
     "@graasp/translations": "npm:1.22.1"
     axios: "npm:0.27.2"
     crypto-js: "npm:4.2.0"
@@ -1015,7 +1015,19 @@ __metadata:
     uuid: "npm:9.0.1"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
-  checksum: cf7d3ebc8b7098b0c8b2d04d71ed56ff8004d5e892ac12bdb7cb088bdb25db559795e2fb73400410b748a09a17b06e1d3c83f28e02f8a6805669c349a13535fe
+  checksum: 0628d10c7e948054cdd024ca8d39b7ab398aaf8981b7820ccde0934a3b0bc79a0a86ca98b5e1b503fea102235a8bc66c261c1cf966aa43e9ea6cb2f146166fbd
+  languageName: node
+  linkType: hard
+
+"@graasp/sdk@github:graasp/graasp-sdk#item-geolocation":
+  version: 3.5.0
+  resolution: "@graasp/sdk@https://github.com/graasp/graasp-sdk.git#commit=7f9b1c7e88c8f22fa9beeb871d3a577c110cc0eb"
+  dependencies:
+    date-fns: "npm:3.3.1"
+    js-cookie: "npm:3.0.5"
+    uuid: "npm:9.0.1"
+    validator: "npm:13.11.0"
+  checksum: 95a6309e11f70364c0f5ccb46317e16a3ebc8bf4766aaf0cac092e59b6f74b935253a9d1b62ed254879f62e64cb093b081935b553f71e61c9ab9823ca9ddb01c
   languageName: node
   linkType: hard
 
@@ -2477,6 +2489,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:3.3.1":
+  version: 3.3.1
+  resolution: "date-fns@npm:3.3.1"
+  checksum: 98231936765dfb6fc6897676319b500a06a39f051b2c3ecbdd541a07ce9b1344b770277b8bfb1049fb7a2f70bf365ac8e6f1e2bb452b10e1a8101d518ca7f95d
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -3635,7 +3654,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "npm:2.2.3"
+    "@graasp/query-client": "github:graasp/graasp-query-client#588-geolocation"
     "@graasp/sdk": "npm:3.4.1"
     "@graasp/translations": "npm:1.22.1"
     "@mui/material": "npm:5.15.5"

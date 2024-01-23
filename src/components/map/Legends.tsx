@@ -5,7 +5,7 @@ interface LegendProps {
 type Props = {
   legends: LegendProps[];
 };
-const Legend = ({ legends }: Props): JSX.Element => (
+const Legends = ({ legends }: Props): JSX.Element => (
   <div className="legend">
     {legends.map(({ title, color }: LegendProps) => (
       <div key={title} className="legend-item d-flex">
@@ -16,4 +16,4 @@ const Legend = ({ legends }: Props): JSX.Element => (
   </div>
 );
 
-export default Legend;
+export default Legends;

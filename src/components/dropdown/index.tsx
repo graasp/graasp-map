@@ -1,5 +1,4 @@
 import { MarkerProps } from '../../types';
-import './style.css';
 
 interface Props {
   itemsList: MarkerProps[];

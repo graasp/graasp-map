@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import 'leaflet-geosearch/assets/css/leaflet.css';
+import 'leaflet-easybutton';
 
 import markerPinPerson from '../../location.svg';
 import { MarkerParent } from '../../types';

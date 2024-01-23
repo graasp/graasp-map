@@ -2,12 +2,11 @@ import React, { Dispatch, SetStateAction } from 'react';
 
 import { Popover } from '@mui/material';
 
+import { tags } from '../../data/data';
 import { MarkerParent, MarkerProps, ParentCheck } from '../../types';
-import CheckboxGroup from '../checkbox';
 import DropDown from '../dropdown';
+import CheckboxGroup from '../map/CheckboxGroup';
 import ToggleButtonsMultiple from '../tags';
-import { tags } from './data';
-import './style.css';
 
 const list: { label: MarkerParent }[] = [
   { label: 'MyItems' },
@@ -20,7 +19,7 @@ interface Props {
   closeMenu: () => void;
   selectedTags: string[];
   setIsChecked: Dispatch<SetStateAction<ParentCheck>>;
-  isChecked: ParentCheck;
+  // isChecked: ParentCheck;
   setSelectedTags: Dispatch<SetStateAction<string[]>>;
   anchorEl: HTMLInputElement | null;
 }
@@ -31,7 +30,7 @@ const CustomSearch = ({
   closeMenu,
   selectedTags,
   setIsChecked,
-  isChecked,
+  // isChecked,
   setSelectedTags,
   anchorEl,
 }: Props): JSX.Element => {
@@ -71,11 +70,7 @@ const CustomSearch = ({
           />
         </div>
         <div>
-          <CheckboxGroup
-            list={list}
-            checked={isChecked}
-            handleChange={handleCheck}
-          />
+          <CheckboxGroup list={list} handleChange={handleCheck} />
         </div>
       </div>
     </Popover>

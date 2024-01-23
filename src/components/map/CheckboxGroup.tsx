@@ -2,12 +2,9 @@ import React from 'react';
 
 import { Checkbox, FormControlLabel, FormGroup, styled } from '@mui/material';
 
-import { Item, Parent, ParentCheck } from '../../types';
-
 interface Props {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  checked: ParentCheck;
-  list: Item[];
+  list: any[];
 }
 
 const StyledFormControlLabel = styled(FormControlLabel)`
@@ -19,18 +16,12 @@ const StyledFormControlLabel = styled(FormControlLabel)`
   }
 `;
 
-const CheckboxGroup = ({ list, checked, handleChange }: Props): JSX.Element => (
+const CheckboxGroup = ({ list, handleChange }: Props): JSX.Element => (
   <FormGroup>
-    {list.map((ele: { label: Parent }) => (
+    {list.map((ele: { label: any }) => (
       <StyledFormControlLabel
         key={ele.label}
-        control={
-          <Checkbox
-            checked={checked[ele.label]}
-            onChange={handleChange}
-            size="small"
-          />
-        }
+        control={<Checkbox checked onChange={handleChange} size="small" />}
         label={ele.label}
         name={ele.label}
       />

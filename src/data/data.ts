@@ -1,4 +1,4 @@
-import { MarkerProps } from '../../types';
+import { MarkerProps } from '../types';
 
 const tags = [
   { name: 'cafe' },
