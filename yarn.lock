@@ -1001,9 +1001,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/query-client@github:graasp/graasp-query-client#588-geolocation":
+"@graasp/query-client@github:graasp/graasp-query-client#main":
   version: 2.3.2
-  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=da1a0bad6f44ad01be98ce4e02e8d2c746df450c"
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=48ed2813891f2166a8a836bba9913396e40c0825"
   dependencies:
     "@graasp/sdk": "npm:3.6.0"
     "@graasp/translations": "github:graasp/graasp-translations#geolocation"
@@ -3665,7 +3665,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "github:graasp/graasp-query-client#588-geolocation"
+    "@graasp/query-client": "github:graasp/graasp-query-client#main"
     "@graasp/sdk": "npm:3.4.1"
     "@graasp/translations": "npm:1.22.1"
     "@mui/material": "npm:5.15.5"
