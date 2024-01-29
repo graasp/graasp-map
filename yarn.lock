@@ -1003,31 +1003,20 @@ __metadata:
 
 "@graasp/query-client@github:graasp/graasp-query-client#588-geolocation":
   version: 2.3.2
-  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=23b7910aa29152845d8cbbf1b2efb5fdad415565"
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=da1a0bad6f44ad01be98ce4e02e8d2c746df450c"
   dependencies:
-    "@graasp/sdk": "github:graasp/graasp-sdk#item-geolocation"
-    "@graasp/translations": "npm:1.22.1"
+    "@graasp/sdk": "npm:3.6.0"
+    "@graasp/translations": "github:graasp/graasp-translations#geolocation"
     axios: "npm:0.27.2"
     crypto-js: "npm:4.2.0"
+    date-fns: "npm:3.3.1"
     http-status-codes: "npm:2.3.0"
     qs: "npm:6.11.2"
     react-query: "npm:3.39.3"
     uuid: "npm:9.0.1"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
-  checksum: 0628d10c7e948054cdd024ca8d39b7ab398aaf8981b7820ccde0934a3b0bc79a0a86ca98b5e1b503fea102235a8bc66c261c1cf966aa43e9ea6cb2f146166fbd
-  languageName: node
-  linkType: hard
-
-"@graasp/sdk@github:graasp/graasp-sdk#item-geolocation":
-  version: 3.5.0
-  resolution: "@graasp/sdk@https://github.com/graasp/graasp-sdk.git#commit=7f9b1c7e88c8f22fa9beeb871d3a577c110cc0eb"
-  dependencies:
-    date-fns: "npm:3.3.1"
-    js-cookie: "npm:3.0.5"
-    uuid: "npm:9.0.1"
-    validator: "npm:13.11.0"
-  checksum: 95a6309e11f70364c0f5ccb46317e16a3ebc8bf4766aaf0cac092e59b6f74b935253a9d1b62ed254879f62e64cb093b081935b553f71e61c9ab9823ca9ddb01c
+  checksum: 3c5bf601018e32dfb293147de888803f2b022d366bdfef7dc462a6a49e89b11c9c134d236c7735b0b4660a8d0a24431129c3f07eeeaf92f3d92c5322bd9fce9a
   languageName: node
   linkType: hard
 
@@ -1040,6 +1029,28 @@ __metadata:
     uuid: "npm:9.0.1"
     validator: "npm:13.11.0"
   checksum: 6bf2d3fbb28d61a457a534628620982a656258ab2e5c101294da8e7e4327eacff526378983c4e06a85f0115e0547325f9dbece793f7f4bc6129aa8909a42a24b
+  languageName: node
+  linkType: hard
+
+"@graasp/sdk@npm:3.6.0":
+  version: 3.6.0
+  resolution: "@graasp/sdk@npm:3.6.0"
+  dependencies:
+    js-cookie: "npm:3.0.5"
+    validator: "npm:13.11.0"
+  peerDependencies:
+    date-fns: ^3
+    uuid: ^9
+  checksum: df52e11764c727e17ce69d247805fd8a2d49ba291b84e00ca390f853f0b0eb7fc4a2153e7003044cb8f84edf9c2c9cae91b79a55d1e71e71c69317e40145ad12
+  languageName: node
+  linkType: hard
+
+"@graasp/translations@github:graasp/graasp-translations#geolocation":
+  version: 1.22.1
+  resolution: "@graasp/translations@https://github.com/graasp/graasp-translations.git#commit=38e9980b5d0450a1fe80b942aae798b20b01ab89"
+  dependencies:
+    i18next: "npm:23.7.16"
+  checksum: d4499181f921aa08bbaf8c7f191d03d5b463c3d55ebb377ccd17edb6603643b239eb5d33af2e8476bca906f1ed5e3bc47271bbfedac1ba471fd393c0ecddb426
   languageName: node
   linkType: hard
 

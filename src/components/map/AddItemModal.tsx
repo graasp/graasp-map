@@ -25,20 +25,18 @@ const AddItemModal = ({
   closeModal,
   location,
 }: Props): JSX.Element => {
-  const { mutateAsync: postItemWithGeolocAsync } =
-    mutations.usePostItemWithGeolocation();
+  const { mutateAsync: postItem } = mutations.usePostItem();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const { name, description }: any = Object.fromEntries(formData);
     if (location.length && name && description) {
-      await postItemWithGeolocAsync({
+      await postItem({
         name,
         description,
         type: ItemType.FOLDER,
-        lat: location[0],
-        lng: location[1],
+        geolocation: { lat: location[0], lng: location[1] },
       });
     }
     closeModal();
