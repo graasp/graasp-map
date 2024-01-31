@@ -13,7 +13,6 @@ const list: { label: MarkerParent }[] = [
   { label: 'Published' },
 ];
 interface Props {
-  isItemSearchDialogOpen: boolean;
   itemsList: MarkerProps[];
   setSelectedItem: (val: MarkerProps) => void;
   closeMenu: () => void;
@@ -24,7 +23,6 @@ interface Props {
   anchorEl: HTMLInputElement | null;
 }
 const CustomSearch = ({
-  isItemSearchDialogOpen,
   itemsList,
   setSelectedItem,
   closeMenu,
@@ -46,7 +44,7 @@ const CustomSearch = ({
 
   return (
     <Popover
-      open={isItemSearchDialogOpen}
+      open
       onClose={closeMenu}
       anchorOrigin={{
         vertical: 'bottom',

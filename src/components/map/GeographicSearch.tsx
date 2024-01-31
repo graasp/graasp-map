@@ -12,22 +12,23 @@ type Props = {
 
 const GeographicSearch = ({ lat, lng, onClick }: Props): null => {
   const map = useMap();
-  const provider = new OpenStreetMapProvider();
 
   useMapEvents({
     click: onClick,
   });
 
-  const searchControl = new GeoSearchControl({
-    provider,
-  });
-
   useEffect(() => {
+    const provider = new OpenStreetMapProvider();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const searchControl = new GeoSearchControl({
+      provider,
+    });
     map.addControl(searchControl);
     return () => {
       map.removeControl(searchControl);
     };
-  }, []);
+  }, [map]);
 
   useEffect(() => {
     map.flyTo({ lat, lng }, 10);

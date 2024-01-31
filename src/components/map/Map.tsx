@@ -4,7 +4,6 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import { LatLng } from 'leaflet';
 
 import { legends } from '../../config/constants';
-import { markers } from '../../data/data';
 import { MarkerProps, Point } from '../../types';
 import Search from '../search/Search';
 import AddItemModal from './AddItemModal';
@@ -35,11 +34,10 @@ import Legends from './Legends';
 const Map = (): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
 
-  const [isItemSearchDialogOpen, setIsItemSearchDialogOpen] = useState(false);
-  const [itemsList] = useState(markers);
+  const [isItemSearchDialogOpen] = useState(false);
 
-  const [selectedItem, setSelectedItem] = useState<null | MarkerProps>(null);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedItem] = useState<null | MarkerProps>(null);
+  const [tags, setTags] = useState<string[]>([]);
 
   // click on pint at the map
   const [clickedPoint, setClickedPoint] = useState<Point>([]);
@@ -93,6 +91,10 @@ const Map = (): JSX.Element => {
     }
   };
 
+  const onChangeTags = (newTags: any) => {
+    setTags(newTags);
+  };
+
   return (
     <>
       {Boolean(clickedPoint.length) && (
@@ -106,7 +108,7 @@ const Map = (): JSX.Element => {
       {/* {showCountryForm && <CountryForm />} */}
 
       <div className="map-container">
-        <Search />
+        <Search onChange={onChangeTags} />
 
         <MapContainer
           center={center}
@@ -119,7 +121,7 @@ const Map = (): JSX.Element => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           <CurrentLocationMarker />
-          <ItemsMarkers />
+          <ItemsMarkers tags={tags} />
 
           <GeographicSearch
             onClick={handleClick}

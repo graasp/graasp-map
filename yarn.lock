@@ -1001,12 +1001,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/query-client@github:graasp/graasp-query-client#main":
-  version: 2.3.2
-  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=48ed2813891f2166a8a836bba9913396e40c0825"
+"@graasp/query-client@github:graasp/graasp-query-client#geoloc-search":
+  version: 2.4.1
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=a14cbb422fa6c79fd07f6d60d28f6a64b1a38638"
   dependencies:
     "@graasp/sdk": "npm:3.6.0"
-    "@graasp/translations": "github:graasp/graasp-translations#geolocation"
+    "@graasp/translations": "npm:1.23.0"
     axios: "npm:0.27.2"
     crypto-js: "npm:4.2.0"
     date-fns: "npm:3.3.1"
@@ -1016,7 +1016,7 @@ __metadata:
     uuid: "npm:9.0.1"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
-  checksum: 3c5bf601018e32dfb293147de888803f2b022d366bdfef7dc462a6a49e89b11c9c134d236c7735b0b4660a8d0a24431129c3f07eeeaf92f3d92c5322bd9fce9a
+  checksum: 47b54579a8fe5ef9f416be731df58dfbedeb1719202e30d7ce26a59e5c7154cffa73f28f9931315f99dba198957d99e94341f5d27519ccb87b06b31bccc9b2cf
   languageName: node
   linkType: hard
 
@@ -1045,21 +1045,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/translations@github:graasp/graasp-translations#geolocation":
-  version: 1.22.1
-  resolution: "@graasp/translations@https://github.com/graasp/graasp-translations.git#commit=38e9980b5d0450a1fe80b942aae798b20b01ab89"
-  dependencies:
-    i18next: "npm:23.7.16"
-  checksum: d4499181f921aa08bbaf8c7f191d03d5b463c3d55ebb377ccd17edb6603643b239eb5d33af2e8476bca906f1ed5e3bc47271bbfedac1ba471fd393c0ecddb426
-  languageName: node
-  linkType: hard
-
 "@graasp/translations@npm:1.22.1":
   version: 1.22.1
   resolution: "@graasp/translations@npm:1.22.1"
   dependencies:
     i18next: "npm:23.7.16"
   checksum: 29043007a9926ff54236101c41ceb92eead09d8ce99edf46943790171f3275fb2cc1acd552bfa605247c42b4866bbf1f83dd889da3f571d388eca5f2dd598e17
+  languageName: node
+  linkType: hard
+
+"@graasp/translations@npm:1.23.0":
+  version: 1.23.0
+  resolution: "@graasp/translations@npm:1.23.0"
+  dependencies:
+    i18next: "npm:23.7.16"
+  checksum: dc0d605b520a28deb1ad3054323dc4b71f709b79adf5924552c602f3c3ed2fa7c3c8538a3015c86c8db05867159df4b2f6ad18583766b2b97c8dd850952d29e2
   languageName: node
   linkType: hard
 
@@ -3665,7 +3665,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "github:graasp/graasp-query-client#main"
+    "@graasp/query-client": "github:graasp/graasp-query-client#geoloc-search"
     "@graasp/sdk": "npm:3.4.1"
     "@graasp/translations": "npm:1.22.1"
     "@mui/material": "npm:5.15.5"
