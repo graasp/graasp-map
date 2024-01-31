@@ -1003,7 +1003,7 @@ __metadata:
 
 "@graasp/query-client@github:graasp/graasp-query-client#geoloc-search":
   version: 2.4.1
-  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=a14cbb422fa6c79fd07f6d60d28f6a64b1a38638"
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=23e5d22484c1f63d9a4c730513c25bc8b974ce3e"
   dependencies:
     "@graasp/sdk": "npm:3.6.0"
     "@graasp/translations": "npm:1.23.0"
@@ -1016,7 +1016,7 @@ __metadata:
     uuid: "npm:9.0.1"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
-  checksum: 47b54579a8fe5ef9f416be731df58dfbedeb1719202e30d7ce26a59e5c7154cffa73f28f9931315f99dba198957d99e94341f5d27519ccb87b06b31bccc9b2cf
+  checksum: 6c8f1e006d7d90c3bf70481621bd045e89f046f9f40ce4acdc1f9dd3247fa087943621a0f283b28199178b0a2f9bca4b98e075fb5dbc6cc06d14820c2dc4522e
   languageName: node
   linkType: hard
 
