@@ -19,7 +19,7 @@ const ItemsMarkers = ({
   });
   const { data: itemGeolocations } = hooks.useItemsInMap({
     ...bounds,
-    search: tags,
+    keywords: tags,
   });
 
   const updateBounds = () => {
