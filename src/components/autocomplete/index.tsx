@@ -16,7 +16,7 @@ const AutoCompleteInput = ({
 }: Props): JSX.Element => (
   <Autocomplete
     value={value}
-    onChange={(event: any, newValue: Country | null) => {
+    onChange={(_event: any, newValue: Country | null) => {
       setValue(newValue);
     }}
     disablePortal

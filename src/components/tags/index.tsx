@@ -31,7 +31,7 @@ const ToggleButtonsMultiple = ({
   setValue,
 }: Props): JSX.Element => {
   const handleSelect = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     ele: string[],
   ) => {
     setValue(ele);

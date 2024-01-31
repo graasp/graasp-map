@@ -19,7 +19,7 @@ const Search = ({
   //   setMarkerSearch(e.target.value);
   // };
 
-  const onChangeTags = (_e, newValue: string[]) => {
+  const onChangeTags = (_e: unknown, newValue: string[]) => {
     onChange(newValue);
   };
 
