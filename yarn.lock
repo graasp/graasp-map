@@ -1001,9 +1001,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/query-client@github:graasp/graasp-query-client#geoloc-search":
-  version: 2.4.1
-  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=23e5d22484c1f63d9a4c730513c25bc8b974ce3e"
+"@graasp/query-client@github:graasp/graasp-query-client#main":
+  version: 2.4.2
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=1f8598e9494b32d37feda3262fb3d12decec6286"
   dependencies:
     "@graasp/sdk": "npm:3.6.0"
     "@graasp/translations": "npm:1.23.0"
@@ -1016,7 +1016,7 @@ __metadata:
     uuid: "npm:9.0.1"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
-  checksum: 6c8f1e006d7d90c3bf70481621bd045e89f046f9f40ce4acdc1f9dd3247fa087943621a0f283b28199178b0a2f9bca4b98e075fb5dbc6cc06d14820c2dc4522e
+  checksum: 72348009a97a62bf18019886e2dc5b5bcb04198c5151da56fbeaa3e67d53c279214bc0010188ee8fd1f6dea90ac9325d725ee757409ebc0c7ad589aa38bf4fa8
   languageName: node
   linkType: hard
 
@@ -3665,7 +3665,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "github:graasp/graasp-query-client#geoloc-search"
+    "@graasp/query-client": "github:graasp/graasp-query-client#main"
     "@graasp/sdk": "npm:3.4.1"
     "@graasp/translations": "npm:1.22.1"
     "@mui/material": "npm:5.15.5"
