@@ -12,16 +12,21 @@ const CurrentLocationMarker = (): JSX.Element | null => {
     maximumAge: 0,
   };
 
-  const success = (pos) => {
+  const success = (pos: {
+    coords: { latitude: number; longitude: number };
+  }) => {
     const crd = pos.coords;
     setPosition([crd.latitude, crd.longitude]);
   };
 
-  const error = (err) => {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  };
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
+  navigator.geolocation.getCurrentPosition(
+    success,
+    (err: { code: number; message: string }) => {
+      // eslint-disable-next-line no-console
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    },
+    options,
+  );
 
   if (!position) {
     return null;
