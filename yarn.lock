@@ -1559,25 +1559,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 18.2.22
-  resolution: "@types/react@npm:18.2.22"
+"@types/react@npm:*, @types/react@npm:^18.2.48":
+  version: 18.2.51
+  resolution: "@types/react@npm:18.2.51"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: a9579ed16492fb08266adb98377bf4b8b6ce2078e8fe19be0bbca3fbea15ec8a9fde9828420192458be7bef6e63f9509ce92c7b8c890ce2973ff40b7091302e6
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.2.48":
-  version: 18.2.48
-  resolution: "@types/react@npm:18.2.48"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    "@types/scheduler": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 2e56ea6bd821ae96bd943f727a59d85384eaf5f8a3e6fce4fa1d34453e32d8eedda742432b3857fa0de7a4214bf84ce4239757eb52918e76452c00384731e585
+  checksum: af2935027172ea40695b90b02e98520a097160fa8517f6022e2e2cf8518017e0b84991cc34ee8d72cd91dcb7c5404784d4bada7a4836edf2727c3d6703c16ff8
   languageName: node
   linkType: hard
 
@@ -6441,8 +6430,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^4.5.1":
-  version: 4.5.1
-  resolution: "vite@npm:4.5.1"
+  version: 4.5.2
+  resolution: "vite@npm:4.5.2"
   dependencies:
     esbuild: "npm:^0.18.10"
     fsevents: "npm:~2.3.2"
@@ -6476,7 +6465,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 2ea9c030a5718ca0adaaa0ecc54402a725cff59131cf80bc84d0237f59c98168803ee59d23e697b98b1184be3af6c6edc2e81517f769c62159f11531b3341a4e
+  checksum: 3feb39f8da038fb2b1ad074c19a9579c263c1d7a872c5c6e0269b82d67805bb8c93cf9fc393e852807483ae9a918b1ac2861c72f73ee92fb3935ea68333a2cf7
   languageName: node
   linkType: hard
 
