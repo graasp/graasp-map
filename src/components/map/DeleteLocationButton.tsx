@@ -34,7 +34,7 @@ const DeleteLocationButton = ({ item }: Props): JSX.Element => {
 
   const handleClose = () => {
     // onClose(selectedValue);
-    // setOpen(false);
+    setOpen(false);
     // setSelectedValue(selectedValue);
   };
 
