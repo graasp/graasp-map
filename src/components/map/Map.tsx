@@ -86,6 +86,7 @@ const Map = (): JSX.Element => {
 
   const handleClick = (e: { latlng: LatLng }) => {
     const { lat, lng } = e.latlng;
+    console.error(e);
     if (!isItemSearchDialogOpen) {
       setClickedPoint([lat, lng]);
     }

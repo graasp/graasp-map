@@ -6,6 +6,8 @@ export const API_HOST =
 
 export const GRAASP_AUTH_HOST =
   import.meta.env.VITE_GRAASP_AUTH_HOST || 'http://localhost:3001';
+export const GRAASP_BUILDER_HOST =
+  import.meta.env.VITE_GRAASP_BUILDER_HOST || 'http://localhost:3111';
 export const GRAASP_PLAYER_HOST =
   import.meta.env.VITE_GRAASP_PLAYER_HOST || 'http://localhost:3112';
 export const GRAASP_LIBRARY_HOST =

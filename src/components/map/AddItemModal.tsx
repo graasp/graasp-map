@@ -51,7 +51,7 @@ const AddItemModal = ({
             autoFocus
             margin="dense"
             id="name"
-            label="Title"
+            label="Name"
             fullWidth
             name="name"
             variant="standard"
