@@ -4,6 +4,8 @@ import { useMap, useMapEvents } from 'react-leaflet';
 import { LatLng } from 'leaflet';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 
+export const provider = new OpenStreetMapProvider();
+
 type Props = {
   lat: number;
   lng: number;
@@ -18,7 +20,6 @@ const GeographicSearch = ({ lat, lng, onClick }: Props): null => {
   });
 
   useEffect(() => {
-    const provider = new OpenStreetMapProvider();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const searchControl = new GeoSearchControl({

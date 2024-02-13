@@ -1036,9 +1036,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/sdk@npm:3.7.0":
+"@graasp/sdk@github:graasp/graasp-sdk#geolocation-address":
   version: 3.7.0
-  resolution: "@graasp/sdk@npm:3.7.0"
+  resolution: "@graasp/sdk@https://github.com/graasp/graasp-sdk.git#commit=a04afbe9d475e00ffd8bc1a7caded6a05c0ca420"
   dependencies:
     "@faker-js/faker": "npm:8.4.0"
     js-cookie: "npm:3.0.5"
@@ -1046,7 +1046,7 @@ __metadata:
   peerDependencies:
     date-fns: ^3
     uuid: ^9
-  checksum: 686ecf2f252ccaf17a63730e3a9f486bbf5d4744a62c66fc338ec7bc4e1c9161387ce1c72bd560946a57aaa6798ef5e50fe97ccd8178c52ff5c497c8d11ee131
+  checksum: ddc5acdc8422b56506c2be23073227d6ea0cfd1685be823305411d9397db7495e1ce937f6008e784afd2280e06c32a5859a8b710d40e5d4341f7597bcf8d8746
   languageName: node
   linkType: hard
 
@@ -4007,7 +4007,7 @@ __metadata:
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
     "@graasp/query-client": "github:graasp/graasp-query-client#main"
-    "@graasp/sdk": "npm:3.7.0"
+    "@graasp/sdk": "github:graasp/graasp-sdk#geolocation-address"
     "@graasp/translations": "npm:1.22.1"
     "@graasp/ui": "npm:4.5.1"
     "@mui/icons-material": "npm:5.15.7"

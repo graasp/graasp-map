@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
+import { ItemGeolocation } from '@graasp/sdk';
+
 import { LatLng } from 'leaflet';
 
 import { legends } from '../../config/constants';
-import { MarkerProps, Point } from '../../types';
+import { MarkerProps } from '../../types';
 import Search from '../search/Search';
-import AddItemModal from './AddItemModal';
 import CurrentLocationMarker from './CurrentLocationMarker';
+import CurrentMarker from './CurrentMarker';
 import GeographicSearch from './GeographicSearch';
 import ItemsMarkers from './ItemsMarkers';
 import Legends from './Legends';
@@ -40,7 +42,8 @@ const Map = (): JSX.Element => {
   const [tags, setTags] = useState<string[]>([]);
 
   // click on pint at the map
-  const [clickedPoint, setClickedPoint] = useState<Point>([]);
+  const [clickedPoint, setClickedPoint] =
+    useState<Pick<ItemGeolocation, 'lat' | 'lng'>>();
 
   useEffect(() => {
     if (selectedItem) {
@@ -88,7 +91,7 @@ const Map = (): JSX.Element => {
     const { lat, lng } = e.latlng;
     console.error(e);
     if (!isItemSearchDialogOpen) {
-      setClickedPoint([lat, lng]);
+      setClickedPoint({ lat, lng });
     }
   };
 
@@ -98,13 +101,14 @@ const Map = (): JSX.Element => {
 
   return (
     <>
+      {/*     
       {Boolean(clickedPoint.length) && (
         <AddItemModal
-          closeModal={() => setClickedPoint([])}
-          location={clickedPoint}
-          open={Boolean(clickedPoint.length)}
+        closeModal={() => setClickedPoint([])}
+        location={clickedPoint}
+        open={Boolean(clickedPoint.length)}
         />
-      )}
+      )} */}
 
       {/* {showCountryForm && <CountryForm />} */}
 
@@ -123,6 +127,8 @@ const Map = (): JSX.Element => {
           />
           <CurrentLocationMarker />
           <ItemsMarkers tags={tags} />
+
+          {clickedPoint && <CurrentMarker point={clickedPoint} />}
 
           <GeographicSearch
             onClick={handleClick}

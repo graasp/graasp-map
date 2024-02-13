@@ -49,7 +49,7 @@ const MarkerPopup = ({
       <Typography variant="h5">{name.slice(0, NAME_MAX_LENGTH)}</Typography>
       {/* TODO: slice and show html  */}
       <Typography variant="subtitle1">{description}</Typography>
-      <Typography variant="subtitle1">{address}</Typography>
+      <Typography variant="caption">{address}</Typography>
       <Stack direction="row">
         <ViewButton item={item} />
         <DeleteLocationButton item={item} />
