@@ -28,8 +28,8 @@
   "dependencies": {
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
-    "@graasp/query-client": "github:graasp/graasp-query-client#main",
-    "@graasp/sdk": "github:graasp/graasp-sdk#geolocation-address",
+    "@graasp/query-client": "github:graasp/graasp-query-client#geolocation-address",
+    "@graasp/sdk": "3.8.0",
     "@graasp/translations": "1.22.1",
     "@graasp/ui": "4.5.1",
     "@mui/icons-material": "5.15.7",
