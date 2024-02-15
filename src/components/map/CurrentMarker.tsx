@@ -45,7 +45,7 @@ const CurrentMarker = ({ point }: Props): JSX.Element | null => {
           <AddItemModal
             location={{
               ...point,
-              address: address?.display_name,
+              addressLabel: address?.display_name,
               country: address?.address?.country_code,
             }}
           />

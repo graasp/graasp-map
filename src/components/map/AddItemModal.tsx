@@ -18,7 +18,7 @@ import { mutations } from '../../config/queryClient';
 
 type Props = {
   location: Pick<ItemGeolocation, 'lat' | 'lng'> &
-    Partial<Pick<ItemGeolocation, 'country' | 'address'>>;
+    Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
 };
 const AddItemModal = ({ location }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
@@ -69,7 +69,7 @@ const AddItemModal = ({ location }: Props): JSX.Element => {
               variant="standard"
             />
 
-            <p>{location.address}</p>
+            <p>{location.addressLabel}</p>
           </DialogContent>
           <DialogActions>
             <Button autoFocus onClick={() => setOpen(false)}>
