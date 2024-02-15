@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
+import { Marker, useMap, useMapEvents } from 'react-leaflet';
 
 import { hooks } from '../../config/queryClient';
 import { iconsPerParent } from '../icons/icons';
+import MarkerPopup from './MarkerPopup';
 
 const ItemsMarkers = ({
   tags,
@@ -46,11 +47,9 @@ const ItemsMarkers = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return itemGeolocations?.map(({ lat, lng, item: { name, description } }) => (
+  return itemGeolocations?.map(({ lat, lng, item }) => (
     <Marker icon={iconsPerParent.MyItems} position={[lat, lng]}>
-      <Popup>
-        {name} <br /> {description}
-      </Popup>
+      <MarkerPopup lat={lat} lng={lng} item={item} />
     </Marker>
   ));
 };
