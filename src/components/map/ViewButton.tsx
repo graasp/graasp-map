@@ -13,7 +13,7 @@ type Props = {
 
 const ViewButton = ({ item }: Props): JSX.Element => {
   const link = new URL(
-    `${GRAASP_PLAYER_HOST}/${PLAYER_ITEMS_PREFIX}/${item.id}`,
+    `${GRAASP_PLAYER_HOST}${PLAYER_ITEMS_PREFIX}/${item.id}`,
   );
 
   return (
