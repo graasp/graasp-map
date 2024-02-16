@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 import WrongLocationIcon from '@mui/icons-material/WrongLocation';
 import {
@@ -11,17 +11,22 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 
 import { DiscriminatedItem } from '@graasp/sdk';
+import { COMMON } from '@graasp/translations';
 import { Button } from '@graasp/ui';
 
+import { useCommonTranslation, useMapTranslation } from '../../config/i18n';
 import { mutations } from '../../config/queryClient';
+import { MAP } from '../../langs/constants';
 
 export interface Props {
   item: DiscriminatedItem;
 }
 
 const DeleteLocationButton = ({ item }: Props): JSX.Element => {
+  const { t } = useMapTranslation();
+  const { t: translateCommon } = useCommonTranslation();
   const { mutate: deleteLocation } = mutations.useDeleteItemGeolocation();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const onClick = () => {
     setOpen(true);
@@ -46,14 +51,16 @@ const DeleteLocationButton = ({ item }: Props): JSX.Element => {
         </IconButton>
       </Tooltip>
       <Dialog onClose={handleClose} open={open}>
-        <DialogTitle>Delete Item Location</DialogTitle>
-        <DialogContent>{`The location of ${item.name} will be removed from the map, but the item will still be accessible through Graasp Builder.`}</DialogContent>
+        <DialogTitle>{t(MAP.DELETE_ITEM_LOCATION_TITLE)}</DialogTitle>
+        <DialogContent>
+          {t(MAP.DELETE_ITEM_LOCATION_EXPLANATION, { name: item.name })}
+        </DialogContent>
         <DialogActions>
           <Button variant="text" onClick={() => setOpen(false)}>
-            Cancel
+            {translateCommon(COMMON.CANCEL_BUTTON)}
           </Button>
           <Button color="error" onClick={onDelete}>
-            Delete
+            {t(MAP.DELETE_ITEM_LOCATION_BUTTON)}
           </Button>
         </DialogActions>
       </Dialog>

@@ -1,12 +1,11 @@
 import { toast } from 'react-toastify';
 
 import { Notifier, routines } from '@graasp/query-client';
-import buildI18n, {
-  FAILURE_MESSAGES,
-  REQUEST_MESSAGES,
-} from '@graasp/translations';
+import { FAILURE_MESSAGES, REQUEST_MESSAGES } from '@graasp/translations';
 
 import axios from 'axios';
+
+import i18n from './i18n';
 
 type ErrorPayload = Parameters<Notifier>[0]['payload'] & {
   failure?: unknown[];
@@ -17,8 +16,6 @@ type SuccessPayload = {
 };
 
 type Payload = ErrorPayload & SuccessPayload;
-
-const i18n = buildI18n();
 
 const getErrorMessageFromPayload = (
   payload?: Parameters<Notifier>[0]['payload'],

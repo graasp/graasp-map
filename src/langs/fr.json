@@ -1,0 +1,8 @@
+{
+  "DELETE_ITEM_LOCATION_TITLE": "Supprimer la Localisation",
+  "DELETE_ITEM_LOCATION_BUTTON": "Supprimer",
+  "DELETE_ITEM_LOCATION_EXPLANATION": "La localisation de {{name}} sera supprimée de la carte, mais l'élément sera toujours disponible.",
+  "DELETE_ITEM_BUTTON": "Mettre à la poubelle",
+  "DELETE_ITEM_TITLE": "Mettre l'élément à la poubelle",
+  "DELETE_ITEM_EXPLANATION": "L'élément {{name}} sera placé dans la poubelle. Voulez-vous continuer ?"
+}

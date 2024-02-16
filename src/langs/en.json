@@ -1,0 +1,8 @@
+{
+  "DELETE_ITEM_LOCATION_TITLE": "Delete Item Location",
+  "DELETE_ITEM_LOCATION_BUTTON": "Delete",
+  "DELETE_ITEM_LOCATION_EXPLANATION": "The location of {{name}} will be removed from the map, but the item will still be accessible.",
+  "DELETE_ITEM_BUTTON": "Trash",
+  "DELETE_ITEM_TITLE": "Trash Item",
+  "DELETE_ITEM_EXPLANATION": "The item {{name}} will be put in your trash. Do you want to proceed?"
+}
