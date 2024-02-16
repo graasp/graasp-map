@@ -1,3 +1,4 @@
+import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
 
 import { ThemeProvider } from '@mui/material';
@@ -10,6 +11,7 @@ import 'leaflet/dist/leaflet.css';
 
 import './App.css';
 import Map from './components/map/Map';
+import i18n from './config/i18n';
 import { QueryClientProvider, queryClient } from './config/queryClient';
 
 const App = (): JSX.Element => (
@@ -17,7 +19,9 @@ const App = (): JSX.Element => (
     <div style={{ width: '100vw', height: '100vh' }}>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          <Map />
+          <I18nextProvider i18n={i18n}>
+            <Map />
+          </I18nextProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </div>

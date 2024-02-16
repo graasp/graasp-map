@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
 import { ItemGeolocation } from '@graasp/sdk';
+import { DEFAULT_LANG } from '@graasp/translations';
 
 import { LatLng } from 'leaflet';
 
 import { legends } from '../../config/constants';
+import i18n from '../../config/i18n';
+import { hooks } from '../../config/queryClient';
 import { MarkerProps } from '../../types';
 import Search from '../search/Search';
 import CurrentLocationMarker from './CurrentLocationMarker';
@@ -35,7 +38,7 @@ import Legends from './Legends';
 
 const Map = (): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
-
+  const { data: currentMember } = hooks.useCurrentMember();
   const [isItemSearchDialogOpen] = useState(false);
 
   const [selectedItem] = useState<null | MarkerProps>(null);
@@ -53,39 +56,11 @@ const Map = (): JSX.Element => {
     }
   }, [selectedItem]);
 
-  // const filteredItems = useMemo(() => {
-  //   const selectedTagsSet = new Set(selectedTags);
-  //   const selectedParentKeys: string[] = Object.keys(isChecked).filter(
-  //     (key) => isChecked[key as keyof typeof isChecked],
-  //   );
-
-  //   return items.filter((ele) => {
-  //     const { tags, parent } = ele;
-  //     const hasCommonTags = selectedTagsSet.size === 0;
-
-  //     if (
-  //       selectedParentKeys.length === 0 ||
-  //       selectedParentKeys.includes(parent)
-  //     ) {
-  //       if (
-  //         hasCommonTags ||
-  //         tags.some((tag: Tag) => selectedTagsSet.has(tag.name))
-  //       ) {
-  //         return true;
-  //       }
-  //     }
-
-  //     return false;
-  //   });
-  // }, [ selectedTags, isChecked]);
-
-  // useEffect(() => {
-  //   // const list = filteredItems.filter(({ title }: MarkerProps) =>
-  //   //   title.toLowerCase().includes(markerSearch.toLowerCase()),
-  //   // );
-  //   console.log('filter');
-  //   // setItemsList(list);
-  // }, [filteredItems, markerSearch]);
+  useEffect(() => {
+    if (currentMember) {
+      i18n.changeLanguage(currentMember.extra.lang ?? DEFAULT_LANG);
+    }
+  }, [currentMember]);
 
   const handleClick = (e: { latlng: LatLng }) => {
     const { lat, lng } = e.latlng;
@@ -101,15 +76,6 @@ const Map = (): JSX.Element => {
 
   return (
     <>
-      {/*     
-      {Boolean(clickedPoint.length) && (
-        <AddItemModal
-        closeModal={() => setClickedPoint([])}
-        location={clickedPoint}
-        open={Boolean(clickedPoint.length)}
-        />
-      )} */}
-
       {/* {showCountryForm && <CountryForm />} */}
 
       <div className="map-container">

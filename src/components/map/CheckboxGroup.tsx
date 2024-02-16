@@ -1,9 +1,9 @@
-import React from 'react';
+import { ChangeEvent } from 'react';
 
 import { Checkbox, FormControlLabel, FormGroup, styled } from '@mui/material';
 
 interface Props {
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   list: any[];
 }
 

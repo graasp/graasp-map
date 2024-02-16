@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent } from 'react';
 
 import { styled } from '@mui/material';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -30,10 +30,7 @@ const ToggleButtonsMultiple = ({
   value,
   setValue,
 }: Props): JSX.Element => {
-  const handleSelect = (
-    _event: React.MouseEvent<HTMLElement>,
-    ele: string[],
-  ) => {
+  const handleSelect = (_event: MouseEvent<HTMLElement>, ele: string[]) => {
     setValue(ele);
   };
 
