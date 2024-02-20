@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0](https://github.com/graasp/graasp-map/compare/v1.0.0...v1.1.0) (2024-02-20)
+
+
+### Features
+
+* add delete geoloc, delete item and view buttons, view address ([#21](https://github.com/graasp/graasp-map/issues/21)) ([3be8d95](https://github.com/graasp/graasp-map/commit/3be8d957e84e81e21de5f613d8e0b81147198f93))
+* add translations ([#33](https://github.com/graasp/graasp-map/issues/33)) ([1006312](https://github.com/graasp/graasp-map/commit/100631287c6c39e3a61894c6af6faa904f8ee745))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/query-client to v2.6.2 ([d5886f4](https://github.com/graasp/graasp-map/commit/d5886f4c7e07166f3def3e666bbb8a772812e3d3))
+* **deps:** update dependency react-i18next to v14.0.5 ([99a786b](https://github.com/graasp/graasp-map/commit/99a786bdf3701c59f4782f50db2bd2f7dfb49f31))
+* **deps:** update dependency react-router-dom to v6.22.1 ([d9fe324](https://github.com/graasp/graasp-map/commit/d9fe324f3d7f56a19bb0188b1d3963244d6e906d))
+* **deps:** update mui (non-major) ([b0edccf](https://github.com/graasp/graasp-map/commit/b0edccfff672f9fb8bbe3854476184a2f1f07404))
+
 ## 1.0.0 (2024-02-13)
 
 
