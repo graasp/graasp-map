@@ -55,6 +55,7 @@ const Map = ({
   recycleItems,
   postItem,
   viewItem,
+  deleteLocation,
 }: Props): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
   const [isItemSearchDialogOpen] = useState(false);
@@ -103,6 +104,7 @@ const Map = ({
         recycleItems={recycleItems}
         postItem={postItem}
         viewItem={viewItem}
+        deleteLocation={deleteLocation}
       >
         <div
           style={{
