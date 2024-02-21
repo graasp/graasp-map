@@ -1,7 +1,6 @@
 {
   "name": "@graasp/map",
   "version": "1.3.2",
-  "private": false,
   "license": "AGPL-3.0-only",
   "repository": "git@github.com:graasp/graasp-map.git",
   "author": "Graasp",
@@ -94,6 +93,20 @@
     "typescript": "^5.3.3",
     "vite": "^4.5.1",
     "vite-plugin-dts": "3.7.3"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@graasp/query-client": "*",
+    "@graasp/sdk": "*",
+    "@graasp/translations": "*",
+    "@graasp/ui": "*",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/lab": "^5.0.0-alpha.165",
+    "@mui/material": "^5.15.10",
+    "react": "*",
+    "react-dom": "*",
+    "react-i18next": "^14.0.0"
   },
   "packageManager": "yarn@4.0.2"
 }
