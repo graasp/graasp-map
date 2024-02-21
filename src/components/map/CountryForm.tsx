@@ -17,7 +17,16 @@ const CountryForm = (): JSX.Element => {
   //   }, [selectedCountry]);
 
   return (
-    <div className="p-absolute abs-center top-30">
+    <div
+      style={{
+        top: '30%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        position: 'absolute',
+        zIndex: 9999,
+        backgroundColor: 'white',
+      }}
+    >
       <AutoCompleteInput
         items={countries}
         label="Country"

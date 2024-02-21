@@ -6,10 +6,18 @@ type Props = {
   legends: LegendProps[];
 };
 const Legends = ({ legends }: Props): JSX.Element => (
-  <div className="legend">
+  <div style={{ position: 'absolute', zIndex: 9999, bottom: 0, fontSize: 12 }}>
     {legends.map(({ title, color }: LegendProps) => (
-      <div key={title} className="legend-item d-flex">
-        <div className="legend-icon" style={{ backgroundColor: color }} />
+      <div
+        key={title}
+        className="legend-item d-flex"
+        style={{
+          display: 'flex',
+          gap: 4,
+          marginTop: 4,
+        }}
+      >
+        <div style={{ backgroundColor: color, width: 20, height: 20 }} />
         {title}
       </div>
     ))}

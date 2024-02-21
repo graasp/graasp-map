@@ -13,7 +13,6 @@ import { legends } from '../config/constants';
 import i18n from '../config/i18n';
 import { hooks } from '../config/queryClient';
 import { MarkerProps } from '../types';
-import './Map.css';
 import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
 import GeographicSearch from './map/GeographicSearch';
@@ -82,7 +81,13 @@ const Map = (): JSX.Element => {
     <>
       {/* {showCountryForm && <CountryForm />} */}
 
-      <div className="map-container">
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+        }}
+      >
         <Search onChange={onChangeTags} />
 
         <MapContainer

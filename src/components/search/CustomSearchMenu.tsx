@@ -52,7 +52,16 @@ const CustomSearch = ({
       }}
       anchorEl={anchorEl}
     >
-      <div className="search-menu">
+      <div
+        style={{
+          backgroundColor: 'white',
+          display: 'flex',
+          padding: 8,
+          width: 350,
+          maxHeight: 400,
+          overflowY: 'scroll',
+        }}
+      >
         <div className="text-start">
           <div>
             <ToggleButtonsMultiple
