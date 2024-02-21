@@ -9,7 +9,6 @@ type Props = {
   item: DiscriminatedItem;
 };
 
-// eslint-disable-next-line arrow-body-style
 const ViewButton = ({ item }: Props): JSX.Element => {
   const { viewItem } = useQueryClientContext();
   return (

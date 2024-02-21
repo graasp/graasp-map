@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-import { DiscriminatedItem, ItemGeolocation } from '@graasp/sdk';
+import { ItemGeolocation } from '@graasp/sdk';
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import { LatLng } from 'leaflet';

@@ -27,7 +27,7 @@ const CurrentMarker = ({ point }: Props): JSX.Element | null => {
           console.error(e);
         });
     }
-  }, [point]);
+  }, [getAddressFromLatLng, point]);
 
   if (!point) {
     return null;

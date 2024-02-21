@@ -3,12 +3,12 @@ import { I18nextProvider } from 'react-i18next';
 
 import { ThemeProvider } from '@mui/material';
 
-import Map from '@graasp/map/src/components/Map';
-import type { AddressResult } from '@graasp/map/src/components/map/CurrentMarker';
-import i18n from '@graasp/map/src/config/i18n';
 import { ItemGeolocation } from '@graasp/sdk';
 import { theme } from '@graasp/ui';
 
+import Map from '../src/components/Map';
+import type { AddressResult } from '../src/components/map/CurrentMarker';
+import i18n from '../src/config/i18n';
 import { axios, hooks, mutations } from './queryClient';
 
 const getAddressFromLatLng = (point: Pick<ItemGeolocation, 'lat' | 'lng'>) =>
@@ -30,6 +30,7 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
       <I18nextProvider i18n={i18n}>
         <Map
+          itemId="d5a1c73d-cd4d-4f20-8a91-3c689ee87ea4"
           viewItem={viewItem}
           currentMember={currentMember}
           deleteLocation={mutations.useDeleteItemGeolocation().mutate}
