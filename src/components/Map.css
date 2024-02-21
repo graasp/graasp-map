@@ -10,14 +10,6 @@
   text-align: start;
 }
 
-/* .custom-search-input {
-  position: absolute;
-  z-index: 9999;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
 .leaflet-div-icon {
   border: none;
   background: none;
