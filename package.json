@@ -57,7 +57,6 @@
     "@mui/icons-material": "5.15.10",
     "@mui/lab": "5.0.0-alpha.165",
     "@mui/material": "5.15.10",
-    "axios": "1.6.7",
     "leaflet": "^1.9.4",
     "leaflet-easybutton": "2.4.0",
     "leaflet-geosearch": "3.11.0",
