@@ -1,7 +1,7 @@
 {
   "name": "@graasp/map",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.3.0",
   "license": "AGPL-3.0-only",
   "repository": "git@github.com:graasp/graasp-map.git",
   "author": "Graasp",
