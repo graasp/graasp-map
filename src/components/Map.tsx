@@ -6,16 +6,16 @@ import { DEFAULT_LANG } from '@graasp/translations';
 
 import { LatLng } from 'leaflet';
 
-import { legends } from '../../config/constants';
-import i18n from '../../config/i18n';
-import { hooks } from '../../config/queryClient';
-import { MarkerProps } from '../../types';
-import Search from '../search/Search';
-import CurrentLocationMarker from './CurrentLocationMarker';
-import CurrentMarker from './CurrentMarker';
-import GeographicSearch from './GeographicSearch';
-import ItemsMarkers from './ItemsMarkers';
-import Legends from './Legends';
+import { legends } from '../config/constants';
+import i18n from '../config/i18n';
+import { hooks } from '../config/queryClient';
+import { MarkerProps } from '../types';
+import CurrentLocationMarker from './map/CurrentLocationMarker';
+import CurrentMarker from './map/CurrentMarker';
+import GeographicSearch from './map/GeographicSearch';
+import ItemsMarkers from './map/ItemsMarkers';
+import Legends from './map/Legends';
+import Search from './search/Search';
 
 // const Component = () => {
 //   const map = useMap();

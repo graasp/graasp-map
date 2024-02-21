@@ -1,15 +1,29 @@
 {
-  "name": "graasp-map",
+  "name": "@graasp/map",
   "private": true,
   "version": "1.1.0",
-  "type": "module",
   "license": "AGPL-3.0-only",
+  "repository": "git@github.com:graasp/graasp-map.git",
   "author": "Graasp",
   "contributors": [
     "Kim Lan Phan Hoang"
   ],
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite ./example",
     "build": "tsc && vite build",
     "start": "yarn dev",
     "start:test": "vite --mode test",
@@ -18,12 +32,18 @@
     "preview": "vite preview",
     "preview:dev": "vite preview --mode development",
     "preview:test": "vite preview --mode test",
-    "lint": "eslint .",
     "pre-commit": "yarn prettier:check && yarn lint && yarn type-check",
     "prettier:check": "prettier --check {src,cypress}/**/*.{js,ts,tsx,json}",
     "prettier:write": "prettier --write {src,cypress}/**/*.{js,ts,tsx,json}",
     "type-check": "tsc --noEmit",
-    "check": "yarn prettier:check && yarn lint && yarn type-check"
+    "check": "yarn prettier:check && yarn lint && yarn type-check",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "yarn build && yarn cypress:ci",
+    "hooks:uninstall": "husky uninstall",
+    "hooks:install": "husky install",
+    "prepack": "yarn build",
+    "cypress:open": "cypress open",
+    "cypress:ci": "cypress run --component"
   },
   "dependencies": {
     "@emotion/react": "11.11.3",
@@ -67,8 +87,10 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "prettier": "3.2.5",
+    "rollup-plugin-visualizer": "5.12.0",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1"
+    "vite": "^4.5.1",
+    "vite-plugin-dts": "3.7.3"
   },
   "packageManager": "yarn@4.0.2"
 }

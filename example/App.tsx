@@ -9,10 +9,10 @@ import 'leaflet-easybutton/src/easy-button.css';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 import 'leaflet/dist/leaflet.css';
 
+import Map from '../src/components/Map';
+import i18n from '../src/config/i18n';
+import { QueryClientProvider, queryClient } from '../src/config/queryClient';
 import './App.css';
-import Map from './components/map/Map';
-import i18n from './config/i18n';
-import { QueryClientProvider, queryClient } from './config/queryClient';
 
 const App = (): JSX.Element => (
   <BrowserRouter>
