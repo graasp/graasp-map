@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/graasp/graasp-map/compare/v1.3.0...v1.3.1) (2024-02-21)
+
+
+### Bug Fixes
+
+* set private false ([f979e23](https://github.com/graasp/graasp-map/commit/f979e235ff423f9160b0876ce0e521a0b134958e))
+
 ## [1.3.0](https://github.com/graasp/graasp-map/compare/v1.2.0...v1.3.0) (2024-02-21)
 
 
