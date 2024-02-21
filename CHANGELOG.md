@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/graasp/graasp-map/compare/v1.3.1...v1.3.2) (2024-02-21)
+
+
+### Bug Fixes
+
+* add npm config ([c94efb1](https://github.com/graasp/graasp-map/commit/c94efb107e412b629a88f665ddfa0a2331f7f3c8))
+
 ## [1.3.1](https://github.com/graasp/graasp-map/compare/v1.3.0...v1.3.1) (2024-02-21)
 
 
