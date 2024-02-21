@@ -21,9 +21,8 @@ type Props = {
     Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
 };
 const AddItemButton = ({ location }: Props): JSX.Element => {
-  const { mutations } = useQueryClientContext();
+  const { postItem } = useQueryClientContext();
   const [open, setOpen] = useState(false);
-  const { mutateAsync: postItem } = mutations.usePostItem();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

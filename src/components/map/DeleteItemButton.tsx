@@ -18,9 +18,8 @@ type Props = {
 
 const DeleteItemButton = ({ item }: Props): JSX.Element => {
   const { t } = useMapTranslation();
-  const { mutations } = useQueryClientContext();
+  const { recycleItems } = useQueryClientContext();
   const { t: translateCommon } = useCommonTranslation();
-  const { mutate: recycleItems } = mutations.useRecycleItems();
   const [open, setOpen] = useState(false);
 
   const { name, id } = item;

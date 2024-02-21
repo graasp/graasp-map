@@ -10,25 +10,22 @@ type Props = {
   point: Pick<ItemGeolocation, 'lat' | 'lng'>;
 };
 
-type AddressResult = {
+export type AddressResult = {
   display_name?: string;
   address?: { country_code?: string };
 };
 
 const CurrentMarker = ({ point }: Props): JSX.Element | null => {
   const [address, setAddress] = useState<AddressResult | null>(null);
-  const { axios } = useQueryClientContext();
+  const { getAddressFromLatLng } = useQueryClientContext();
 
   useEffect(() => {
     if (point) {
-      axios
-        .get<AddressResult>(
-          `https://nominatim.openstreetmap.org/reverse?lat=${point.lat}&lon=${point.lng}&format=jsonv2`,
-          {
-            responseType: 'json',
-          },
-        )
-        .then(({ data }) => setAddress(data));
+      getAddressFromLatLng(point)
+        .then(({ data }) => setAddress(data))
+        .catch((e) => {
+          console.error(e);
+        });
     }
   }, [point]);
 

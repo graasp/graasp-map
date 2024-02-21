@@ -12,7 +12,10 @@ import 'leaflet/dist/leaflet.css';
 import { legends } from '../config/constants';
 import i18n from '../config/i18n';
 import { MarkerProps } from '../types';
-import { QueryClientContextProvider } from './context/QueryClientContext';
+import {
+  QueryClientContextInterface,
+  QueryClientContextProvider,
+} from './context/QueryClientContext';
 import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
 import GeographicSearch from './map/GeographicSearch';
@@ -41,14 +44,19 @@ import Search from './search/Search';
 
 type Props = {
   itemId?: DiscriminatedItem['id'];
-  hooks: any;
-  mutations: any;
-  axios: any;
-};
+} & QueryClientContextInterface;
 
-const Map = ({ itemId, hooks, mutations, axios }: Props): JSX.Element => {
+const Map = ({
+  itemId,
+  currentMember,
+  useAddressFromGeolocation,
+  useItemsInMap,
+  getAddressFromLatLng,
+  recycleItems,
+  postItem,
+  viewItem,
+}: Props): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
-  const { data: currentMember } = hooks.useCurrentMember();
   const [isItemSearchDialogOpen] = useState(false);
 
   const [selectedItem] = useState<null | MarkerProps>(null);
@@ -88,9 +96,13 @@ const Map = ({ itemId, hooks, mutations, axios }: Props): JSX.Element => {
     <>
       {/* {showCountryForm && <CountryForm />} */}
       <QueryClientContextProvider
-        axios={axios}
-        hooks={hooks}
-        mutations={mutations}
+        currentMember={currentMember}
+        useAddressFromGeolocation={useAddressFromGeolocation}
+        useItemsInMap={useItemsInMap}
+        getAddressFromLatLng={getAddressFromLatLng}
+        recycleItems={recycleItems}
+        postItem={postItem}
+        viewItem={viewItem}
       >
         <div
           style={{

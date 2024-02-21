@@ -20,7 +20,7 @@ const getErrorMessageFromPayload = (
 ) => {
   if (payload?.error) {
     return (
-      (payload.error.response?.data as any).message ??
+      ((payload.error as any).response?.data as any).message ??
       FAILURE_MESSAGES.UNEXPECTED_ERROR
     );
   }

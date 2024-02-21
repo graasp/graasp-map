@@ -15,15 +15,14 @@ const ItemsMarkers = ({
   itemId?: DiscriminatedItem['id'];
 }): JSX.Element | JSX.Element[] | undefined => {
   const map = useMap();
-
+  const { useItemsInMap } = useQueryClientContext();
   const [bounds, setBounds] = useState({
     lat1: 0,
     lat2: 10,
     lng1: 0,
     lng2: 10,
   });
-  const { hooks } = useQueryClientContext();
-  const { data: itemGeolocations } = hooks.useItemsInMap({
+  const { data: itemGeolocations } = useItemsInMap({
     ...bounds,
     keywords: tags,
     parentItemId: itemId,

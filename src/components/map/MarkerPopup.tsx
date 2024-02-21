@@ -20,9 +20,8 @@ const MarkerPopup = ({
   lat: ItemGeolocation['lat'];
   lng: ItemGeolocation['lng'];
 }): JSX.Element => {
-  const { hooks } = useQueryClientContext();
-  const { data: address } = hooks.useAddressFromGeolocation({ lat, lng });
-
+  const { useAddressFromGeolocation } = useQueryClientContext();
+  const { data: address } = useAddressFromGeolocation({ lat, lng });
   const { name, description } = item;
 
   return (
