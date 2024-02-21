@@ -42,9 +42,7 @@ import Search from './search/Search';
 //   return null;
 // };
 
-type Props = {
-  itemId?: DiscriminatedItem['id'];
-} & QueryClientContextInterface;
+type Props = QueryClientContextInterface;
 
 const Map = ({
   itemId,
@@ -97,6 +95,7 @@ const Map = ({
     <>
       {/* {showCountryForm && <CountryForm />} */}
       <QueryClientContextProvider
+        itemId={itemId}
         currentMember={currentMember}
         useAddressFromGeolocation={useAddressFromGeolocation}
         useItemsInMap={useItemsInMap}

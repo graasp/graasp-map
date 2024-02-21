@@ -21,7 +21,7 @@ type Props = {
     Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
 };
 const AddItemButton = ({ location }: Props): JSX.Element => {
-  const { postItem } = useQueryClientContext();
+  const { postItem, itemId: parentId } = useQueryClientContext();
   const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,6 +30,7 @@ const AddItemButton = ({ location }: Props): JSX.Element => {
     const { name, description }: any = Object.fromEntries(formData);
     if (location && name && description) {
       await postItem({
+        parentId,
         name,
         description,
         type: ItemType.FOLDER,

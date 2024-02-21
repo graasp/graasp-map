@@ -7,6 +7,7 @@ import {
 } from '@graasp/sdk';
 
 export interface QueryClientContextInterface {
+  itemId?: DiscriminatedItem['id'];
   currentMember?: CompleteMember | null;
   useAddressFromGeolocation: ({
     lat,
@@ -26,7 +27,14 @@ export interface QueryClientContextInterface {
   getAddressFromLatLng: (
     point: Pick<ItemGeolocation, 'lat' | 'lng'>,
   ) => Promise<{ data: any }>;
-  postItem: (item: Partial<DiscriminatedItem> & { geolocation: any }) => void;
+  postItem: (
+    item: Partial<DiscriminatedItem> &
+      Pick<DiscriminatedItem, 'type' | 'name'> & {
+        parentId?: DiscriminatedItem['id'];
+      } & {
+        geolocation?: Pick<ItemGeolocation, 'lat' | 'lng'>;
+      },
+  ) => void;
   deleteLocation: (args: { itemId: DiscriminatedItem['id'] }) => void;
   viewItem: (item: DiscriminatedItem) => void;
 }
@@ -54,6 +62,7 @@ export const QueryClientContextProvider = ({
   postItem,
   deleteLocation,
   viewItem,
+  itemId,
 }: QueryClientContextInterface & { children: JSX.Element }): JSX.Element => {
   const value = useMemo(
     () => ({
@@ -65,6 +74,7 @@ export const QueryClientContextProvider = ({
       postItem,
       deleteLocation,
       viewItem,
+      itemId,
     }),
     [
       currentMember,
@@ -75,6 +85,7 @@ export const QueryClientContextProvider = ({
       postItem,
       deleteLocation,
       viewItem,
+      itemId,
     ],
   );
 

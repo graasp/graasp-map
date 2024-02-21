@@ -1,13 +1,14 @@
+import * as React from 'react';
 import { I18nextProvider } from 'react-i18next';
 
 import { ThemeProvider } from '@mui/material';
 
+import Map from '@graasp/map/src/components/Map';
+import type { AddressResult } from '@graasp/map/src/components/map/CurrentMarker';
+import i18n from '@graasp/map/src/config/i18n';
 import { ItemGeolocation } from '@graasp/sdk';
 import { theme } from '@graasp/ui';
 
-import Map from '../src/components/Map';
-import type { AddressResult } from '../src/components/map/CurrentMarker';
-import i18n from '../src/config/i18n';
 import { axios, hooks, mutations } from './queryClient';
 
 const getAddressFromLatLng = (point: Pick<ItemGeolocation, 'lat' | 'lng'>) =>
