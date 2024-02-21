@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/graasp/graasp-map/compare/v1.1.0...v1.2.0) (2024-02-21)
+
+
+### Features
+
+* move to component ([8c0ed2d](https://github.com/graasp/graasp-map/commit/8c0ed2df32dba45c4a60b4e8f4d704913e6cb8a0))
+
 ## [1.1.0](https://github.com/graasp/graasp-map/compare/v1.0.0...v1.1.0) (2024-02-20)
 
 
