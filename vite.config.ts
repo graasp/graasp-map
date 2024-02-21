@@ -39,6 +39,7 @@ export default ({ mode }: { mode: string }): UserConfigExport =>
           '@emotion/styled',
           '@graasp/sdk',
           '@graasp/translations',
+          '@graasp/query-client',
           '@graasp/ui',
           '@mui/icons-material',
           '@mui/lab',
