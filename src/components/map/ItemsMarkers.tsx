@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Marker, useMap, useMapEvents } from 'react-leaflet';
 
-import { hooks } from '../../config/queryClient';
+import { DiscriminatedItem } from '@graasp/sdk';
+
+import { useQueryClientContext } from '../context/QueryClientContext';
 import { iconsPerParent } from '../icons/icons';
 import MarkerPopup from './MarkerPopup';
 
 const ItemsMarkers = ({
   tags,
+  itemId,
 }: {
   tags: string[];
+  itemId?: DiscriminatedItem['id'];
 }): JSX.Element | JSX.Element[] | undefined => {
   const map = useMap();
 
@@ -18,9 +22,11 @@ const ItemsMarkers = ({
     lng1: 0,
     lng2: 10,
   });
+  const { hooks } = useQueryClientContext();
   const { data: itemGeolocations } = hooks.useItemsInMap({
     ...bounds,
     keywords: tags,
+    parentItemId: itemId,
   });
 
   const updateBounds = () => {

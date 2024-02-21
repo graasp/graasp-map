@@ -14,13 +14,14 @@ import {
 
 import { ItemGeolocation, ItemType } from '@graasp/sdk';
 
-import { mutations } from '../../config/queryClient';
+import { useQueryClientContext } from '../context/QueryClientContext';
 
 type Props = {
   location: Pick<ItemGeolocation, 'lat' | 'lng'> &
     Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
 };
-const AddItemModal = ({ location }: Props): JSX.Element => {
+const AddItemButton = ({ location }: Props): JSX.Element => {
+  const { mutations } = useQueryClientContext();
   const [open, setOpen] = useState(false);
   const { mutateAsync: postItem } = mutations.usePostItem();
 
@@ -83,4 +84,4 @@ const AddItemModal = ({ location }: Props): JSX.Element => {
   );
 };
 
-export default AddItemModal;
+export default AddItemButton;

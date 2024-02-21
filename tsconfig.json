@@ -26,6 +26,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "example/queryClient.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

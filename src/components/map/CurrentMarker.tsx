@@ -3,8 +3,8 @@ import { Marker, Popup } from 'react-leaflet';
 
 import { ItemGeolocation } from '@graasp/sdk';
 
-import { axios } from '../../config/queryClient';
-import AddItemModal from './AddItemModal';
+import { useQueryClientContext } from '../context/QueryClientContext';
+import AddItemButton from './AddItemButton';
 
 type Props = {
   point: Pick<ItemGeolocation, 'lat' | 'lng'>;
@@ -17,6 +17,7 @@ type AddressResult = {
 
 const CurrentMarker = ({ point }: Props): JSX.Element | null => {
   const [address, setAddress] = useState<AddressResult | null>(null);
+  const { axios } = useQueryClientContext();
 
   useEffect(() => {
     if (point) {
@@ -42,7 +43,7 @@ const CurrentMarker = ({ point }: Props): JSX.Element | null => {
           {address?.display_name ??
             'This location does not match a specific address.'}
           <br />
-          <AddItemModal
+          <AddItemButton
             location={{
               ...point,
               addressLabel: address?.display_name,

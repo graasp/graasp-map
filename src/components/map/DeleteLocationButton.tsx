@@ -14,8 +14,8 @@ import { DiscriminatedItem } from '@graasp/sdk';
 import { COMMON } from '@graasp/translations';
 import { Button } from '@graasp/ui';
 
+import { mutations } from '../../../example/queryClient';
 import { useCommonTranslation, useMapTranslation } from '../../config/i18n';
-import { mutations } from '../../config/queryClient';
 import { MAP } from '../../langs/constants';
 
 export interface Props {

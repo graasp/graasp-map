@@ -1,34 +1,8 @@
 {
-  "name": "@graasp/map",
-  "version": "1.3.2",
-  "license": "AGPL-3.0-only",
-  "repository": "git@github.com:graasp/graasp-map.git",
-  "author": "Graasp",
-  "contributors": [
-    "Kim Lan Phan Hoang"
-  ],
-  "type": "module",
-  "sideEffects": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "workspaces": [
-    "example"
-  ],
+  "name": "example",
+  "private": true,
   "scripts": {
-    "dev": "vite ./example",
+    "dev": "vite .",
     "build": "tsc && vite build",
     "start": "yarn dev",
     "start:test": "vite --mode test",
@@ -51,15 +25,13 @@
   "dependencies": {
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
+    "@graasp/query-client": "2.6.2",
     "@graasp/sdk": "3.8.3",
     "@graasp/translations": "1.23.0",
     "@graasp/ui": "4.5.1",
     "@mui/icons-material": "5.15.10",
     "@mui/lab": "5.0.0-alpha.165",
     "@mui/material": "5.15.10",
-    "leaflet": "^1.9.4",
-    "leaflet-easybutton": "2.4.0",
-    "leaflet-geosearch": "3.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "14.0.5",

@@ -4,7 +4,7 @@ import { Stack, Typography } from '@mui/material';
 
 import { DiscriminatedItem, ItemGeolocation } from '@graasp/sdk';
 
-import { hooks } from '../../config/queryClient';
+import { useQueryClientContext } from '../context/QueryClientContext';
 import DeleteItemButton from './DeleteItemButton';
 import DeleteLocationButton from './DeleteLocationButton';
 import ViewButton from './ViewButton';
@@ -20,6 +20,7 @@ const MarkerPopup = ({
   lat: ItemGeolocation['lat'];
   lng: ItemGeolocation['lng'];
 }): JSX.Element => {
+  const { hooks } = useQueryClientContext();
   const { data: address } = hooks.useAddressFromGeolocation({ lat, lng });
 
   const { name, description } = item;

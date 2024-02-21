@@ -4,7 +4,6 @@ import { Notifier, routines } from '@graasp/query-client';
 import { FAILURE_MESSAGES, REQUEST_MESSAGES } from '@graasp/translations';
 
 import i18n from './i18n';
-import { axios } from './queryClient';
 
 type ErrorPayload = Parameters<Notifier>[0]['payload'] & {
   failure?: unknown[];
@@ -19,7 +18,7 @@ type Payload = ErrorPayload & SuccessPayload;
 const getErrorMessageFromPayload = (
   payload?: Parameters<Notifier>[0]['payload'],
 ) => {
-  if (payload?.error && axios.isAxiosError(payload.error)) {
+  if (payload?.error) {
     return (
       (payload.error.response?.data as any).message ??
       FAILURE_MESSAGES.UNEXPECTED_ERROR
