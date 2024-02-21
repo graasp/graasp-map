@@ -5,11 +5,15 @@ import { ItemGeolocation } from '@graasp/sdk';
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import { LatLng } from 'leaflet';
+import 'leaflet-easybutton/src/easy-button.css';
+import 'leaflet-geosearch/assets/css/leaflet.css';
+import 'leaflet/dist/leaflet.css';
 
 import { legends } from '../config/constants';
 import i18n from '../config/i18n';
 import { hooks } from '../config/queryClient';
 import { MarkerProps } from '../types';
+import './Map.css';
 import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
 import GeographicSearch from './map/GeographicSearch';
