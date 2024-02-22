@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo } from 'react';
 
+import type { configureQueryClient } from '@graasp/query-client';
 import {
   CompleteMember,
   DiscriminatedItem,
@@ -9,12 +10,9 @@ import {
 export interface QueryClientContextInterface {
   itemId?: DiscriminatedItem['id'];
   currentMember?: CompleteMember | null;
-  useAddressFromGeolocation: ({
-    lat,
-    lng,
-  }: Pick<ItemGeolocation, 'lat' | 'lng'>) => {
-    data?: { display_name: string };
-  };
+  useAddressFromGeolocation: ReturnType<
+    typeof configureQueryClient
+  >['hooks']['useAddressFromGeolocation'];
   useItemsInMap: (args: {
     lat1?: number;
     lat2?: number;
@@ -41,9 +39,10 @@ export interface QueryClientContextInterface {
 
 export const QueryClientContext = createContext<QueryClientContextInterface>({
   currentMember: undefined,
-  useAddressFromGeolocation: () => ({
-    data: { display_name: 'address' },
-  }),
+  useAddressFromGeolocation: () =>
+    ({
+      data: { display_name: 'address' },
+    }) as any,
   useItemsInMap: () => ({ data: [] }),
   getAddressFromLatLng: async () => ({ data: 'daza' }),
   recycleItems: () => {},
