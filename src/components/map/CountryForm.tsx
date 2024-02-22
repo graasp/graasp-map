@@ -23,7 +23,7 @@ const CountryForm = (): JSX.Element => {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         position: 'absolute',
-        zIndex: 9999,
+        zIndex: 450,
         backgroundColor: 'white',
       }}
     >

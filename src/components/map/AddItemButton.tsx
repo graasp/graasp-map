@@ -14,15 +14,16 @@ import {
 
 import { ItemGeolocation, ItemType } from '@graasp/sdk';
 
-import { mutations } from '../../config/queryClient';
+import { useQueryClientContext } from '../context/QueryClientContext';
 
 type Props = {
   location: Pick<ItemGeolocation, 'lat' | 'lng'> &
     Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
 };
-const AddItemModal = ({ location }: Props): JSX.Element => {
+const AddItemButton = ({ location }: Props): JSX.Element => {
+  const { usePostItem, itemId: parentId } = useQueryClientContext();
+  const { mutate: postItem } = usePostItem();
   const [open, setOpen] = useState(false);
-  const { mutateAsync: postItem } = mutations.usePostItem();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,6 +31,7 @@ const AddItemModal = ({ location }: Props): JSX.Element => {
     const { name, description }: any = Object.fromEntries(formData);
     if (location && name && description) {
       await postItem({
+        parentId,
         name,
         description,
         type: ItemType.FOLDER,
@@ -83,4 +85,4 @@ const AddItemModal = ({ location }: Props): JSX.Element => {
   );
 };
 
-export default AddItemModal;
+export default AddItemButton;

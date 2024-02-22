@@ -1,7 +1,6 @@
 import { configureQueryClient } from '@graasp/query-client';
 
 import { API_HOST, DOMAIN, SHOW_NOTIFICATIONS } from './env';
-import notifier from './notifier';
 
 const {
   queryClient,
@@ -13,7 +12,6 @@ const {
   axios,
 } = configureQueryClient({
   API_HOST,
-  notifier,
   SHOW_NOTIFICATIONS,
   enableWebsocket: true,
   defaultQueryOptions: {

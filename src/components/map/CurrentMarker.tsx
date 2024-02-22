@@ -1,52 +1,35 @@
-import { useEffect, useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 
 import { ItemGeolocation } from '@graasp/sdk';
 
-import { axios } from '../../config/queryClient';
-import AddItemModal from './AddItemModal';
+import { useQueryClientContext } from '../context/QueryClientContext';
+import { greenIcon } from '../icons/icons';
+import AddItemButton from './AddItemButton';
 
 type Props = {
   point: Pick<ItemGeolocation, 'lat' | 'lng'>;
 };
 
-type AddressResult = {
-  display_name?: string;
-  address?: { country_code?: string };
-};
-
 const CurrentMarker = ({ point }: Props): JSX.Element | null => {
-  const [address, setAddress] = useState<AddressResult | null>(null);
-
-  useEffect(() => {
-    if (point) {
-      axios
-        .get<AddressResult>(
-          `https://nominatim.openstreetmap.org/reverse?lat=${point.lat}&lon=${point.lng}&format=jsonv2`,
-          {
-            responseType: 'json',
-          },
-        )
-        .then(({ data }) => setAddress(data));
-    }
-  }, [point]);
+  const { useAddressFromGeolocation } = useQueryClientContext();
+  const { data: address } = useAddressFromGeolocation(point);
 
   if (!point) {
     return null;
   }
 
   return (
-    <Marker position={[point.lat, point.lng]}>
+    <Marker icon={greenIcon} position={[point.lat, point.lng]}>
       <Popup>
         <>
           {address?.display_name ??
             'This location does not match a specific address.'}
           <br />
-          <AddItemModal
+          <AddItemButton
             location={{
               ...point,
               addressLabel: address?.display_name,
-              country: address?.address?.country_code,
+              country: address?.country_code,
             }}
           />
         </>

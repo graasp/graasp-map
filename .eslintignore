@@ -3,7 +3,6 @@ dist
 public
 coverage
 src/serviceWorker.js
-cypress/integration/examples
 node_modules
 .yarn/.cache
 .husky

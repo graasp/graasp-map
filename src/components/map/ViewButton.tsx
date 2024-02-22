@@ -1,29 +1,22 @@
-import { Link } from 'react-router-dom';
-
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { IconButton, Tooltip } from '@mui/material';
 
-import { DiscriminatedItem, PLAYER_ITEMS_PREFIX } from '@graasp/sdk';
+import { DiscriminatedItem } from '@graasp/sdk';
 
-import { GRAASP_PLAYER_HOST } from '../../config/env';
+import { useQueryClientContext } from '../context/QueryClientContext';
 
 type Props = {
   item: DiscriminatedItem;
 };
 
 const ViewButton = ({ item }: Props): JSX.Element => {
-  const link = new URL(
-    `${GRAASP_PLAYER_HOST}${PLAYER_ITEMS_PREFIX}/${item.id}`,
-  );
-
+  const { viewItem } = useQueryClientContext();
   return (
-    <Link to={link.href}>
-      <Tooltip title="View item in Graasp Player">
-        <IconButton>
-          <VisibilityIcon />
-        </IconButton>
-      </Tooltip>
-    </Link>
+    <Tooltip title="View item in Graasp Player">
+      <IconButton onClick={() => viewItem(item)}>
+        <VisibilityIcon />
+      </IconButton>
+    </Tooltip>
   );
 };
 

@@ -9,8 +9,8 @@ import { COMMON } from '@graasp/translations';
 import { Button, DeleteButton } from '@graasp/ui';
 
 import { useCommonTranslation, useMapTranslation } from '../../config/i18n';
-import { mutations } from '../../config/queryClient';
 import { MAP } from '../../langs/constants';
+import { useQueryClientContext } from '../context/QueryClientContext';
 
 type Props = {
   item: DiscriminatedItem;
@@ -18,8 +18,9 @@ type Props = {
 
 const DeleteItemButton = ({ item }: Props): JSX.Element => {
   const { t } = useMapTranslation();
+  const { useRecycleItems } = useQueryClientContext();
+  const { mutate: recycleItems } = useRecycleItems();
   const { t: translateCommon } = useCommonTranslation();
-  const { mutate: recycleItems } = mutations.useRecycleItems();
   const [open, setOpen] = useState(false);
 
   const { name, id } = item;

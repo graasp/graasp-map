@@ -11,8 +11,11 @@ import 'leaflet/dist/leaflet.css';
 
 import { legends } from '../config/constants';
 import i18n from '../config/i18n';
-import { hooks } from '../config/queryClient';
 import { MarkerProps } from '../types';
+import {
+  QueryClientContextInterface,
+  QueryClientContextProvider,
+} from './context/QueryClientContext';
 import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
 import GeographicSearch from './map/GeographicSearch';
@@ -39,9 +42,20 @@ import Search from './search/Search';
 //   return null;
 // };
 
-const Map = (): JSX.Element => {
+type Props = QueryClientContextInterface;
+
+const Map = ({
+  itemId,
+  currentMember,
+  useAddressFromGeolocation,
+  useItemsInMap,
+
+  useRecycleItems,
+  usePostItem,
+  viewItem,
+  useDeleteItemGeolocation,
+}: Props): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
-  const { data: currentMember } = hooks.useCurrentMember();
   const [isItemSearchDialogOpen] = useState(false);
 
   const [selectedItem] = useState<null | MarkerProps>(null);
@@ -80,39 +94,49 @@ const Map = (): JSX.Element => {
   return (
     <>
       {/* {showCountryForm && <CountryForm />} */}
-
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'relative',
-        }}
+      <QueryClientContextProvider
+        itemId={itemId}
+        currentMember={currentMember}
+        useAddressFromGeolocation={useAddressFromGeolocation}
+        useItemsInMap={useItemsInMap}
+        useRecycleItems={useRecycleItems}
+        usePostItem={usePostItem}
+        viewItem={viewItem}
+        useDeleteItemGeolocation={useDeleteItemGeolocation}
       >
-        <Search onChange={onChangeTags} />
-
-        <MapContainer
-          center={center}
-          zoom={8}
-          //   scrollWheelZoom={false}
-          style={{ width: '100%', height: '100%' }}
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'relative',
+          }}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <CurrentLocationMarker />
-          <ItemsMarkers tags={tags} />
+          <Search onChange={onChangeTags} />
 
-          {clickedPoint && <CurrentMarker point={clickedPoint} />}
+          <MapContainer
+            center={center}
+            zoom={8}
+            //   scrollWheelZoom={false}
+            style={{ width: '100%', height: '100%' }}
+          >
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <CurrentLocationMarker />
+            <ItemsMarkers tags={tags} itemId={itemId} />
 
-          <GeographicSearch
-            onClick={handleClick}
-            lat={center[0]}
-            lng={center[1]}
-          />
-        </MapContainer>
-        <Legends legends={legends} />
-      </div>
+            {clickedPoint && <CurrentMarker point={clickedPoint} />}
+
+            <GeographicSearch
+              onClick={handleClick}
+              lat={center[0]}
+              lng={center[1]}
+            />
+          </MapContainer>
+          <Legends legends={legends} />
+        </div>
+      </QueryClientContextProvider>
     </>
   );
 };

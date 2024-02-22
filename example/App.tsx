@@ -1,27 +1,40 @@
+import * as React from 'react';
 import { I18nextProvider } from 'react-i18next';
 
 import { ThemeProvider } from '@mui/material';
 
 import { theme } from '@graasp/ui';
 
-import 'leaflet-easybutton/src/easy-button.css';
-import 'leaflet-geosearch/assets/css/leaflet.css';
-import 'leaflet/dist/leaflet.css';
-
+// eslint-disable-next-line import/no-relative-packages
 import Map from '../src/components/Map';
+// eslint-disable-next-line import/no-relative-packages
 import i18n from '../src/config/i18n';
-import { QueryClientProvider, queryClient } from '../src/config/queryClient';
+import { hooks, mutations } from './queryClient';
 
-const App = (): JSX.Element => (
-  <div style={{ width: '80vw', height: '80vh' }}>
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <I18nextProvider i18n={i18n}>
-          <Map />
-        </I18nextProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
-  </div>
-);
+const viewItem = (item) => {
+  // eslint-disable-next-line no-console
+  console.log('view item', item);
+};
+
+const App = (): JSX.Element => {
+  const { data: currentMember } = hooks.useCurrentMember();
+
+  return (
+    <ThemeProvider theme={theme}>
+      <I18nextProvider i18n={i18n}>
+        <Map
+          itemId="d5a1c73d-cd4d-4f20-8a91-3c689ee87ea4"
+          viewItem={viewItem}
+          currentMember={currentMember}
+          useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}
+          useItemsInMap={hooks.useItemsInMap}
+          useAddressFromGeolocation={hooks.useAddressFromGeolocation}
+          usePostItem={mutations.usePostItem}
+          useRecycleItems={mutations.useRecycleItems}
+        />
+      </I18nextProvider>
+    </ThemeProvider>
+  );
+};
 
 export default App;

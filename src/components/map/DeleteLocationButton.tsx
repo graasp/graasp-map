@@ -15,8 +15,8 @@ import { COMMON } from '@graasp/translations';
 import { Button } from '@graasp/ui';
 
 import { useCommonTranslation, useMapTranslation } from '../../config/i18n';
-import { mutations } from '../../config/queryClient';
 import { MAP } from '../../langs/constants';
+import { useQueryClientContext } from '../context/QueryClientContext';
 
 export interface Props {
   item: DiscriminatedItem;
@@ -25,7 +25,8 @@ export interface Props {
 const DeleteLocationButton = ({ item }: Props): JSX.Element => {
   const { t } = useMapTranslation();
   const { t: translateCommon } = useCommonTranslation();
-  const { mutate: deleteLocation } = mutations.useDeleteItemGeolocation();
+  const { useDeleteItemGeolocation } = useQueryClientContext();
+  const { mutate: deleteLocation } = useDeleteItemGeolocation();
   const [open, setOpen] = useState(false);
 
   const onClick = () => {
