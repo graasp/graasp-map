@@ -996,25 +996,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@graasp/query-client@npm:2.6.2":
-  version: 2.6.2
-  resolution: "@graasp/query-client@npm:2.6.2"
-  dependencies:
-    "@graasp/sdk": "npm:3.8.3"
-    "@graasp/translations": "npm:1.23.0"
-    axios: "npm:0.27.2"
-    crypto-js: "npm:4.2.0"
-    date-fns: "npm:3.3.1"
-    http-status-codes: "npm:2.3.0"
-    qs: "npm:6.11.2"
-    react-query: "npm:3.39.3"
-    uuid: "npm:9.0.1"
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-  checksum: f0e790c26c4d97c6a6e012799ac07ef66b5349a40398109dabb4c83eabe5513d1aa2d005748790226115c5ce11b338071a228d27c5f7a00debfdc4eda9ef64cc
-  languageName: node
-  linkType: hard
-
 "@graasp/query-client@npm:2.6.3":
   version: 2.6.3
   resolution: "@graasp/query-client@npm:2.6.3"
@@ -2958,13 +2939,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:3.3.1":
-  version: 3.3.1
-  resolution: "date-fns@npm:3.3.1"
-  checksum: 98231936765dfb6fc6897676319b500a06a39f051b2c3ecbdd541a07ce9b1344b770277b8bfb1049fb7a2f70bf365ac8e6f1e2bb452b10e1a8101d518ca7f95d
-  languageName: node
-  linkType: hard
-
 "de-indent@npm:^1.0.2":
   version: 1.0.2
   resolution: "de-indent@npm:1.0.2"
@@ -3766,7 +3740,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "npm:2.6.2"
+    "@graasp/query-client": "npm:2.6.3"
     "@graasp/sdk": "npm:3.8.3"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.5.1"
