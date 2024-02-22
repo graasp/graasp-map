@@ -5,11 +5,14 @@ import { ThemeProvider } from '@mui/material';
 
 import { theme } from '@graasp/ui';
 
+// eslint-disable-next-line import/no-relative-packages
 import Map from '../src/components/Map';
+// eslint-disable-next-line import/no-relative-packages
 import i18n from '../src/config/i18n';
 import { hooks, mutations } from './queryClient';
 
 const viewItem = (item) => {
+  // eslint-disable-next-line no-console
   console.log('view item', item);
 };
 
