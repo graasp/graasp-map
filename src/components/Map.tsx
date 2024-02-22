@@ -49,11 +49,11 @@ const Map = ({
   currentMember,
   useAddressFromGeolocation,
   useItemsInMap,
-  getAddressFromLatLng,
-  recycleItems,
-  postItem,
+
+  useRecycleItems,
+  usePostItem,
   viewItem,
-  deleteLocation,
+  useDeleteItemGeolocation,
 }: Props): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
   const [isItemSearchDialogOpen] = useState(false);
@@ -99,11 +99,10 @@ const Map = ({
         currentMember={currentMember}
         useAddressFromGeolocation={useAddressFromGeolocation}
         useItemsInMap={useItemsInMap}
-        getAddressFromLatLng={getAddressFromLatLng}
-        recycleItems={recycleItems}
-        postItem={postItem}
+        useRecycleItems={useRecycleItems}
+        usePostItem={usePostItem}
         viewItem={viewItem}
-        deleteLocation={deleteLocation}
+        useDeleteItemGeolocation={useDeleteItemGeolocation}
       >
         <div
           style={{

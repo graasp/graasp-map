@@ -25,7 +25,8 @@ export interface Props {
 const DeleteLocationButton = ({ item }: Props): JSX.Element => {
   const { t } = useMapTranslation();
   const { t: translateCommon } = useCommonTranslation();
-  const { deleteLocation } = useQueryClientContext();
+  const { useDeleteItemGeolocation } = useQueryClientContext();
+  const { mutate: deleteLocation } = useDeleteItemGeolocation();
   const [open, setOpen] = useState(false);
 
   const onClick = () => {

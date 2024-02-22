@@ -1,39 +1,21 @@
 import { createContext, useContext, useMemo } from 'react';
 
 import type { configureQueryClient } from '@graasp/query-client';
-import {
-  CompleteMember,
-  DiscriminatedItem,
-  ItemGeolocation,
-} from '@graasp/sdk';
+import { CompleteMember, DiscriminatedItem } from '@graasp/sdk';
+
+type QueryClientHooks = ReturnType<typeof configureQueryClient>['hooks'];
+type QueryClientMutations = ReturnType<
+  typeof configureQueryClient
+>['mutations'];
 
 export interface QueryClientContextInterface {
   itemId?: DiscriminatedItem['id'];
   currentMember?: CompleteMember | null;
-  useAddressFromGeolocation: ReturnType<
-    typeof configureQueryClient
-  >['hooks']['useAddressFromGeolocation'];
-  useItemsInMap: (args: {
-    lat1?: number;
-    lat2?: number;
-    lng1?: number;
-    lng2?: number;
-    keywords?: string[];
-    parentItemId?: DiscriminatedItem['id'];
-  }) => { data?: ItemGeolocation[] };
-  recycleItems: (ids: DiscriminatedItem['id'][]) => void;
-  getAddressFromLatLng: (
-    point: Pick<ItemGeolocation, 'lat' | 'lng'>,
-  ) => Promise<{ data: any }>;
-  postItem: (
-    item: Partial<DiscriminatedItem> &
-      Pick<DiscriminatedItem, 'type' | 'name'> & {
-        parentId?: DiscriminatedItem['id'];
-      } & {
-        geolocation?: Pick<ItemGeolocation, 'lat' | 'lng'>;
-      },
-  ) => void;
-  deleteLocation: (args: { itemId: DiscriminatedItem['id'] }) => void;
+  useAddressFromGeolocation: QueryClientHooks['useAddressFromGeolocation'];
+  useItemsInMap: QueryClientHooks['useItemsInMap'];
+  useRecycleItems: QueryClientMutations['useRecycleItems'];
+  usePostItem: QueryClientMutations['usePostItem'];
+  useDeleteItemGeolocation: QueryClientMutations['useDeleteItemGeolocation'];
   viewItem: (item: DiscriminatedItem) => void;
 }
 
@@ -43,12 +25,11 @@ export const QueryClientContext = createContext<QueryClientContextInterface>({
     ({
       data: { display_name: 'address' },
     }) as any,
-  useItemsInMap: () => ({ data: [] }),
-  getAddressFromLatLng: async () => ({ data: 'daza' }),
-  recycleItems: () => {},
-  postItem: () => {},
-  deleteLocation: () => {},
-  viewItem: () => {},
+  useItemsInMap: () => ({ data: [] }) as any,
+  useRecycleItems: () => ({}) as any,
+  usePostItem: () => ({}) as any,
+  useDeleteItemGeolocation: () => ({}) as any,
+  viewItem: () => ({}) as any,
 });
 
 export const QueryClientContextProvider = ({
@@ -56,10 +37,9 @@ export const QueryClientContextProvider = ({
   children,
   useAddressFromGeolocation,
   useItemsInMap,
-  getAddressFromLatLng,
-  recycleItems,
-  postItem,
-  deleteLocation,
+  useRecycleItems,
+  usePostItem,
+  useDeleteItemGeolocation,
   viewItem,
   itemId,
 }: QueryClientContextInterface & { children: JSX.Element }): JSX.Element => {
@@ -68,10 +48,9 @@ export const QueryClientContextProvider = ({
       currentMember,
       useAddressFromGeolocation,
       useItemsInMap,
-      getAddressFromLatLng,
-      recycleItems,
-      postItem,
-      deleteLocation,
+      useRecycleItems,
+      usePostItem,
+      useDeleteItemGeolocation,
       viewItem,
       itemId,
     }),
@@ -79,10 +58,9 @@ export const QueryClientContextProvider = ({
       currentMember,
       useAddressFromGeolocation,
       useItemsInMap,
-      getAddressFromLatLng,
-      recycleItems,
-      postItem,
-      deleteLocation,
+      useRecycleItems,
+      usePostItem,
+      useDeleteItemGeolocation,
       viewItem,
       itemId,
     ],

@@ -3,21 +3,11 @@ import { I18nextProvider } from 'react-i18next';
 
 import { ThemeProvider } from '@mui/material';
 
-import { ItemGeolocation } from '@graasp/sdk';
 import { theme } from '@graasp/ui';
 
 import Map from '../src/components/Map';
-import type { AddressResult } from '../src/components/map/CurrentMarker';
 import i18n from '../src/config/i18n';
-import { axios, hooks, mutations } from './queryClient';
-
-const getAddressFromLatLng = (point: Pick<ItemGeolocation, 'lat' | 'lng'>) =>
-  axios.get<AddressResult>(
-    `https://nominatim.openstreetmap.org/reverse?lat=${point.lat}&lon=${point.lng}&format=jsonv2`,
-    {
-      responseType: 'json',
-    },
-  );
+import { hooks, mutations } from './queryClient';
 
 const viewItem = (item) => {
   console.log('view item', item);
@@ -33,12 +23,11 @@ const App = (): JSX.Element => {
           itemId="d5a1c73d-cd4d-4f20-8a91-3c689ee87ea4"
           viewItem={viewItem}
           currentMember={currentMember}
-          deleteLocation={mutations.useDeleteItemGeolocation().mutate}
+          useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}
           useItemsInMap={hooks.useItemsInMap}
           useAddressFromGeolocation={hooks.useAddressFromGeolocation}
-          getAddressFromLatLng={getAddressFromLatLng}
-          postItem={mutations.usePostItem().mutate}
-          recycleItems={mutations.useRecycleItems().mutate}
+          usePostItem={mutations.usePostItem}
+          useRecycleItems={mutations.useRecycleItems}
         />
       </I18nextProvider>
     </ThemeProvider>
