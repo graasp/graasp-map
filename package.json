@@ -59,7 +59,7 @@
     "@mui/material": "5.15.10",
     "leaflet": "^1.9.4",
     "leaflet-easybutton": "2.4.0",
-    "leaflet-geosearch": "3.11.0",
+    "leaflet-geosearch": "3.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "14.0.5",

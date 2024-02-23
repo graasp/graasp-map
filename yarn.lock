@@ -924,7 +924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@googlemaps/js-api-loader@npm:^1.14.3":
+"@googlemaps/js-api-loader@npm:^1.16.6":
   version: 1.16.6
   resolution: "@googlemaps/js-api-loader@npm:1.16.6"
   dependencies:
@@ -966,7 +966,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.5"
     leaflet: "npm:^1.9.4"
     leaflet-easybutton: "npm:2.4.0"
-    leaflet-geosearch: "npm:3.11.0"
+    leaflet-geosearch: "npm:3.11.1"
     prettier: "npm:3.2.5"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -5096,18 +5096,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leaflet-geosearch@npm:3.11.0":
-  version: 3.11.0
-  resolution: "leaflet-geosearch@npm:3.11.0"
+"leaflet-geosearch@npm:3.11.1":
+  version: 3.11.1
+  resolution: "leaflet-geosearch@npm:3.11.1"
   dependencies:
-    "@googlemaps/js-api-loader": "npm:^1.14.3"
+    "@googlemaps/js-api-loader": "npm:^1.16.6"
     leaflet: "npm:^1.6.0"
   dependenciesMeta:
     "@googlemaps/js-api-loader":
       optional: true
     leaflet:
       optional: true
-  checksum: 7e4334ed5e7d6cfa2aa6c5eab954a14cd0cc16c096bd07b288cc55ed27f511a7f4101f5fded30fb8ee16623057bf26533e3a868f257a2da93d8bbf9140feac56
+  checksum: 527931609cdd8cca9eb3481ae729f57a2ac44b8bce623b4508f0c96188854d259c9102ef50327b11ff98b5ffe5c93e6221a4d1dcb3c366b1fc0527c78ee290ba
   languageName: node
   linkType: hard
 
