@@ -942,7 +942,7 @@ __metadata:
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
     "@graasp/query-client": "npm:2.6.3"
-    "@graasp/sdk": "npm:3.8.3"
+    "@graasp/sdk": "npm:3.10.0"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.5.1"
     "@mui/icons-material": "npm:5.15.10"
@@ -1013,6 +1013,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graasp/sdk@npm:3.10.0":
+  version: 3.10.0
+  resolution: "@graasp/sdk@npm:3.10.0"
+  dependencies:
+    "@faker-js/faker": "npm:8.4.0"
+    js-cookie: "npm:3.0.5"
+    validator: "npm:13.11.0"
+  peerDependencies:
+    date-fns: ^3
+    uuid: ^9
+  checksum: 4a2353869d4bdbcd5e9fac19cf11adf2a63a25864eedb8be938b788d3028844ebf28565d6164c84b7ff5b4da56e6821071d0623f4793c6ff590ae45866edd239
+  languageName: node
+  linkType: hard
+
 "@graasp/sdk@npm:3.5.0":
   version: 3.5.0
   resolution: "@graasp/sdk@npm:3.5.0"
@@ -1022,20 +1036,6 @@ __metadata:
     uuid: "npm:9.0.1"
     validator: "npm:13.11.0"
   checksum: dfbb9977904336214e411c93a33084fca8e07cb73145f655a070dfdb81a772d6a0412849ee07c8ee2e74497d59f960a8ef1989062a4e41d78ad5d22b24e8a8db
-  languageName: node
-  linkType: hard
-
-"@graasp/sdk@npm:3.8.3":
-  version: 3.8.3
-  resolution: "@graasp/sdk@npm:3.8.3"
-  dependencies:
-    "@faker-js/faker": "npm:8.4.0"
-    js-cookie: "npm:3.0.5"
-    validator: "npm:13.11.0"
-  peerDependencies:
-    date-fns: ^3
-    uuid: ^9
-  checksum: 3968defd8bc2eb9c4165ae8a89ae43c0cbe22bef9934f0eb4a2645188b793639c193a79016cb961052068601754f0cc1ef8b2abf23b691231aa9ad0594ad56f2
   languageName: node
   linkType: hard
 
@@ -3741,7 +3741,7 @@ __metadata:
     "@emotion/react": "npm:11.11.3"
     "@emotion/styled": "npm:11.11.0"
     "@graasp/query-client": "npm:2.6.3"
-    "@graasp/sdk": "npm:3.8.3"
+    "@graasp/sdk": "npm:3.10.0"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.5.1"
     "@mui/icons-material": "npm:5.15.10"
