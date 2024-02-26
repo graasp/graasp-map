@@ -52,9 +52,13 @@ const ItemsMarkers = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return itemGeolocations?.map(({ lat, lng, item }) => (
-    <Marker icon={iconsPerParent.MyItems} position={[lat, lng]}>
-      <MarkerPopup lat={lat} lng={lng} item={item} />
+  return itemGeolocations?.map((geoloc) => (
+    <Marker
+      key={geoloc.id}
+      icon={iconsPerParent.MyItems}
+      position={[geoloc.lat, geoloc.lng]}
+    >
+      <MarkerPopup geolocation={geoloc} />
     </Marker>
   ));
 };
