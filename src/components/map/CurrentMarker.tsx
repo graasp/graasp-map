@@ -1,5 +1,7 @@
 import { Marker, Popup } from 'react-leaflet';
 
+import { Skeleton } from '@mui/material';
+
 import { ItemGeolocation } from '@graasp/sdk';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
@@ -11,25 +13,41 @@ type Props = {
 };
 
 const CurrentMarker = ({ point }: Props): JSX.Element | null => {
-  const { useAddressFromGeolocation } = useQueryClientContext();
-  const { data: address } = useAddressFromGeolocation(point);
+  const { useAddressFromGeolocation, geolocationKey } = useQueryClientContext();
+  const { data: address, isLoading } = useAddressFromGeolocation({
+    ...point,
+    key: geolocationKey,
+  });
 
   if (!point) {
     return null;
   }
 
+  const location = address?.results?.[0];
+
+  const renderAddress = () => {
+    if (location?.formatted) {
+      return location?.formatted;
+    }
+
+    if (isLoading) {
+      return <Skeleton />;
+    }
+
+    return 'This location does not match a specific address.';
+  };
+
   return (
     <Marker icon={greenIcon} position={[point.lat, point.lng]}>
       <Popup>
         <>
-          {address?.display_name ??
-            'This location does not match a specific address.'}
+          {renderAddress()}
           <br />
           <AddItemButton
             location={{
               ...point,
-              addressLabel: address?.display_name,
-              country: address?.country_code,
+              addressLabel: location?.formatted,
+              country: location?.country_code,
             }}
           />
         </>
