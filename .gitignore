@@ -72,3 +72,5 @@ cypress/videos
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+storybook-static

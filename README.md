@@ -5,4 +5,5 @@
 ![NPM package downloads per month](https://img.shields.io/npm/dm/@graasp/map?color=green)
 ![typescript version](https://img.shields.io/github/package-json/dependency-version/graasp/graasp-map/dev/typescript)
 
+[![Storybook deployment](https://img.shields.io/badge/storybook-ui-%23FF4785?logo=storybook)](https://graasp.github.io/graasp-map/)
 <a href="https://gitlocalize.com/repo/9355?utm_source=badge"> <img src="https://gitlocalize.com/repo/9355/whole_project/badge.svg" /> </a>
