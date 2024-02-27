@@ -47,8 +47,11 @@
     "hooks:uninstall": "husky uninstall",
     "hooks:install": "husky install",
     "prepack": "yarn build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 65000",
+    "storybook:build": "storybook build",
+    "storybook:preview": "http-server storybook-static --port 65000 --silent",
+    "storybook:test": "test-storybook --coverage",
+    "storybook:test-ci": "wait-on http://127.0.0.1:65000 && yarn storybook:test"
   },
   "dependencies": {
     "@emotion/react": "11.11.3",
