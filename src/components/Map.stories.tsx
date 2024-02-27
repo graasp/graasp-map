@@ -32,7 +32,7 @@ export const Map = {
       </div>
     ),
   ],
-  play: async ({ canvasElement, args }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     expect(canvas.getByLabelText('Search')).toBeInTheDocument();
   },
