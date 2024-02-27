@@ -18,10 +18,10 @@ import {
 } from './context/QueryClientContext';
 import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
-import GeographicSearch from './map/GeographicSearch';
 import ItemsMarkers from './map/ItemsMarkers';
 import Legends from './map/Legends';
-import Search from './search/Search';
+import GeographicSearch from './topbar/GeographicSearch';
+import TopBar from './topbar/TopBar';
 
 // const Component = () => {
 //   const map = useMap();
@@ -113,14 +113,13 @@ const Map = ({
             position: 'relative',
           }}
         >
-          <Search onChange={onChangeTags} />
-
           <MapContainer
             center={center}
             zoom={8}
             //   scrollWheelZoom={false}
             style={{ width: '100%', height: '100%' }}
           >
+            <TopBar onChange={onChangeTags} />
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -130,11 +129,11 @@ const Map = ({
 
             {clickedPoint && <CurrentMarker point={clickedPoint} />}
 
-            <GeographicSearch
+            {/* <GeographicSearch
               onClick={handleClick}
               lat={center[0]}
               lng={center[1]}
-            />
+            /> */}
           </MapContainer>
           <Legends legends={legends} />
         </div>

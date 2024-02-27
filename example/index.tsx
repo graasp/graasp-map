@@ -6,7 +6,7 @@ import { QueryClientProvider, queryClient } from './queryClient';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <div style={{ width: '80vw', height: '80vh' }}>
+    <div style={{ width: '90vw', height: '90vh' }}>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>
