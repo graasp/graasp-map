@@ -47,5 +47,5 @@ jobs:
       - name: Run storybook tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 65000 --silent" \
-            "npx wait-on http://127.0.0.1:65000 && yarn storybook:test"
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on http://127.0.0.1:6006 && yarn storybook:test"
