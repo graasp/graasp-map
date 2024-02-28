@@ -16,6 +16,7 @@ export interface QueryClientContextInterface {
   useRecycleItems: QueryClientMutations['useRecycleItems'];
   usePostItem: QueryClientMutations['usePostItem'];
   useDeleteItemGeolocation: QueryClientMutations['useDeleteItemGeolocation'];
+  useSuggestionsForAddress: QueryClientHooks['useSuggestionsForAddress'];
   viewItem: (item: DiscriminatedItem) => void;
   geolocationKey: string;
 }
@@ -27,6 +28,7 @@ export const QueryClientContext = createContext<QueryClientContextInterface>({
       data: { display_name: 'address' },
     }) as any,
   useItemsInMap: () => ({ data: [] }) as any,
+  useSuggestionsForAddress: () => ({ data: [] }) as any,
   useRecycleItems: () => ({}) as any,
   usePostItem: () => ({}) as any,
   useDeleteItemGeolocation: () => ({}) as any,
@@ -42,6 +44,7 @@ export const QueryClientContextProvider = ({
   useRecycleItems,
   usePostItem,
   useDeleteItemGeolocation,
+  useSuggestionsForAddress,
   viewItem,
   itemId,
   geolocationKey,
@@ -56,6 +59,7 @@ export const QueryClientContextProvider = ({
       useDeleteItemGeolocation,
       viewItem,
       itemId,
+      useSuggestionsForAddress,
       geolocationKey,
     }),
     [
@@ -65,6 +69,7 @@ export const QueryClientContextProvider = ({
       useRecycleItems,
       usePostItem,
       useDeleteItemGeolocation,
+      useSuggestionsForAddress,
       viewItem,
       itemId,
       geolocationKey,

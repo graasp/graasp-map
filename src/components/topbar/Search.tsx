@@ -35,9 +35,15 @@ const Search = ({
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...params}
             placeholder="Search here..."
-            variant="outlined"
+            variant="standard"
             label="Filters"
             sx={{ width: 300 }}
+            InputProps={{
+              disableUnderline: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
         )}
         onChange={onChangeTags}

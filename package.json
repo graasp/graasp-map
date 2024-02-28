@@ -76,7 +76,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
-    "@graasp/query-client": "github:graasp/graasp-query-client#geoapify",
+    "@graasp/query-client": "github:graasp/graasp-query-client#get-suggestion-addresses",
     "@storybook/addon-coverage": "1.0.1",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addon-interactions": "7.6.17",
@@ -128,6 +128,9 @@
     "react": "*",
     "react-dom": "*",
     "react-i18next": "^14.0.0"
+  },
+  "resolutions": {
+    "@graasp/query-client": "github:graasp/graasp-query-client#get-suggestion-addresses"
   },
   "packageManager": "yarn@4.0.2",
   "eslintConfig": {

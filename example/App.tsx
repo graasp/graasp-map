@@ -20,7 +20,6 @@ const API_KEY = import.meta.env.VITE_GEOLOCATION_KEY;
 
 const App = (): JSX.Element => {
   const { data: currentMember } = hooks.useCurrentMember();
-
   return (
     <ThemeProvider theme={theme}>
       <I18nextProvider i18n={i18n}>
@@ -31,6 +30,7 @@ const App = (): JSX.Element => {
           useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}
           useItemsInMap={hooks.useItemsInMap}
           useAddressFromGeolocation={hooks.useAddressFromGeolocation}
+          useSuggestionsForAddress={hooks.useSuggestionsForAddress}
           usePostItem={mutations.usePostItem}
           useRecycleItems={mutations.useRecycleItems}
           geolocationKey={API_KEY}

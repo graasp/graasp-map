@@ -4,6 +4,7 @@ import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within } from '@storybook/testing-library';
 
+import { MOCK_USE_SUGGESTIONS } from '../../.storybook/fixtures';
 import MapComponent from './Map';
 
 const meta = {
@@ -24,10 +25,11 @@ export const Map = {
     useAddressFromGeolocation: () => ({ data: 'address' }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
   },
   decorators: [
     (Story) => (
-      <div style={{ margin: 'auto', width: '90vw', height: '90vh' }}>
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
         <Story />
       </div>
     ),
