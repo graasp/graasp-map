@@ -1,33 +1,40 @@
-import { Marker, Popup } from 'react-leaflet';
+import { useState } from 'react';
+import { Marker, Popup, useMapEvents } from 'react-leaflet';
 
 import { Skeleton } from '@mui/material';
 
 import { ItemGeolocation } from '@graasp/sdk';
 
+import { LatLng } from 'leaflet';
+
 import { useQueryClientContext } from '../context/QueryClientContext';
 import { greenIcon } from '../icons/icons';
 import AddItemButton from './AddItemButton';
 
-type Props = {
-  point: Pick<ItemGeolocation, 'lat' | 'lng'>;
-};
+const CurrentMarker = (): JSX.Element | null => {
+  // click on pint at the map
+  const [clickedPoint, setClickedPoint] =
+    useState<Pick<ItemGeolocation, 'lat' | 'lng'>>();
+  const { useAddressFromGeolocation } = useQueryClientContext();
+  const { data: address, isLoading } = useAddressFromGeolocation(clickedPoint);
 
-const CurrentMarker = ({ point }: Props): JSX.Element | null => {
-  const { useAddressFromGeolocation, geolocationKey } = useQueryClientContext();
-  const { data: address, isLoading } = useAddressFromGeolocation({
-    ...point,
-    key: geolocationKey,
+  const handleClick = (e: { latlng: LatLng }) => {
+    const { lat, lng } = e.latlng;
+    console.error(e);
+    setClickedPoint({ lat, lng });
+  };
+
+  useMapEvents({
+    click: handleClick,
   });
 
-  if (!point) {
+  if (!clickedPoint) {
     return null;
   }
 
-  const location = address?.results?.[0];
-
   const renderAddress = () => {
-    if (location?.formatted) {
-      return location?.formatted;
+    if (address?.display_name) {
+      return address?.display_name;
     }
 
     if (isLoading) {
@@ -38,16 +45,16 @@ const CurrentMarker = ({ point }: Props): JSX.Element | null => {
   };
 
   return (
-    <Marker icon={greenIcon} position={[point.lat, point.lng]}>
+    <Marker icon={greenIcon} position={[clickedPoint.lat, clickedPoint.lng]}>
       <Popup>
         <>
           {renderAddress()}
           <br />
           <AddItemButton
             location={{
-              ...point,
-              addressLabel: location?.formatted,
-              country: location?.country_code,
+              ...clickedPoint,
+              addressLabel: address?.display_name,
+              country: address?.country_code,
             }}
           />
         </>

@@ -2439,7 +2439,7 @@ __metadata:
 
 "@graasp/query-client@github:graasp/graasp-query-client#get-suggestion-addresses":
   version: 2.7.1
-  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=553c988f901d67ea0d624892a9b524b698a5b8b1"
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=4320854d610b0574ee36f7aa1842603e628adab4"
   dependencies:
     "@tanstack/react-query": "npm:4.36.1"
     "@tanstack/react-query-devtools": "npm:4.36.1"
@@ -2451,7 +2451,7 @@ __metadata:
     "@graasp/sdk": ^4.0.0
     "@graasp/translations": ^1.23.0
     react: ^18.0.0
-  checksum: b3d91d58f58eb69c6a1609bfd8b45d87b4bd98c4642ae19777a48bedeb534cad58c9badbde2e4a7f84ab3512229cadf97541e7ea5e1f29dfb12f3752c13df63f
+  checksum: 4a8104440a6486b81e81c0615bf3d4a085b0b38d059278e52f2bd656ae7d187fa50e44265cbe30c0ffe114ada038955e38bd040f82b8a24e26b89a3e881c07cd
   languageName: node
   linkType: hard
 

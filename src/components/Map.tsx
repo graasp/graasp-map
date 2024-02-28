@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-import { ItemGeolocation } from '@graasp/sdk';
 import { DEFAULT_LANG } from '@graasp/translations';
 
-import { LatLng } from 'leaflet';
 import 'leaflet-easybutton/src/easy-button.css';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 import 'leaflet/dist/leaflet.css';
@@ -20,7 +18,6 @@ import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
 import ItemsMarkers from './map/ItemsMarkers';
 import Legends from './map/Legends';
-import GeographicSearch from './topbar/GeographicSearch';
 import TopBar from './topbar/TopBar';
 
 // const Component = () => {
@@ -57,14 +54,9 @@ const Map = ({
   geolocationKey,
 }: Props): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
-  const [isItemSearchDialogOpen] = useState(false);
 
   const [selectedItem] = useState<null | MarkerProps>(null);
   const [tags, setTags] = useState<string[]>([]);
-
-  // click on pint at the map
-  const [clickedPoint, setClickedPoint] =
-    useState<Pick<ItemGeolocation, 'lat' | 'lng'>>();
 
   useEffect(() => {
     if (selectedItem) {
@@ -79,14 +71,6 @@ const Map = ({
       i18n.changeLanguage(currentMember.extra.lang ?? DEFAULT_LANG);
     }
   }, [currentMember]);
-
-  const handleClick = (e: { latlng: LatLng }) => {
-    const { lat, lng } = e.latlng;
-    console.error(e);
-    if (!isItemSearchDialogOpen) {
-      setClickedPoint({ lat, lng });
-    }
-  };
 
   const onChangeTags = (newTags: any) => {
     setTags(newTags);
@@ -127,7 +111,7 @@ const Map = ({
             <CurrentLocationMarker />
             <ItemsMarkers tags={tags} itemId={itemId} />
 
-            {clickedPoint && <CurrentMarker point={clickedPoint} />}
+            <CurrentMarker />
 
             {/* <GeographicSearch
               onClick={handleClick}
@@ -135,7 +119,7 @@ const Map = ({
               lng={center[1]}
             /> */}
           </MapContainer>
-          <Legends legends={legends} />
+          {/* <Legends legends={legends} /> */}
         </div>
       </QueryClientContextProvider>
     </>
