@@ -33,7 +33,7 @@ const checkSuggestions = async (canvas: BoundFunctions<typeof queries>) => {
   });
 
   // select a suggestion
-  const toSelect = suggestions[0].display_name;
+  const toSelect = suggestions![0].display_name;
   await userEvent.click(canvas.getByText(toSelect));
   expect(canvas.getByLabelText('Location')).toHaveTextContent(toSelect);
 };
@@ -57,7 +57,7 @@ export const InitialValue = {
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByLabelText('Location')).toHaveTextContent(
-      args.initialValue,
+      args.initialValue!,
     );
 
     await checkSuggestions(canvas);
@@ -78,7 +78,7 @@ export const Background = {
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByLabelText('Location')).toHaveTextContent(
-      args.initialValue,
+      args.initialValue!,
     );
 
     await checkSuggestions(canvas);

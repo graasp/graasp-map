@@ -7,7 +7,7 @@ import 'leaflet-easybutton/src/easy-button.css';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 import 'leaflet/dist/leaflet.css';
 
-import { legends } from '../config/constants';
+// import { legends } from '../config/constants';
 import i18n from '../config/i18n';
 import { MarkerProps } from '../types';
 import {
@@ -17,7 +17,7 @@ import {
 import CurrentLocationMarker from './map/CurrentLocationMarker';
 import CurrentMarker from './map/CurrentMarker';
 import ItemsMarkers from './map/ItemsMarkers';
-import Legends from './map/Legends';
+// import Legends from './map/Legends';
 import TopBar from './topbar/TopBar';
 
 // const Component = () => {

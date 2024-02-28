@@ -26,6 +26,7 @@ export const Map = {
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    geolocationKey: 'key',
   },
   decorators: [
     (Story) => (
