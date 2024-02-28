@@ -2331,7 +2331,7 @@ __metadata:
     "@mui/icons-material": "npm:5.15.11"
     "@mui/lab": "npm:5.0.0-alpha.166"
     "@mui/material": "npm:5.15.11"
-    "@storybook/addon-coverage": "npm:1.0.0"
+    "@storybook/addon-coverage": "npm:1.0.1"
     "@storybook/addon-essentials": "npm:7.6.17"
     "@storybook/addon-interactions": "npm:7.6.17"
     "@storybook/addon-links": "npm:7.6.17"
@@ -4089,9 +4089,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-coverage@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@storybook/addon-coverage@npm:1.0.0"
+"@storybook/addon-coverage@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@storybook/addon-coverage@npm:1.0.1"
   dependencies:
     "@istanbuljs/load-nyc-config": "npm:^1.1.0"
     "@jsdevtools/coverage-istanbul-loader": "npm:^3.0.5"
@@ -4102,7 +4102,7 @@ __metadata:
     source-map: "npm:^0.7.4"
     test-exclude: "npm:^6.0.0"
     vite-plugin-istanbul: "npm:^3.0.1"
-  checksum: c04739ead5eb79f91794d519cf4e5bb9dae1ee120f577a252ccdca1eb1be3115681cc5b40648619a36cadf8a03a88fe744fe6a4f0197c1ff56fd9b509bef9562
+  checksum: 59bb1664054d4d576ed96f946480a2c0756488e6811f9113eed3070042f0d809df911c9feb99e400995640fcc48ac613194eb1fb22142e0eb5e5a4e0a2895d2b
   languageName: node
   linkType: hard
 
