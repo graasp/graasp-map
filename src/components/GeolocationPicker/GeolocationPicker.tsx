@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useState } from 'react';
+import { ChangeEventHandler, useEffect, useState } from 'react';
 
 import {
   Box,
@@ -24,6 +24,7 @@ export type GeolocationPickerProps = {
   }) => void;
   invisible?: boolean;
   initialValue?: string;
+  endAdornment?: JSX.Element;
 };
 
 const GeolocationPicker = ({
@@ -41,6 +42,13 @@ const GeolocationPicker = ({
     address: query !== initialValue ? query : undefined,
     lang: i18n.language ?? DEFAULT_LANG,
   });
+
+  useEffect(() => {
+    if (initialValue !== query) {
+      setQuery(initialValue);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialValue]);
 
   const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setQuery(e.target.value);
