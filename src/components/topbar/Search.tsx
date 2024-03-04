@@ -22,13 +22,12 @@ const Search = ({
           placeholder="Search here..."
           variant="standard"
           label="Filters"
-          // sx={{ width: 300 }}
           InputProps={{
             ...params.InputProps,
             disableUnderline: true,
           }}
           sx={{
-            width: 300,
+            width: 250,
           }}
           InputLabelProps={{
             shrink: true,

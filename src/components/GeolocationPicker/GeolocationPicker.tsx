@@ -59,7 +59,7 @@ const GeolocationPicker = ({
   };
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ position: 'relative', width: '100%' }}>
       <TextField
         disabled={disabled}
         fullWidth
@@ -68,7 +68,7 @@ const GeolocationPicker = ({
         placeholder={t(MAP.GEOLOCATION_PICKER_PLACEHOLDER)}
         onChange={onChange}
         value={selectedAddress ?? query}
-        sx={{ minWidth: 300 }}
+        sx={{ minWidth: 250 }}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(invisible
           ? {
