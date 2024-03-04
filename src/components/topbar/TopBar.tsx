@@ -9,7 +9,7 @@ import { useQueryClientContext } from '../context/QueryClientContext';
 import Search from './Search';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const TopBar = ({ onChange }: any): JSX.Element => {
+const TopBar = ({ onChange, tags }: any): JSX.Element => {
   const map = useMap();
   const { useSuggestionsForAddress } = useQueryClientContext();
 
@@ -50,7 +50,7 @@ const TopBar = ({ onChange }: any): JSX.Element => {
           </Stack>
           <Divider orientation="vertical" flexItem />
           <Stack>
-            <Search onChange={onChange} />
+            <Search tags={tags} onChange={onChange} />
           </Stack>
         </Stack>
       </Stack>

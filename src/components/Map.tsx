@@ -51,7 +51,6 @@ const Map = ({
   usePostItem,
   viewItem,
   useDeleteItemGeolocation,
-  geolocationKey,
 }: Props): JSX.Element => {
   const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
 
@@ -88,7 +87,6 @@ const Map = ({
         usePostItem={usePostItem}
         viewItem={viewItem}
         useDeleteItemGeolocation={useDeleteItemGeolocation}
-        geolocationKey={geolocationKey}
       >
         <div
           style={{
@@ -107,7 +105,7 @@ const Map = ({
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
-            <TopBar onChange={onChangeTags} />
+            <TopBar tags={tags} onChange={onChangeTags} />
             <CurrentLocationMarker />
             <ItemsMarkers tags={tags} itemId={itemId} />
 

@@ -48,19 +48,13 @@ const GeolocationPicker = ({
   };
 
   const handleChangeOption = (option: {
-    display_name: string;
-    lat: string;
-    lon: string;
+    addressLabel: string;
+    lat: number;
+    lng: number;
   }): void => {
-    // eslint-disable-next-line camelcase
-    const { display_name: addressLabel, lat, lon: lng } = option;
-    onChangeOption?.({
-      addressLabel,
-      lat: +lat,
-      lng: +lng,
-    });
+    onChangeOption?.(option);
 
-    setSelectedAddress(addressLabel);
+    setSelectedAddress(option.addressLabel);
     setQuery(undefined);
   };
 
@@ -104,11 +98,8 @@ const GeolocationPicker = ({
           }}
         >
           {suggestions.map((r) => (
-            <ListItemButton
-              key={r.osm_id}
-              onClick={() => handleChangeOption(r)}
-            >
-              {r.display_name}
+            <ListItemButton key={r.id} onClick={() => handleChangeOption(r)}>
+              {r.addressLabel}
             </ListItemButton>
           ))}
           {!suggestions.length &&

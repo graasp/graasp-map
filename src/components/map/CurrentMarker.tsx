@@ -15,8 +15,11 @@ const CurrentMarker = (): JSX.Element | null => {
   // click on pint at the map
   const [clickedPoint, setClickedPoint] =
     useState<Pick<ItemGeolocation, 'lat' | 'lng'>>();
-  const { useAddressFromGeolocation } = useQueryClientContext();
-  const { data: address, isLoading } = useAddressFromGeolocation(clickedPoint);
+  const { useAddressFromGeolocation, currentMember } = useQueryClientContext();
+
+  const { data: address, isLoading } = useAddressFromGeolocation(clickedPoint, {
+    enabled: Boolean(currentMember),
+  });
 
   const handleClick = (e: { latlng: LatLng }) => {
     const { lat, lng } = e.latlng;
@@ -33,8 +36,8 @@ const CurrentMarker = (): JSX.Element | null => {
   }
 
   const renderAddress = () => {
-    if (address?.display_name) {
-      return address?.display_name;
+    if (address?.addressLabel) {
+      return address?.addressLabel;
     }
 
     if (isLoading) {
@@ -46,19 +49,21 @@ const CurrentMarker = (): JSX.Element | null => {
 
   return (
     <Marker icon={greenIcon} position={[clickedPoint.lat, clickedPoint.lng]}>
-      <Popup>
-        <>
-          {renderAddress()}
-          <br />
-          <AddItemButton
-            location={{
-              ...clickedPoint,
-              addressLabel: address?.display_name,
-              country: address?.country_code,
-            }}
-          />
-        </>
-      </Popup>
+      {currentMember && (
+        <Popup>
+          <>
+            {renderAddress()}
+            <br />
+            <AddItemButton
+              location={{
+                ...clickedPoint,
+                addressLabel: address?.addressLabel,
+                country: address?.country,
+              }}
+            />
+          </>
+        </Popup>
+      )}
     </Marker>
   );
 };

@@ -16,8 +16,6 @@ const viewItem = (item) => {
   console.log('view item', item);
 };
 
-const API_KEY = import.meta.env.VITE_GEOLOCATION_KEY;
-
 const App = (): JSX.Element => {
   const { data: currentMember } = hooks.useCurrentMember();
   return (
@@ -33,7 +31,6 @@ const App = (): JSX.Element => {
           useSuggestionsForAddress={hooks.useSuggestionsForAddress}
           usePostItem={mutations.usePostItem}
           useRecycleItems={mutations.useRecycleItems}
-          geolocationKey={API_KEY}
         />
       </I18nextProvider>
     </ThemeProvider>
