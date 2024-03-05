@@ -1,29 +1,13 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import { visualizer } from 'rollup-plugin-visualizer';
 import { fileURLToPath } from 'url';
-import { PluginOption, UserConfigExport, defineConfig } from 'vite';
+import { UserConfigExport, defineConfig } from 'vite';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import dts from 'vite-plugin-dts';
 
 export default ({ mode }: { mode: string }): UserConfigExport =>
   defineConfig({
-    plugins: [
-      react(),
-      dts(),
-      ...(mode === 'dev'
-        ? [
-            visualizer({
-              template: 'treemap', // or sunburst
-              open: true,
-              gzipSize: true,
-              brotliSize: true,
-              filename: 'analice.html',
-            }) as PluginOption,
-          ]
-        : []),
-      cssInjectedByJsPlugin(),
-    ],
+    plugins: [react(), dts({ entryRoot: 'src' }), cssInjectedByJsPlugin()],
     build: {
       lib: {
         // Could also be a dictionary or array of multiple entry points
