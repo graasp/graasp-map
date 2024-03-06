@@ -16,11 +16,7 @@
     "prettier:write": "prettier --write {src,cypress}/**/*.{js,ts,tsx,json}",
     "type-check": "tsc --noEmit",
     "check": "yarn prettier:check && yarn lint && yarn type-check",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "test": "yarn build && yarn cypress:ci",
-    "hooks:uninstall": "husky uninstall",
-    "hooks:install": "husky install",
-    "prepack": "yarn build"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "@emotion/react": "11.11.4",
@@ -32,6 +28,7 @@
     "@mui/icons-material": "5.15.12",
     "@mui/lab": "5.0.0-alpha.167",
     "@mui/material": "5.15.12",
+    "date-fns": "3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "14.0.8",

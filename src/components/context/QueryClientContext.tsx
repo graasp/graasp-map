@@ -17,6 +17,7 @@ export interface QueryClientContextInterface {
   usePostItem: QueryClientMutations['usePostItem'];
   useDeleteItemGeolocation: QueryClientMutations['useDeleteItemGeolocation'];
   viewItem: (item: DiscriminatedItem) => void;
+  geolocationKey: string;
 }
 
 export const QueryClientContext = createContext<QueryClientContextInterface>({
@@ -30,6 +31,7 @@ export const QueryClientContext = createContext<QueryClientContextInterface>({
   usePostItem: () => ({}) as any,
   useDeleteItemGeolocation: () => ({}) as any,
   viewItem: () => ({}) as any,
+  geolocationKey: 'geolocationKey',
 });
 
 export const QueryClientContextProvider = ({
@@ -42,6 +44,7 @@ export const QueryClientContextProvider = ({
   useDeleteItemGeolocation,
   viewItem,
   itemId,
+  geolocationKey,
 }: QueryClientContextInterface & { children: JSX.Element }): JSX.Element => {
   const value = useMemo(
     () => ({
@@ -53,6 +56,7 @@ export const QueryClientContextProvider = ({
       useDeleteItemGeolocation,
       viewItem,
       itemId,
+      geolocationKey,
     }),
     [
       currentMember,
@@ -63,6 +67,7 @@ export const QueryClientContextProvider = ({
       useDeleteItemGeolocation,
       viewItem,
       itemId,
+      geolocationKey,
     ],
   );
 
