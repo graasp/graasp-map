@@ -1,7 +1,9 @@
 import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import type { BoundFunctions } from '@testing-library/dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { queries } from '@testing-library/dom';
 
 import { MOCK_USE_SUGGESTIONS } from '../../../.storybook/fixtures';

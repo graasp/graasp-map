@@ -21,6 +21,7 @@ export type GeolocationPickerProps = {
     addressLabel: string;
     lat: number;
     lng: number;
+    country?: string;
   }) => void;
   invisible?: boolean;
   initialValue?: string;
@@ -59,6 +60,7 @@ const GeolocationPicker = ({
     addressLabel: string;
     lat: number;
     lng: number;
+    country?: string;
   }): void => {
     onChangeOption?.(option);
 
