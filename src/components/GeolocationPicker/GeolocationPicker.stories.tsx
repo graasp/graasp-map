@@ -30,11 +30,11 @@ const checkSuggestions = async (canvas: BoundFunctions<typeof queries>) => {
   await userEvent.type(canvas.getByLabelText('Location'), 'my address');
   const suggestions = MOCK_USE_SUGGESTIONS({ address: 'query' }).data;
   suggestions?.forEach((value) => {
-    expect(canvas.getByText(value.display_name)).toBeVisible();
+    expect(canvas.getByText(value.addressLabel)).toBeVisible();
   });
 
   // select a suggestion
-  const toSelect = suggestions![0].display_name;
+  const toSelect = suggestions![0].addressLabel;
   await userEvent.click(canvas.getByText(toSelect));
   expect(canvas.getByLabelText('Location')).toHaveTextContent(toSelect);
 };

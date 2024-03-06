@@ -36,6 +36,7 @@ export const Map = {
   ],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByLabelText('Search')).toBeInTheDocument();
+    expect(canvas.getByLabelText('Filters')).toBeInTheDocument();
+    expect(canvas.getByLabelText('Location')).toBeInTheDocument();
   },
 } satisfies Story;
