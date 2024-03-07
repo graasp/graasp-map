@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { FeatureGroup, Marker, useMap, useMapEvents } from 'react-leaflet';
+import { useRef } from 'react';
+import { FeatureGroup, Marker } from 'react-leaflet';
 
 import { DiscriminatedItem } from '@graasp/sdk';
 
@@ -20,8 +20,7 @@ const ItemsMarkers = ({
     lng2: number;
   };
 }): JSX.Element | JSX.Element[] | undefined => {
-  const groupRef = useRef(null);
-  const map = useMap();
+  const groupRef = useRef<any>(null);
   const { useItemsInMap, itemId } = useQueryClientContext();
   const { data: itemGeolocations } = useItemsInMap({
     ...bounds,
@@ -29,14 +28,16 @@ const ItemsMarkers = ({
     keywords: tags,
   });
 
-  useEffect(() => {
-    if (itemId && itemGeolocations && groupRef) {
-      const group = groupRef.current; // get native featureGroup instance
-      if (group.getBounds().getNorthEast()) {
-        map.fitBounds(group.getBounds());
-      }
-    }
-  }, []);
+  // initial view
+  // useEffect(() => {
+  //   if (itemId && itemGeolocations && groupRef) {
+  //     const group = groupRef.current; // get native featureGroup instance
+  //     if (group && group.getBounds().getNorthEast()) {
+  //       map.fitBounds(group.getBounds());
+  //     }
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [itemGeolocations]);
 
   return (
     <FeatureGroup ref={groupRef}>

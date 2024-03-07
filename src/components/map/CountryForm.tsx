@@ -1,3 +1,4 @@
+import { Dispatch } from 'react';
 import { useMap } from 'react-leaflet';
 
 import { Autocomplete, Paper, TextField } from '@mui/material';
@@ -5,15 +6,16 @@ import { Autocomplete, Paper, TextField } from '@mui/material';
 import countries from '../../data/output.json';
 import { Country } from '../../types';
 
-const CountryForm = ({ setCenter }: any): JSX.Element => {
+const CountryForm = ({
+  setShowMap,
+}: {
+  setShowMap: Dispatch<boolean>;
+}): JSX.Element => {
   const map = useMap();
   const onChange = (_event: any, newValue: Country | null) => {
     if (newValue) {
       // necessary to move map
-      setCenter({
-        lat: (newValue.maxBoundary[0] - newValue.minBoundary[0]) / 2,
-        lin: (newValue.maxBoundary[1] - newValue.minBoundary[1]) / 2,
-      });
+      setShowMap(true);
       map.fitBounds([newValue.minBoundary, newValue.maxBoundary]);
     }
   };
@@ -44,16 +46,15 @@ const CountryForm = ({ setCenter }: any): JSX.Element => {
       >
         <Autocomplete
           autoSelect
-          onChange={onChange}
+          onChange={onChange as any}
           disablePortal
           options={countries}
           getOptionKey={(o) => o.name}
           getOptionLabel={(o) => o.name}
           sx={{ minWidth: 300 }}
-          InputPr
-          // eslint-disable-next-line react/jsx-props-no-spreading
           renderInput={(params) => (
             <TextField
+              // eslint-disable-next-line react/jsx-props-no-spreading
               {...params}
               InputProps={{
                 ...params.InputProps,

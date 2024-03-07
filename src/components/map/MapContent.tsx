@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import { useMap } from 'react-leaflet';
+import { useState } from 'react';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
 import TopBar from '../topbar/TopBar';
 import CurrentLocationMarker from './CurrentLocationMarker';
 import CurrentMarker from './CurrentMarker';
-import InitialSetup from './InitialSetup';
 import ItemsMarkers from './ItemsMarkers';
 import MapEvents from './MapEvents';
 
-const MapContent = ({ initialCenter }: any): JSX.Element => {
+const MapContent = (): JSX.Element => {
   const { itemId } = useQueryClientContext();
-  const [bounds, setBounds] = useState();
+  const [bounds, setBounds] = useState<{
+    lat1: number;
+    lat2: number;
+    lng1: number;
+    lng2: number;
+  }>();
   const [tags, setTags] = useState<string[]>([]);
 
   const onChangeTags = (newTags: any) => {
@@ -20,8 +23,7 @@ const MapContent = ({ initialCenter }: any): JSX.Element => {
 
   return (
     <>
-      <InitialSetup initialCenter={initialCenter} />
-      <MapEvents center={initialCenter} setBounds={setBounds} />
+      <MapEvents setBounds={setBounds} />
 
       <TopBar tags={tags} onChange={onChangeTags} />
       <CurrentLocationMarker />

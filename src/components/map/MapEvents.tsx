@@ -1,7 +1,16 @@
-import { useEffect } from 'react';
+import { Dispatch, useEffect } from 'react';
 import { useMap, useMapEvents } from 'react-leaflet';
 
-const MapEvents = ({ setBounds }: any): null => {
+const MapEvents = ({
+  setBounds,
+}: {
+  setBounds: Dispatch<{
+    lat1: number;
+    lat2: number;
+    lng1: number;
+    lng2: number;
+  }>;
+}): null => {
   const map = useMap();
 
   const updateBounds = () => {
@@ -21,6 +30,7 @@ const MapEvents = ({ setBounds }: any): null => {
     // I guess it works only because the transition is immediate
     // might be breaking later
     updateBounds();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useMapEvents({

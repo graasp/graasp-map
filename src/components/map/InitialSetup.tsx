@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
 
 const InitialSetup = ({
-  initialCenter,
+  showMap,
+  setShowMap,
 }: {
-  initialCenter?: { lat: number; lng: number };
+  showMap: boolean;
+  setShowMap: Dispatch<boolean>;
 }): null => {
   const { useItemsInMap, itemId } = useQueryClientContext();
   const [isInitial, setIsInitial] = useState(true);
@@ -18,16 +20,17 @@ const InitialSetup = ({
   });
 
   useEffect(() => {
-    if (initialCenter || !isInitial) {
+    if (showMap || !isInitial) {
       return;
     }
 
     if (itemGeolocations && isInitial) {
       const c = itemGeolocations.map((g) => [g.lat, g.lng]);
-      map.fitBounds(c);
-
+      map.fitBounds(c as any);
+      setShowMap(true);
       setIsInitial(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemGeolocations]);
 
   return null;

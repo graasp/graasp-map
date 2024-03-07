@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-import { Alert } from '@mui/material';
-
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import 'leaflet-easybutton/src/easy-button.css';
@@ -16,6 +14,7 @@ import {
   QueryClientContextProvider,
 } from './context/QueryClientContext';
 import CountryForm from './map/CountryForm';
+import InitialSetup from './map/InitialSetup';
 import MapContent from './map/MapContent';
 
 type Props = QueryClientContextInterface;
@@ -26,15 +25,12 @@ const Map = ({
   useAddressFromGeolocation,
   useItemsInMap,
   useSuggestionsForAddress,
-  useItemGeolocation,
   useRecycleItems,
   usePostItem,
   viewItem,
   useDeleteItemGeolocation,
 }: Props): JSX.Element => {
-  const [center, setCenter] = useState<{ lat: number; lng: number } | null>(
-    null,
-  );
+  const [showMap, setShowMap] = useState<boolean>(false);
 
   useEffect(() => {
     if (currentMember) {
@@ -43,77 +39,46 @@ const Map = ({
   }, [currentMember]);
 
   return (
-    <>
-      {/* {showCountryForm && <CountryForm />} */}
-      <QueryClientContextProvider
-        itemId={itemId}
-        useSuggestionsForAddress={useSuggestionsForAddress}
-        currentMember={currentMember}
-        useItemGeolocation={useItemGeolocation}
-        useAddressFromGeolocation={useAddressFromGeolocation}
-        useItemsInMap={useItemsInMap}
-        useRecycleItems={useRecycleItems}
-        usePostItem={usePostItem}
-        viewItem={viewItem}
-        useDeleteItemGeolocation={useDeleteItemGeolocation}
+    <QueryClientContextProvider
+      itemId={itemId}
+      useSuggestionsForAddress={useSuggestionsForAddress}
+      currentMember={currentMember}
+      useAddressFromGeolocation={useAddressFromGeolocation}
+      useItemsInMap={useItemsInMap}
+      useRecycleItems={useRecycleItems}
+      usePostItem={usePostItem}
+      viewItem={viewItem}
+      useDeleteItemGeolocation={useDeleteItemGeolocation}
+    >
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+        }}
       >
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            position: 'relative',
-          }}
+        {/* the properties set here are the initial ones */}
+        <MapContainer
+          // default to switzerland
+          center={[47, 8]}
+          zoom={4}
+          dragging={false}
+          scrollWheelZoom={false}
+          style={{ width: '100%', height: '100%' }}
         >
-          {/* {!itemId && (
-            <>
-              <CountryForm setCenter={setCenter} />
-              <MapContainer
-                // default to switzerland
-                center={[47, 8]}
-                zoom={8}
-                //   scrollWheelZoom={false}
-                style={{ width: '100%', height: '100%' }}
-              >
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                />
-              </MapContainer>
-            </>
-          )} */}
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          <LoggedOutWarning />
 
-          {/* the properties set here are the initial ones */}
-          <MapContainer
-            // default to switzerland
-            center={center ? [center.lat, center.lng] : [47, 8]}
-            zoom={8}
-            dragging={false}
-            scrollWheelZoom={false}
-            style={{ width: '100%', height: '100%' }}
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <LoggedOutWarning />
+          {/* focus on initial geoloc if item id is defined, cannot use useffect because of map updates */}
+          <InitialSetup showMap={showMap} setShowMap={setShowMap} />
 
-            {!center ? (
-              <CountryForm setCenter={setCenter} />
-            ) : (
-              <MapContent initialCenter={center} />
-            )}
-
-            {/* <GeographicSearch
-              onClick={handleClick}
-              lat={center[0]}
-              lng={center[1]}
-            /> */}
-          </MapContainer>
-          {/* )} */}
-          {/* <Legends legends={legends} /> */}
-        </div>
-      </QueryClientContextProvider>
-    </>
+          {!showMap ? <CountryForm setShowMap={setShowMap} /> : <MapContent />}
+        </MapContainer>
+      </div>
+    </QueryClientContextProvider>
   );
 };
 

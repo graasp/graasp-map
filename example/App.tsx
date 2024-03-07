@@ -28,7 +28,6 @@ const App = (): JSX.Element => {
           useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}
           useItemsInMap={hooks.useItemsInMap}
           useAddressFromGeolocation={hooks.useAddressFromGeolocation}
-          useItemGeolocation={hooks.useItemGeolocation}
           useSuggestionsForAddress={hooks.useSuggestionsForAddress}
           usePostItem={mutations.usePostItem}
           useRecycleItems={mutations.useRecycleItems}
