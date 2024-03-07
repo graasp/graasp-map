@@ -40,3 +40,28 @@ export const Map = {
     expect(canvas.getByLabelText('Location')).toBeInTheDocument();
   },
 } satisfies Story;
+
+export const MapSignedOut = {
+  args: {
+    itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
+    viewItem: () => ({}) as any,
+    currentMember: null,
+    useDeleteItemGeolocation: () => ({}) as any,
+    useItemsInMap: () => ({ data: [] }) as any,
+    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    usePostItem: () => ({}) as any,
+    useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByLabelText('Filters')).toBeInTheDocument();
+  },
+} satisfies Story;

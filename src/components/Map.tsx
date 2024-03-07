@@ -1,43 +1,22 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
+import { Alert } from '@mui/material';
+
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import 'leaflet-easybutton/src/easy-button.css';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 import 'leaflet/dist/leaflet.css';
 
-// import { legends } from '../config/constants';
 import i18n from '../config/i18n';
-import { MarkerProps } from '../types';
+import LoggedOutWarning from './common/LoggedOutWarning';
 import {
   QueryClientContextInterface,
   QueryClientContextProvider,
 } from './context/QueryClientContext';
-import CurrentLocationMarker from './map/CurrentLocationMarker';
-import CurrentMarker from './map/CurrentMarker';
-import ItemsMarkers from './map/ItemsMarkers';
-// import Legends from './map/Legends';
-import TopBar from './topbar/TopBar';
-
-// const Component = () => {
-//   const map = useMap();
-
-//   useMapEvents({
-//     click: () => {
-//       map.locate();
-//     },
-//     locationfound: (location) => {
-//       console.log('location found:', location);
-//     },
-//     dragend: (e) => {
-//       console.log(e);
-//       console.log('map center:', map.getBounds());
-//     },
-//   });
-
-//   return null;
-// };
+import CountryForm from './map/CountryForm';
+import MapContent from './map/MapContent';
 
 type Props = QueryClientContextInterface;
 
@@ -47,23 +26,15 @@ const Map = ({
   useAddressFromGeolocation,
   useItemsInMap,
   useSuggestionsForAddress,
+  useItemGeolocation,
   useRecycleItems,
   usePostItem,
   viewItem,
   useDeleteItemGeolocation,
 }: Props): JSX.Element => {
-  const [center, setCenter] = useState<[number, number]>([51.505, -0.09]); // Default center coordinates
-
-  const [selectedItem] = useState<null | MarkerProps>(null);
-  const [tags, setTags] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (selectedItem) {
-      const { lat, lng } = selectedItem;
-      setCenter([lat, lng]);
-      // setMarkerSearch(title);
-    }
-  }, [selectedItem]);
+  const [center, setCenter] = useState<{ lat: number; lng: number } | null>(
+    null,
+  );
 
   useEffect(() => {
     if (currentMember) {
@@ -71,9 +42,6 @@ const Map = ({
     }
   }, [currentMember]);
 
-  const onChangeTags = (newTags: any) => {
-    setTags(newTags);
-  };
   return (
     <>
       {/* {showCountryForm && <CountryForm />} */}
@@ -81,6 +49,7 @@ const Map = ({
         itemId={itemId}
         useSuggestionsForAddress={useSuggestionsForAddress}
         currentMember={currentMember}
+        useItemGeolocation={useItemGeolocation}
         useAddressFromGeolocation={useAddressFromGeolocation}
         useItemsInMap={useItemsInMap}
         useRecycleItems={useRecycleItems}
@@ -95,21 +64,44 @@ const Map = ({
             position: 'relative',
           }}
         >
+          {/* {!itemId && (
+            <>
+              <CountryForm setCenter={setCenter} />
+              <MapContainer
+                // default to switzerland
+                center={[47, 8]}
+                zoom={8}
+                //   scrollWheelZoom={false}
+                style={{ width: '100%', height: '100%' }}
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </MapContainer>
+            </>
+          )} */}
+
+          {/* the properties set here are the initial ones */}
           <MapContainer
-            center={center}
+            // default to switzerland
+            center={center ? [center.lat, center.lng] : [47, 8]}
             zoom={8}
-            //   scrollWheelZoom={false}
+            dragging={false}
+            scrollWheelZoom={false}
             style={{ width: '100%', height: '100%' }}
           >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
-            <TopBar tags={tags} onChange={onChangeTags} />
-            <CurrentLocationMarker />
-            <ItemsMarkers tags={tags} itemId={itemId} />
+            <LoggedOutWarning />
 
-            <CurrentMarker />
+            {!center ? (
+              <CountryForm setCenter={setCenter} />
+            ) : (
+              <MapContent initialCenter={center} />
+            )}
 
             {/* <GeographicSearch
               onClick={handleClick}
@@ -117,6 +109,7 @@ const Map = ({
               lng={center[1]}
             /> */}
           </MapContainer>
+          {/* )} */}
           {/* <Legends legends={legends} /> */}
         </div>
       </QueryClientContextProvider>

@@ -18,7 +18,6 @@ const CurrentMarker = (): JSX.Element | null => {
 
   const handleClick = (e: { latlng: LatLng }) => {
     const { lat, lng } = e.latlng;
-    console.error(e);
     setClickedPoint({ lat, lng });
   };
 
@@ -26,7 +25,7 @@ const CurrentMarker = (): JSX.Element | null => {
     click: handleClick,
   });
 
-  if (!clickedPoint) {
+  if (!clickedPoint || !currentMember) {
     return null;
   }
 

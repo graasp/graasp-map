@@ -1,11 +1,15 @@
 import { Autocomplete, TextField } from '@mui/material';
 
+import { useQueryClientContext } from '../context/QueryClientContext';
+
 const Search = ({
   onChange,
 }: {
   tags: string[];
   onChange: (newTags: string[]) => void;
 }): JSX.Element => {
+  const { currentMember } = useQueryClientContext();
+
   const onChangeTags = (_e: unknown, newValue: string[]) => {
     onChange(newValue);
   };
@@ -27,7 +31,7 @@ const Search = ({
             disableUnderline: true,
           }}
           sx={{
-            width: 250,
+            width: currentMember ? 250 : 500,
           }}
           InputLabelProps={{
             shrink: true,

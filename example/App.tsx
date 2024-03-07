@@ -22,12 +22,13 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
       <I18nextProvider i18n={i18n}>
         <Map
-          itemId="d5a1c73d-cd4d-4f20-8a91-3c689ee87ea4"
+          // itemId="58421c27-84cc-44d5-9f9c-99784dfefe7f"
           viewItem={viewItem}
           currentMember={currentMember}
           useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}
           useItemsInMap={hooks.useItemsInMap}
           useAddressFromGeolocation={hooks.useAddressFromGeolocation}
+          useItemGeolocation={hooks.useItemGeolocation}
           useSuggestionsForAddress={hooks.useSuggestionsForAddress}
           usePostItem={mutations.usePostItem}
           useRecycleItems={mutations.useRecycleItems}
