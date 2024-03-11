@@ -37,6 +37,7 @@ const GeolocationPicker = ({
 }: GeolocationPickerProps): JSX.Element => {
   const { t } = useMapTranslation();
 
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState<string | undefined>(initialValue);
   const [selectedAddress, setSelectedAddress] = useState<string | undefined>();
   const { data: suggestions, isFetching } = useSuggestionsForAddress({
@@ -77,6 +78,8 @@ const GeolocationPicker = ({
         multiline
         placeholder={t(MAP.GEOLOCATION_PICKER_PLACEHOLDER)}
         onChange={onChange}
+        onFocus={() => setShowSuggestions(true)}
+        onBlur={() => setShowSuggestions(false)}
         value={selectedAddress ?? query}
         sx={{ minWidth: 250 }}
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -98,7 +101,7 @@ const GeolocationPicker = ({
         </Box>
       )}
 
-      {suggestions && !selectedAddress && (
+      {showSuggestions && suggestions && !selectedAddress && (
         <List
           sx={{
             position: 'absolute',
