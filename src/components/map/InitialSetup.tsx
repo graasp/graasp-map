@@ -26,9 +26,11 @@ const InitialSetup = ({
 
     if (itemGeolocations && isInitial) {
       const c = itemGeolocations.map((g) => [g.lat, g.lng]);
-      map.fitBounds(c as any);
-      setShowMap(true);
-      setIsInitial(false);
+      if (c.length) {
+        map.fitBounds(c as any);
+        setShowMap(true);
+        setIsInitial(false);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemGeolocations]);
