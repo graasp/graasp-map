@@ -19,7 +19,12 @@ const MarkerPopup = ({
     <Popup>
       <Typography variant="h5">{item.name}</Typography>
       {/* TODO: slice and show html  */}
-      <Typography variant="subtitle1">{item.description}</Typography>
+      {item.description && (
+        <Typography
+          component="p"
+          dangerouslySetInnerHTML={{ __html: item.description }}
+        />
+      )}
       <Typography variant="caption">{geolocation.addressLabel}</Typography>
       <Box>
         {item.settings.tags?.map((t: string, idx) => (
