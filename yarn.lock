@@ -2367,7 +2367,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "github:graasp/graasp-query-client#get-suggestion-addresses"
+    "@graasp/query-client": "npm:2.9.0"
     "@graasp/sdk": "npm:4.0.1"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.8.2"

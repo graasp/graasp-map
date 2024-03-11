@@ -76,7 +76,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
-    "@graasp/query-client": "github:graasp/graasp-query-client#get-suggestion-addresses",
+    "@graasp/query-client": "2.9.0",
     "@storybook/addon-coverage": "1.0.1",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addon-interactions": "7.6.17",
