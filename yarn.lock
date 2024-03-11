@@ -9350,7 +9350,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "npm:2.6.3"
+    "@graasp/query-client": "npm:2.9.0"
     "@graasp/sdk": "npm:3.8.3"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.5.1"
