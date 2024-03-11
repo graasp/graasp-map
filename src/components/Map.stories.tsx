@@ -1,8 +1,6 @@
-import { MemberFactory } from '@graasp/sdk';
+import { FolderItemFactory, MemberFactory } from '@graasp/sdk';
 
-import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
-import { within } from '@storybook/testing-library';
 
 import { MOCK_USE_SUGGESTIONS } from '../../.storybook/fixtures';
 import MapComponent from './Map';
@@ -15,13 +13,25 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const item = FolderItemFactory();
+
 export const Map = {
   args: {
-    itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
+    itemId: item.id,
     viewItem: () => ({}) as any,
     currentMember: MemberFactory(),
     useDeleteItemGeolocation: () => ({}) as any,
-    useItemsInMap: () => ({ data: [] }) as any,
+    useItemsInMap: () =>
+      ({
+        data: [
+          {
+            lat: 46.51,
+            lng: 6.5,
+            addressLabel: 'EPFL',
+            item,
+          },
+        ],
+      }) as any,
     useAddressFromGeolocation: () => ({ data: 'address' }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
@@ -34,11 +44,7 @@ export const Map = {
       </div>
     ),
   ],
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByLabelText('Filters')).toBeInTheDocument();
-    expect(canvas.getByLabelText('Location')).toBeInTheDocument();
-  },
+  // cannot play inside an iframe
 } satisfies Story;
 
 export const MapSignedOut = {
@@ -60,8 +66,5 @@ export const MapSignedOut = {
       </div>
     ),
   ],
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByLabelText('Filters')).toBeInTheDocument();
-  },
+  // cannot play inside an iframe
 } satisfies Story;

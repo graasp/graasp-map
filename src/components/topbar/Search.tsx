@@ -18,6 +18,7 @@ const Search = ({
     <Autocomplete
       multiple
       freeSolo
+      aria-label="Filters"
       options={[]}
       renderInput={(params) => (
         <TextField
