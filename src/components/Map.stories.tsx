@@ -1,9 +1,8 @@
-import { MemberFactory } from '@graasp/sdk';
+import { FolderItemFactory, MemberFactory } from '@graasp/sdk';
 
-import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
-import { within } from '@storybook/testing-library';
 
+import { MOCK_USE_SUGGESTIONS } from '../../.storybook/fixtures';
 import MapComponent from './Map';
 
 const meta = {
@@ -14,26 +13,58 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const item = FolderItemFactory();
+
 export const Map = {
+  args: {
+    itemId: item.id,
+    viewItem: () => ({}) as any,
+    currentMember: MemberFactory(),
+    useDeleteItemGeolocation: () => ({}) as any,
+    useItemsInMap: () =>
+      ({
+        data: [
+          {
+            lat: 46.51,
+            lng: 6.5,
+            addressLabel: 'EPFL',
+            item,
+          },
+        ],
+      }) as any,
+    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    usePostItem: () => ({}) as any,
+    useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  // cannot play inside an iframe
+} satisfies Story;
+
+export const MapSignedOut = {
   args: {
     itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
     viewItem: () => ({}) as any,
-    currentMember: MemberFactory(),
+    currentMember: null,
     useDeleteItemGeolocation: () => ({}) as any,
     useItemsInMap: () => ({ data: [] }) as any,
     useAddressFromGeolocation: () => ({ data: 'address' }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
   },
   decorators: [
     (Story) => (
-      <div style={{ margin: 'auto', width: '90vw', height: '90vh' }}>
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
         <Story />
       </div>
     ),
   ],
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByLabelText('Search')).toBeInTheDocument();
-  },
+  // cannot play inside an iframe
 } satisfies Story;

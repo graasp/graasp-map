@@ -1,39 +1,52 @@
-import { Marker, Popup } from 'react-leaflet';
+import { useState } from 'react';
+import { Marker, Popup, useMapEvents } from 'react-leaflet';
 
 import { ItemGeolocation } from '@graasp/sdk';
 
+import { LatLng } from 'leaflet';
+
 import { useQueryClientContext } from '../context/QueryClientContext';
 import { greenIcon } from '../icons/icons';
-import AddItemButton from './AddItemButton';
+import CurrentMarkerPopupContent from './CurrentMarkerPopupContent';
 
-type Props = {
-  point: Pick<ItemGeolocation, 'lat' | 'lng'>;
-};
+const CurrentMarker = (): JSX.Element | null => {
+  // click on pint at the map
+  const [clickedPoint, setClickedPoint] =
+    useState<Pick<ItemGeolocation, 'lat' | 'lng'>>();
+  const [open, setOpen] = useState(false);
+  const { currentMember } = useQueryClientContext();
 
-const CurrentMarker = ({ point }: Props): JSX.Element | null => {
-  const { useAddressFromGeolocation } = useQueryClientContext();
-  const { data: address } = useAddressFromGeolocation(point);
+  const handleClick = (e: { latlng: LatLng }) => {
+    const { lat, lng } = e.latlng;
+    setClickedPoint({ lat, lng });
+  };
 
-  if (!point) {
+  useMapEvents({
+    click: handleClick,
+  });
+
+  if (!clickedPoint || !currentMember) {
     return null;
   }
 
   return (
-    <Marker icon={greenIcon} position={[point.lat, point.lng]}>
-      <Popup>
-        <>
-          {address?.display_name ??
-            'This location does not match a specific address.'}
-          <br />
-          <AddItemButton
-            location={{
-              ...point,
-              addressLabel: address?.display_name,
-              country: address?.country_code,
-            }}
-          />
-        </>
-      </Popup>
+    <Marker
+      icon={greenIcon}
+      eventHandlers={{
+        popupclose: () => {
+          setOpen(false);
+        },
+        click: () => {
+          setOpen(true);
+        },
+      }}
+      position={[clickedPoint.lat, clickedPoint.lng]}
+    >
+      {currentMember && (
+        <Popup>
+          <CurrentMarkerPopupContent open={open} point={clickedPoint} />
+        </Popup>
+      )}
     </Marker>
   );
 };

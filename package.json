@@ -56,9 +56,9 @@
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
-    "@graasp/sdk": "3.8.3",
+    "@graasp/sdk": "4.1.0",
     "@graasp/translations": "1.23.0",
-    "@graasp/ui": "4.5.1",
+    "@graasp/ui": "4.9.1",
     "@mui/icons-material": "5.15.12",
     "@mui/lab": "5.0.0-alpha.167",
     "@mui/material": "5.15.12",
@@ -76,7 +76,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
-    "@graasp/query-client": "2.6.3",
+    "@graasp/query-client": "2.9.0",
     "@storybook/addon-coverage": "1.0.1",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addon-interactions": "7.6.17",

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Marker, useMap, useMapEvents } from 'react-leaflet';
+import { useRef } from 'react';
+import { FeatureGroup, Marker } from 'react-leaflet';
 
 import { DiscriminatedItem } from '@graasp/sdk';
 
@@ -9,54 +9,49 @@ import MarkerPopup from './MarkerPopup';
 
 const ItemsMarkers = ({
   tags,
-  itemId,
+  bounds,
 }: {
   tags: string[];
   itemId?: DiscriminatedItem['id'];
+  bounds?: {
+    lat1: number;
+    lat2: number;
+    lng1: number;
+    lng2: number;
+  };
 }): JSX.Element | JSX.Element[] | undefined => {
-  const map = useMap();
-  const { useItemsInMap } = useQueryClientContext();
-  const [bounds, setBounds] = useState({
-    lat1: 0,
-    lat2: 10,
-    lng1: 0,
-    lng2: 10,
-  });
+  const groupRef = useRef<any>(null);
+  const { useItemsInMap, itemId } = useQueryClientContext();
   const { data: itemGeolocations } = useItemsInMap({
     ...bounds,
-    keywords: tags,
     parentItemId: itemId,
+    keywords: tags,
   });
 
-  const updateBounds = () => {
-    const b = map.getBounds();
-    setBounds({
-      lat1: b.getSouthWest().lat,
-      lat2: b.getNorthEast().lat,
-      lng1: b.getSouthWest().lng,
-      lng2: b.getNorthEast().lng,
-    });
-  };
+  // initial view
+  // useEffect(() => {
+  //   if (itemId && itemGeolocations && groupRef) {
+  //     const group = groupRef.current; // get native featureGroup instance
+  //     if (group && group.getBounds().getNorthEast()) {
+  //       map.fitBounds(group.getBounds());
+  //     }
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [itemGeolocations]);
 
-  useMapEvents({
-    zoomend: (_e) => {
-      updateBounds();
-    },
-    dragend: (_e) => {
-      updateBounds();
-    },
-  });
-
-  useEffect(() => {
-    updateBounds();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return itemGeolocations?.map(({ lat, lng, item }) => (
-    <Marker icon={iconsPerParent.MyItems} position={[lat, lng]}>
-      <MarkerPopup lat={lat} lng={lng} item={item} />
-    </Marker>
-  ));
+  return (
+    <FeatureGroup ref={groupRef}>
+      {itemGeolocations?.map((geoloc) => (
+        <Marker
+          key={geoloc.id}
+          icon={iconsPerParent.MyItems}
+          position={[geoloc.lat, geoloc.lng]}
+        >
+          <MarkerPopup geolocation={geoloc} />
+        </Marker>
+      ))}
+    </FeatureGroup>
+  );
 };
 
 export default ItemsMarkers;

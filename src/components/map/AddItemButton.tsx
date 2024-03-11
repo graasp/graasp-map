@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import {
   Button,
+  CssBaseline,
   Dialog,
   DialogActions,
   DialogContent,
@@ -29,7 +30,7 @@ const AddItemButton = ({ location }: Props): JSX.Element => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const { name, description }: any = Object.fromEntries(formData);
-    if (location && name && description) {
+    if (location && name) {
       await postItem({
         parentId,
         name,
@@ -43,13 +44,14 @@ const AddItemButton = ({ location }: Props): JSX.Element => {
 
   return (
     <>
+      <CssBaseline />
       <Tooltip title="Add a new item with this address">
         <IconButton onClick={() => setOpen(true)}>
           <AddLocationAltIcon />
         </IconButton>
       </Tooltip>
       <Dialog open={open}>
-        <DialogTitle>Add New Location</DialogTitle>
+        <DialogTitle>Add New Folder at Location</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <TextField
@@ -65,7 +67,7 @@ const AddItemButton = ({ location }: Props): JSX.Element => {
               autoFocus
               margin="dense"
               id="description"
-              label="Description"
+              label="Description (optional)"
               fullWidth
               name="description"
               variant="standard"

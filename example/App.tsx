@@ -18,17 +18,17 @@ const viewItem = (item) => {
 
 const App = (): JSX.Element => {
   const { data: currentMember } = hooks.useCurrentMember();
-
   return (
     <ThemeProvider theme={theme}>
       <I18nextProvider i18n={i18n}>
         <Map
-          itemId="d5a1c73d-cd4d-4f20-8a91-3c689ee87ea4"
+          itemId="6c0c2f21-8787-4ff2-a426-9a9358e1423f"
           viewItem={viewItem}
           currentMember={currentMember}
           useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}
           useItemsInMap={hooks.useItemsInMap}
           useAddressFromGeolocation={hooks.useAddressFromGeolocation}
+          useSuggestionsForAddress={hooks.useSuggestionsForAddress}
           usePostItem={mutations.usePostItem}
           useRecycleItems={mutations.useRecycleItems}
         />

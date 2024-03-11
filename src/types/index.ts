@@ -14,9 +14,9 @@ export interface MarkerProps {
 }
 
 export type Country = {
-  label: string;
-  latitude: number;
-  longitude: number;
+  name: string;
+  maxBoundary: [number, number];
+  minBoundary: [number, number];
 };
 
 export type ParentCheck = {

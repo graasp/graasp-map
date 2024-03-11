@@ -1,38 +1,70 @@
-import { useState } from 'react';
+import { Dispatch } from 'react';
+import { useMap } from 'react-leaflet';
 
-import { countries } from '../../data/data';
+import { Autocomplete, Paper, TextField } from '@mui/material';
+
+import countries from '../../data/output.json';
 import { Country } from '../../types';
-import AutoCompleteInput from '../autocomplete';
 
-const CountryForm = (): JSX.Element => {
-  // countries search if not able to geolocalize user
-  // const [showCountryForm, setShowCountryForm] = useState<boolean>(false);
-  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
-
-  //   useEffect(() => {
-  //     if (selectedCountry) {
-  //       const { latitude, longitude } = selectedCountry;
-  //       setCenter([latitude, longitude]);
-  //     }
-  //   }, [selectedCountry]);
+const CountryForm = ({
+  setShowMap,
+}: {
+  setShowMap: Dispatch<boolean>;
+}): JSX.Element => {
+  const map = useMap();
+  const onChange = (_event: any, newValue: Country | null) => {
+    if (newValue) {
+      // necessary to move map
+      setShowMap(true);
+      map.fitBounds([newValue.minBoundary, newValue.maxBoundary]);
+    }
+  };
 
   return (
-    <div
-      style={{
-        top: '30%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        position: 'absolute',
-        zIndex: 450,
-        backgroundColor: 'white',
-      }}
-    >
-      <AutoCompleteInput
-        items={countries}
-        label="Country"
-        value={selectedCountry}
-        setValue={setSelectedCountry}
+    <div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '100vh',
+          width: '100vw',
+          background: 'rgba(0,0,0,0.5)',
+          zIndex: 450,
+        }}
       />
+      <Paper
+        style={{
+          top: '40%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          position: 'absolute',
+          zIndex: 450,
+          background: 'white',
+          borderRadius: 15,
+        }}
+      >
+        <Autocomplete
+          autoSelect
+          onChange={onChange as any}
+          disablePortal
+          options={countries}
+          getOptionKey={(o) => o.name}
+          getOptionLabel={(o) => o.name}
+          sx={{ minWidth: 300 }}
+          renderInput={(params) => (
+            <TextField
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...params}
+              InputProps={{
+                ...params.InputProps,
+                sx: { borderRadius: '15px' },
+              }}
+              label="Select a country"
+            />
+          )}
+        />
+      </Paper>
     </div>
   );
 };
