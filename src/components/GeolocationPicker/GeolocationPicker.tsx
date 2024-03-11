@@ -13,6 +13,7 @@ import { DEFAULT_LANG } from '@graasp/translations';
 import i18n, { useMapTranslation } from '../../config/i18n';
 import { MAP } from '../../langs/constants';
 import { QueryClientContextInterface } from '../context/QueryClientContext';
+import { useOutsideClick } from './hook';
 
 export type GeolocationPickerProps = {
   disabled?: boolean;
@@ -44,6 +45,9 @@ const GeolocationPicker = ({
     address: query !== initialValue ? query : undefined,
     lang: i18n.language ?? DEFAULT_LANG,
   });
+  const ref = useOutsideClick(() => {
+    setShowSuggestions(false);
+  });
 
   useEffect(() => {
     if (initialValue !== query) {
@@ -70,7 +74,7 @@ const GeolocationPicker = ({
   };
 
   return (
-    <Box sx={{ position: 'relative', width: '100%' }}>
+    <Box sx={{ position: 'relative', width: '100%' }} ref={ref}>
       <TextField
         disabled={disabled}
         fullWidth
@@ -79,7 +83,6 @@ const GeolocationPicker = ({
         placeholder={t(MAP.GEOLOCATION_PICKER_PLACEHOLDER)}
         onChange={onChange}
         onFocus={() => setShowSuggestions(true)}
-        onBlur={() => setShowSuggestions(false)}
         value={selectedAddress ?? query}
         sx={{ minWidth: 250 }}
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -111,7 +114,13 @@ const GeolocationPicker = ({
           }}
         >
           {suggestions.map((r) => (
-            <ListItemButton key={r.id} onClick={() => handleChangeOption(r)}>
+            <ListItemButton
+              key={r.id}
+              onMouseDown={() => {
+                handleChangeOption(r);
+                setShowSuggestions(false);
+              }}
+            >
               {r.addressLabel}
             </ListItemButton>
           ))}
