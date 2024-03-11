@@ -25,7 +25,7 @@
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
-    "@graasp/query-client": "2.6.3",
+    "@graasp/query-client": "2.9.0",
     "@graasp/sdk": "3.8.3",
     "@graasp/translations": "1.23.0",
     "@graasp/ui": "4.5.1",
