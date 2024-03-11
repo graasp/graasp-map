@@ -1,9 +1,9 @@
-import { type MutableRefObject, useEffect, useRef } from 'react';
+import { type RefObject, useEffect, useRef } from 'react';
 
 // eslint-disable-next-line import/prefer-default-export
 export const useOutsideClick = <T extends HTMLElement>(
   callback: () => void,
-): MutableRefObject<T> => {
+): RefObject<T> => {
   const ref = useRef<T>(null);
 
   useEffect(() => {
