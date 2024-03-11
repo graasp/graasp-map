@@ -56,9 +56,9 @@
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
-    "@graasp/sdk": "4.0.1",
+    "@graasp/sdk": "4.1.0",
     "@graasp/translations": "1.23.0",
-    "@graasp/ui": "4.8.2",
+    "@graasp/ui": "4.9.1",
     "@mui/icons-material": "5.15.12",
     "@mui/lab": "5.0.0-alpha.167",
     "@mui/material": "5.15.12",
@@ -128,9 +128,6 @@
     "react": "*",
     "react-dom": "*",
     "react-i18next": "^14.0.0"
-  },
-  "resolutions": {
-    "@graasp/query-client": "github:graasp/graasp-query-client#get-suggestion-addresses"
   },
   "packageManager": "yarn@4.0.2",
   "eslintConfig": {
