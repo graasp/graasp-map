@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.4.0](https://github.com/graasp/graasp-map/compare/v1.3.2...v1.4.0) (2024-03-11)
+
+
+### Features
+
+* export GeolocationPicker, improve map ([#60](https://github.com/graasp/graasp-map/issues/60)) ([ddc1080](https://github.com/graasp/graasp-map/commit/ddc1080a92943439038f81e098f8cfdde9cb8f0f))
+* remove axios package ([c3a9275](https://github.com/graasp/graasp-map/commit/c3a9275df4d7271a18e23368f6737bd1acedaba9))
+* remove query client ([#46](https://github.com/graasp/graasp-map/issues/46)) ([cfa75f2](https://github.com/graasp/graasp-map/commit/cfa75f2d6a449a2e790d621e321c22b2576cdef2))
+* update vite ([6d937d3](https://github.com/graasp/graasp-map/commit/6d937d3ae41f4a9c71b4624460df15b794819781))
+
+
+### Bug Fixes
+
+* add peer dependencies ([b56bccb](https://github.com/graasp/graasp-map/commit/b56bccbcb09c49bb5f824e6ae15afc85680dc73d))
+* **deps:** update dependency @emotion/react to v11.11.4 ([2b13d36](https://github.com/graasp/graasp-map/commit/2b13d36dac28520729ef92f000df45db4cd7abc9))
+* **deps:** update dependency @graasp/query-client to v2.6.3 ([a66808b](https://github.com/graasp/graasp-map/commit/a66808b79b9dc0102b1a8698bea60ae63242e58c))
+* **deps:** update dependency leaflet-geosearch to v3.11.1 ([e957152](https://github.com/graasp/graasp-map/commit/e9571527bcdb1e54c7846fe981b1403639bc0b68))
+* **deps:** update dependency react-i18next to v14.0.8 ([9ab4373](https://github.com/graasp/graasp-map/commit/9ab43733e8e0b221e642939479c9b379c51bac46))
+* **deps:** update dependency react-router-dom to v6.22.2 ([fb9a0e1](https://github.com/graasp/graasp-map/commit/fb9a0e140409b2ac17c3fe6a71147c09cc71cd72))
+* **deps:** update dependency react-router-dom to v6.22.3 ([c32d4cb](https://github.com/graasp/graasp-map/commit/c32d4cb6fc5e6e0b5e87bba8b551c29677549f20))
+* **deps:** update mui (non-major) ([ac417f8](https://github.com/graasp/graasp-map/commit/ac417f8292aa43b856b80d62578c9705878545d4))
+* **deps:** update mui (non-major) ([9bf089d](https://github.com/graasp/graasp-map/commit/9bf089d851dc38966c8668a36f509c2325f4b9af))
+* export types ([fef3245](https://github.com/graasp/graasp-map/commit/fef324502b5adb8e4510b9691cc393a0f07a6cc5))
+* include css ([cd44cab](https://github.com/graasp/graasp-map/commit/cd44cabeab26232541ae5d201b6181196a4980eb))
+
 ## [1.3.2](https://github.com/graasp/graasp-map/compare/v1.3.1...v1.3.2) (2024-02-21)
 
 
