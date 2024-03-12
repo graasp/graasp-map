@@ -2360,7 +2360,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "npm:2.9.0"
+    "@graasp/query-client": "npm:2.9.1"
     "@graasp/sdk": "npm:4.1.0"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.9.1"
@@ -2411,7 +2411,7 @@ __metadata:
     storybook: "npm:7.6.17"
     stylis-plugin-rtl: "npm:2.1.1"
     typescript: "npm:^5.3.3"
-    vite: "npm:5.1.5"
+    vite: "npm:5.1.6"
     vite-plugin-css-injected-by-js: "npm:3.4.0"
     vite-plugin-dts: "npm:3.7.3"
   peerDependencies:
@@ -2444,6 +2444,23 @@ __metadata:
     "@graasp/translations": ^1.23.0
     react: ^18.0.0
   checksum: c7620005d455c74d9d88c2a070436ced7d022a752af1570c8a45644259f6031213deb20101d051e2be17c9f7b4b1b5d6be46615cae4aed7762acba15b0031c33
+  languageName: node
+  linkType: hard
+
+"@graasp/query-client@npm:2.9.1":
+  version: 2.9.1
+  resolution: "@graasp/query-client@npm:2.9.1"
+  dependencies:
+    "@tanstack/react-query": "npm:4.36.1"
+    "@tanstack/react-query-devtools": "npm:4.36.1"
+    axios: "npm:1.6.7"
+    http-status-codes: "npm:2.3.0"
+    qs: "npm:6.12.0"
+  peerDependencies:
+    "@graasp/sdk": ^4.0.0
+    "@graasp/translations": ^1.23.0
+    react: ^18.0.0
+  checksum: a8368b4b2c6500f35d112680811ee7fc683f1abae0cb561e3f3a2c27bb405a1dc0bc0dbf47a54b24fdb0a0a1b94ca07ae52c43426e4292453b44f1dbe0a7b2a4
   languageName: node
   linkType: hard
 
@@ -5738,25 +5755,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.2.48":
-  version: 18.2.59
-  resolution: "@types/react@npm:18.2.59"
+"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.48":
+  version: 18.2.65
+  resolution: "@types/react@npm:18.2.65"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: d065b998bc99ac61ff30011072a55e52eaa51ad20a84bc5893fae5e5de80d2e0a61217772a3ab79eb19d2f8d8ae3bd8451db5e0a77044f279618a1fc3446def6
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:>=16":
-  version: 18.2.60
-  resolution: "@types/react@npm:18.2.60"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    "@types/scheduler": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 5f2f6091623f13375a5bbc7e5c222cd212b5d6366ead737b76c853f6f52b314db24af5ae3f688d2d49814c668c216858a75433f145311839d8989d46bb3cbecf
+  checksum: 8022689f6c68e76b5e7b3c95af794fb3d128d5b2ccac408adaa80b117724c48b04dd4a2750e5c2ca29cd70ac7719b4ed5c5b1c12cb739d6f1d52188c09fb3060
   languageName: node
   linkType: hard
 
@@ -9355,7 +9361,7 @@ __metadata:
     rollup-plugin-visualizer: "npm:5.12.0"
     stylis-plugin-rtl: "npm:2.1.1"
     typescript: "npm:^5.3.3"
-    vite: "npm:5.1.5"
+    vite: "npm:5.1.6"
     vite-plugin-css-injected-by-js: "npm:3.4.0"
     vite-plugin-dts: "npm:3.7.3"
   peerDependencies:
@@ -13964,6 +13970,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"qs@npm:6.12.0":
+  version: 6.12.0
+  resolution: "qs@npm:6.12.0"
+  dependencies:
+    side-channel: "npm:^1.0.6"
+  checksum: 6156d3f0d74278b7e93a3a6b56e6b87b513ebd45ae65c7330c96d70270d0844fb0af9454a194124cd56b9ebf47b456dd01e28b223cde93c8ab01d1cb53a0e491
+  languageName: node
+  linkType: hard
+
 "queue-microtask@npm:^1.2.2":
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
@@ -15140,6 +15155,18 @@ __metadata:
     get-intrinsic: "npm:^1.2.4"
     object-inspect: "npm:^1.13.1"
   checksum: 27708b70b5d81bf18dc8cc23f38f1b6c9511691a64abc4aaf17956e67d132c855cf8b46f931e2fc5a6262b29371eb60da7755c1b9f4f862eccea8562b469f8f6
+  languageName: node
+  linkType: hard
+
+"side-channel@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "side-channel@npm:1.0.6"
+  dependencies:
+    call-bind: "npm:^1.0.7"
+    es-errors: "npm:^1.3.0"
+    get-intrinsic: "npm:^1.2.4"
+    object-inspect: "npm:^1.13.1"
+  checksum: eb10944f38cebad8ad643dd02657592fa41273ce15b8bfa928d3291aff2d30c20ff777cfe908f76ccc4551ace2d1245822fdc576657cce40e9066c638ca8fa4d
   languageName: node
   linkType: hard
 
@@ -16592,9 +16619,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:5.1.5":
-  version: 5.1.5
-  resolution: "vite@npm:5.1.5"
+"vite@npm:5.1.6":
+  version: 5.1.6
+  resolution: "vite@npm:5.1.6"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -16628,7 +16655,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: ada0a9138ca541723008ee261d80a97f6b70173508ded0f87834e2142660f45dff9801d143551aa3a8979ed446f0aec71ae114ab3ae978b3fbd5cf1f8c4bc331
+  checksum: f48073e93ead62fa58034398442de4517c824b3e50184f8b4059fb24077a26f2c04e910e29d7fb7ec51ea53eb61b9c7d94d56b14a38851de80c67480094cc79d
   languageName: node
   linkType: hard
 
