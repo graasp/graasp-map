@@ -2430,23 +2430,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@graasp/query-client@npm:2.9.0":
-  version: 2.9.0
-  resolution: "@graasp/query-client@npm:2.9.0"
-  dependencies:
-    "@tanstack/react-query": "npm:4.36.1"
-    "@tanstack/react-query-devtools": "npm:4.36.1"
-    axios: "npm:1.6.7"
-    http-status-codes: "npm:2.3.0"
-    qs: "npm:6.11.2"
-  peerDependencies:
-    "@graasp/sdk": ^4.0.0
-    "@graasp/translations": ^1.23.0
-    react: ^18.0.0
-  checksum: c7620005d455c74d9d88c2a070436ced7d022a752af1570c8a45644259f6031213deb20101d051e2be17c9f7b4b1b5d6be46615cae4aed7762acba15b0031c33
-  languageName: node
-  linkType: hard
-
 "@graasp/query-client@npm:2.9.1":
   version: 2.9.1
   resolution: "@graasp/query-client@npm:2.9.1"
@@ -9327,7 +9310,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "npm:2.9.0"
+    "@graasp/query-client": "npm:2.9.1"
     "@graasp/sdk": "npm:4.1.0"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.5.1"
@@ -13961,21 +13944,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.11.2, qs@npm:^6.10.0, qs@npm:^6.4.0":
-  version: 6.11.2
-  resolution: "qs@npm:6.11.2"
-  dependencies:
-    side-channel: "npm:^1.0.4"
-  checksum: f2321d0796664d0f94e92447ccd3bdfd6b6f3a50b6b762aa79d7f5b1ea3a7a9f94063ba896b82bc2a877ed6a7426d4081e4f16568fdb04f0ee188cca9d8505b4
-  languageName: node
-  linkType: hard
-
 "qs@npm:6.12.0":
   version: 6.12.0
   resolution: "qs@npm:6.12.0"
   dependencies:
     side-channel: "npm:^1.0.6"
   checksum: 6156d3f0d74278b7e93a3a6b56e6b87b513ebd45ae65c7330c96d70270d0844fb0af9454a194124cd56b9ebf47b456dd01e28b223cde93c8ab01d1cb53a0e491
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.10.0, qs@npm:^6.4.0":
+  version: 6.11.2
+  resolution: "qs@npm:6.11.2"
+  dependencies:
+    side-channel: "npm:^1.0.4"
+  checksum: f2321d0796664d0f94e92447ccd3bdfd6b6f3a50b6b762aa79d7f5b1ea3a7a9f94063ba896b82bc2a877ed6a7426d4081e4f16568fdb04f0ee188cca9d8505b4
   languageName: node
   linkType: hard
 
