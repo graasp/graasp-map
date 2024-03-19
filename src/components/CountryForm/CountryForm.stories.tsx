@@ -19,6 +19,13 @@ export const Default = {
   },
 } satisfies Story;
 
+export const InitialValue = {
+  args: {
+    onChange: fn(),
+    initialValue: "CH"
+  },
+} satisfies Story;
+
 // the popper can overflow
 export const TopPlacement = {
   args: {

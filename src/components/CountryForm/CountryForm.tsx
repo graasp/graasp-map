@@ -24,12 +24,14 @@ export type CountryFormProps = {
   onChange: (newValue: Country) => void;
   label?: string;
   placement?: PopperProps['placement'];
+  initialValue?: string;
 };
 
 const CountryForm = ({
   onChange,
   label = 'Select a country',
   placement = 'auto',
+  initialValue,
 }: CountryFormProps): JSX.Element => {
   const handleOnChange = (_event: any, newValue: Country | null) => {
     if (newValue) {
@@ -43,6 +45,7 @@ const CountryForm = ({
         autoSelect
         onChange={handleOnChange as any}
         disablePortal
+        defaultValue={countries.find((c) => c.alpha2 === initialValue)}
         options={countries}
         getOptionKey={(o) => o.name}
         getOptionLabel={(o) => o.name}
