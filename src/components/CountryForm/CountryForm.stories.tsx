@@ -18,3 +18,29 @@ export const Default = {
     onChange: fn(),
   },
 } satisfies Story;
+
+// the popper can overflow
+export const TopPlacement = {
+  args: {
+    onChange: fn(),
+    placement: 'top-start',
+  },
+  decorators: [
+    (Story) => (
+      <>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Story />
+      </>
+    ),
+  ],
+} satisfies Story;

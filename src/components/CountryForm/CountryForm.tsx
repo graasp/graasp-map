@@ -1,16 +1,35 @@
-import { Autocomplete, TextField } from '@mui/material';
+import { Autocomplete, Popper, PopperProps, TextField } from '@mui/material';
 
 import countries from '../../data/countries.json';
 import { Country } from '../../types';
 
+const CustomPopper = ({
+  placement = 'auto',
+}: {
+  placement: PopperProps['placement'];
+}) =>
+  // eslint-disable-next-line func-names
+  function (props: PopperProps): JSX.Element {
+    return (
+      <Popper
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+        style={{ width: '100%' }}
+        popperOptions={{ placement }}
+      />
+    );
+  };
+
 export type CountryFormProps = {
   onChange: (newValue: Country) => void;
   label?: string;
+  placement?: PopperProps['placement'];
 };
 
 const CountryForm = ({
   onChange,
   label = 'Select a country',
+  placement = 'auto',
 }: CountryFormProps): JSX.Element => {
   const handleOnChange = (_event: any, newValue: Country | null) => {
     if (newValue) {
@@ -19,26 +38,48 @@ const CountryForm = ({
   };
 
   return (
-    <Autocomplete
-      autoSelect
-      onChange={handleOnChange as any}
-      disablePortal
-      options={countries}
-      getOptionKey={(o) => o.name}
-      getOptionLabel={(o) => o.name}
-      sx={{ minWidth: 300 }}
-      renderInput={(params) => (
-        <TextField
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...params}
-          InputProps={{
-            ...params.InputProps,
-            sx: { borderRadius: '15px' },
-          }}
-          label={label}
-        />
-      )}
-    />
+    <div style={{ position: 'relative' }}>
+      <Autocomplete
+        autoSelect
+        onChange={handleOnChange as any}
+        disablePortal
+        options={countries}
+        getOptionKey={(o) => o.name}
+        getOptionLabel={(o) => o.name}
+        sx={{ minWidth: 300 }}
+        // set custom popper to force placement
+        PopperComponent={CustomPopper({ placement })}
+        componentsProps={
+          placement !== 'auto'
+            ? {
+                popper: {
+                  modifiers: [
+                    {
+                      name: 'flip',
+                      enabled: false,
+                    },
+                    {
+                      name: 'preventOverflow',
+                      enabled: false,
+                    },
+                  ],
+                },
+              }
+            : {}
+        }
+        renderInput={(params) => (
+          <TextField
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...params}
+            InputProps={{
+              ...params.InputProps,
+              sx: { borderRadius: '15px' },
+            }}
+            label={label}
+          />
+        )}
+      />
+    </div>
   );
 };
 
