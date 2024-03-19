@@ -1,3 +1,5 @@
+import { TextField } from '@mui/material';
+
 import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
@@ -91,6 +93,29 @@ export const Invisible = {
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
     invisible: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await checkSuggestions(canvas);
+  },
+} satisfies Story;
+
+// displays above other text fields
+export const Form = {
+  args: {
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <>
+        <Story />
+        <TextField
+          label="complementary information"
+          placeholder="red door on the right, ..."
+        />
+      </>
+    ),
+  ],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 

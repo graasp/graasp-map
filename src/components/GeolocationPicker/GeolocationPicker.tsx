@@ -103,14 +103,15 @@ const GeolocationPicker = ({
           <LinearProgress />
         </Box>
       )}
-
       {showSuggestions && suggestions && !selectedAddress && (
         <List
           sx={{
             position: 'absolute',
             background: 'white',
-            top: 70,
+            top: 60,
             width: '100%',
+            zIndex: 2,
+            boxShadow: '0px 5px 6px rgba(0,0,0,0.3)',
           }}
         >
           {suggestions.map((r) => (
