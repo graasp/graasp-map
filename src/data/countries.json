@@ -415,8 +415,8 @@
   },
   {
     "name": "France",
-    "maxBoundary": [51.08754088348043, 55.85450280000006],
-    "minBoundary": [-21.37078215899986, -61.79784094999988],
+    "maxBoundary": [52.5095347703273, 12.48046875],
+    "minBoundary": [40.51379915504413, -7.998046875],
     "alpha2": "FR"
   },
   {
@@ -1305,13 +1305,13 @@
     "name": "Uganda",
     "maxBoundary": [4.219691875000109, 35.006472615000064],
     "minBoundary": [-1.475205993999836, 29.54845951300007],
-    "alpha2":"UG"
+    "alpha2": "UG"
   },
   {
     "name": "Ukraine",
     "maxBoundary": [52.36894928000005, 40.15954309100019],
     "minBoundary": [44.381048895, 22.13283980300011],
-    "alpha2":"UA"
+    "alpha2": "UA"
   },
   {
     "name": "United States Minor Outlying Islands",

@@ -2,7 +2,11 @@ import { Popup } from 'react-leaflet';
 
 import { Box, Chip, Stack, Typography } from '@mui/material';
 
-import { ItemGeolocation } from '@graasp/sdk';
+import {
+  ItemGeolocation,
+  PermissionLevel,
+  PermissionLevelCompare,
+} from '@graasp/sdk';
 
 import DeleteItemButton from './DeleteItemButton';
 import DeleteLocationButton from './DeleteLocationButton';
@@ -29,13 +33,17 @@ const MarkerPopup = ({
       <Box>
         {item.settings.tags?.map((t: string, idx) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Chip key={idx} label={t} />
+          <Chip key={idx} label={t} sx={{ mx: 0.5 }} />
         ))}
       </Box>
       <Stack direction="row">
         <ViewButton item={item} />
-        <DeleteLocationButton item={item} />
-        <DeleteItemButton item={item} />
+        {PermissionLevelCompare.gte(item.permission, PermissionLevel.Admin) && (
+          <>
+            <DeleteLocationButton item={item} />
+            <DeleteItemButton item={item} />
+          </>
+        )}
       </Stack>
     </Popup>
   );

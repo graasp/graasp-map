@@ -2361,7 +2361,7 @@ __metadata:
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.0"
     "@graasp/query-client": "npm:2.9.1"
-    "@graasp/sdk": "npm:4.1.0"
+    "@graasp/sdk": "github:graasp/graasp-sdk#packed"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.9.3"
     "@mui/icons-material": "npm:5.15.13"
@@ -2430,6 +2430,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@graasp/query-client@github:graasp/graasp-query-client#item-packed":
+  version: 3.0.1
+  resolution: "@graasp/query-client@https://github.com/graasp/graasp-query-client.git#commit=be88cd197d1b1cf40fae538709fd29d2ceea15bd"
+  dependencies:
+    "@tanstack/react-query": "npm:4.36.1"
+    "@tanstack/react-query-devtools": "npm:4.36.1"
+    axios: "npm:1.6.8"
+    http-status-codes: "npm:2.3.0"
+    qs: "npm:6.12.0"
+  peerDependencies:
+    "@graasp/sdk": ^4.0.0
+    "@graasp/translations": ^1.23.0
+    react: ^18.0.0
+  checksum: 953ba003aeeb302318756dd52968ff3416a412d5acdfc46a9b271e33aae88891244178d1c99ba96c6b75d34edba81b32c830f6909992bc30ccd8e76dfc04db41
+  languageName: node
+  linkType: hard
+
 "@graasp/query-client@npm:2.9.1":
   version: 2.9.1
   resolution: "@graasp/query-client@npm:2.9.1"
@@ -2447,6 +2464,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graasp/sdk@github:graasp/graasp-sdk#packed":
+  version: 4.2.1
+  resolution: "@graasp/sdk@https://github.com/graasp/graasp-sdk.git#commit=fb0940c9066b02b9a872ec923c6c14366d0fdc89"
+  dependencies:
+    "@faker-js/faker": "npm:8.4.1"
+    js-cookie: "npm:3.0.5"
+    validator: "npm:13.11.0"
+  peerDependencies:
+    date-fns: ^3
+    uuid: ^9
+  checksum: 897988626a4ca6d57145a83f55f85a8c9795521eb4243fc144afbc4eb81d266729608de6445764db4386db7caa20bcf003dd79318c9f922f26a2d10f69c4e8dc
+  languageName: node
+  linkType: hard
+
 "@graasp/sdk@npm:3.5.0":
   version: 3.5.0
   resolution: "@graasp/sdk@npm:3.5.0"
@@ -2456,20 +2487,6 @@ __metadata:
     uuid: "npm:9.0.1"
     validator: "npm:13.11.0"
   checksum: dfbb9977904336214e411c93a33084fca8e07cb73145f655a070dfdb81a772d6a0412849ee07c8ee2e74497d59f960a8ef1989062a4e41d78ad5d22b24e8a8db
-  languageName: node
-  linkType: hard
-
-"@graasp/sdk@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@graasp/sdk@npm:4.1.0"
-  dependencies:
-    "@faker-js/faker": "npm:8.4.1"
-    js-cookie: "npm:3.0.5"
-    validator: "npm:13.11.0"
-  peerDependencies:
-    date-fns: ^3
-    uuid: ^9
-  checksum: 80c8b07bd04f90b0ad399a673626a9299faefac381f78fff158110968191453e3cce7b8a77be0ffa19d98f6711b9be43269b993099367c98dc3ae196b28a5d1c
   languageName: node
   linkType: hard
 
@@ -6826,6 +6843,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:1.6.8":
+  version: 1.6.8
+  resolution: "axios@npm:1.6.8"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 3f9a79eaf1d159544fca9576261ff867cbbff64ed30017848e4210e49f3b01e97cf416390150e6fdf6633f336cd43dc1151f890bbd09c3c01ad60bb0891eee63
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^3.2.1":
   version: 3.2.1
   resolution: "axobject-query@npm:3.2.1"
@@ -9310,8 +9338,8 @@ __metadata:
     "@commitlint/config-conventional": "npm:17.8.1"
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.0"
-    "@graasp/query-client": "npm:2.9.1"
-    "@graasp/sdk": "npm:4.1.0"
+    "@graasp/query-client": "github:graasp/graasp-query-client#item-packed"
+    "@graasp/sdk": "github:graasp/graasp-sdk#packed"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.5.1"
     "@mui/icons-material": "npm:5.15.13"
@@ -9756,6 +9784,16 @@ __metadata:
     debug:
       optional: true
   checksum: d467f13c1c6aa734599b8b369cd7a625b20081af358f6204ff515f6f4116eb440de9c4e0c49f10798eeb0df26c95dd05d5e0d9ddc5786ab1a8a8abefe92929b4
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 70c7612c4cab18e546e36b991bbf8009a1a41cf85354afe04b113d1117569abf760269409cb3eb842d9f7b03d62826687086b081c566ea7b1e6613cf29030bf7
   languageName: node
   linkType: hard
 
