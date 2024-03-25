@@ -2362,7 +2362,7 @@ __metadata:
     "@emotion/styled": "npm:11.11.0"
     "@graasp/query-client": "npm:2.9.1"
     "@graasp/sdk": "github:graasp/graasp-sdk#packed"
-    "@graasp/translations": "npm:1.23.0"
+    "@graasp/translations": "npm:1.25.3"
     "@graasp/ui": "npm:4.9.3"
     "@mui/icons-material": "npm:5.15.13"
     "@mui/lab": "npm:5.0.0-alpha.168"
@@ -2490,12 +2490,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/translations@npm:1.23.0":
-  version: 1.23.0
-  resolution: "@graasp/translations@npm:1.23.0"
-  dependencies:
-    i18next: "npm:23.7.16"
-  checksum: 10/dc0d605b520a28deb1ad3054323dc4b71f709b79adf5924552c602f3c3ed2fa7c3c8538a3015c86c8db05867159df4b2f6ad18583766b2b97c8dd850952d29e2
+"@graasp/translations@npm:1.25.3":
+  version: 1.25.3
+  resolution: "@graasp/translations@npm:1.25.3"
+  peerDependencies:
+    i18next: ^23.8.1
+  checksum: 10/99ec5075c0071d3f5388da421ea3306fffeea82becc2ca5379628a7a1bb32ff18d9e704cba6d527650f1dc42b5abe57d2367c5b0b33546f2199420297f59c8b5
   languageName: node
   linkType: hard
 
@@ -9340,7 +9340,7 @@ __metadata:
     "@emotion/styled": "npm:11.11.0"
     "@graasp/query-client": "github:graasp/graasp-query-client#item-packed"
     "@graasp/sdk": "github:graasp/graasp-sdk#packed"
-    "@graasp/translations": "npm:1.23.0"
+    "@graasp/translations": "npm:1.25.3"
     "@graasp/ui": "npm:4.5.1"
     "@mui/icons-material": "npm:5.15.13"
     "@mui/lab": "npm:5.0.0-alpha.168"
@@ -10606,15 +10606,6 @@ __metadata:
   version: 5.0.0
   resolution: "human-signals@npm:5.0.0"
   checksum: 10/30f8870d831cdcd2d6ec0486a7d35d49384996742052cee792854273fa9dd9e7d5db06bb7985d4953e337e10714e994e0302e90dc6848069171b05ec836d65b0
-  languageName: node
-  linkType: hard
-
-"i18next@npm:23.7.16":
-  version: 23.7.16
-  resolution: "i18next@npm:23.7.16"
-  dependencies:
-    "@babel/runtime": "npm:^7.23.2"
-  checksum: 10/77e74c07a73316f6fb6678a5a3e8ce58a6e66be457dd1ccd23941e9fc57ad8e1da55193fa6328c70b86073337b776cd267f3c13c6309f548b3116f27a1e41787
   languageName: node
   linkType: hard
 

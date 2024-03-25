@@ -23,7 +23,7 @@
     "@emotion/styled": "11.11.0",
     "@graasp/query-client": "github:graasp/graasp-query-client#item-packed",
     "@graasp/sdk": "github:graasp/graasp-sdk#packed",
-    "@graasp/translations": "1.23.0",
+    "@graasp/translations": "1.25.3",
     "@graasp/ui": "4.5.1",
     "@mui/icons-material": "5.15.13",
     "@mui/lab": "5.0.0-alpha.168",
