@@ -30,6 +30,7 @@ const MarkerPopup = ({
         />
       )}
       <Typography variant="caption">{geolocation.addressLabel}</Typography>
+      <Typography variant="caption">{geolocation.helperLabel}</Typography>
       <Box>
         {item.settings.tags?.map((t: string, idx) => (
           // eslint-disable-next-line react/no-array-index-key
