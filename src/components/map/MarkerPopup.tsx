@@ -29,8 +29,11 @@ const MarkerPopup = ({
           dangerouslySetInnerHTML={{ __html: item.description }}
         />
       )}
-      <Typography variant="caption">{geolocation.addressLabel}</Typography>
-      <Typography variant="caption">{geolocation.helperLabel}</Typography>
+      <Typography variant="caption">
+        {geolocation.addressLabel}
+        <br />
+        {geolocation.helperLabel}
+      </Typography>
       <Box>
         {item.settings.tags?.map((t: string, idx) => (
           // eslint-disable-next-line react/no-array-index-key
