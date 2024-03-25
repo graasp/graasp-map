@@ -22,7 +22,7 @@ export const Default = {
 export const InitialValue = {
   args: {
     onChange: fn(),
-    initialValue: "CH"
+    initialValue: 'CH',
   },
 } satisfies Story;
 
