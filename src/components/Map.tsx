@@ -13,7 +13,7 @@ import {
   QueryClientContextInterface,
   QueryClientContextProvider,
 } from './context/QueryClientContext';
-import CountryForm from './map/CountryForm';
+import CountryContent from './map/CountryContent';
 import InitialSetup from './map/InitialSetup';
 import MapContent from './map/MapContent';
 
@@ -75,7 +75,11 @@ const Map = ({
           {/* focus on initial geoloc if item id is defined, cannot use useffect because of map updates */}
           <InitialSetup showMap={showMap} setShowMap={setShowMap} />
 
-          {!showMap ? <CountryForm setShowMap={setShowMap} /> : <MapContent />}
+          {!showMap ? (
+            <CountryContent setShowMap={setShowMap} />
+          ) : (
+            <MapContent />
+          )}
         </MapContainer>
       </div>
     </QueryClientContextProvider>

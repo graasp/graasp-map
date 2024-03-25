@@ -22,7 +22,7 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
       <I18nextProvider i18n={i18n}>
         <Map
-          itemId="6c0c2f21-8787-4ff2-a426-9a9358e1423f"
+          // itemId="6c0c2f21-8787-4ff2-a426-9a9358e1423f"
           viewItem={viewItem}
           currentMember={currentMember}
           useDeleteItemGeolocation={mutations.useDeleteItemGeolocation}

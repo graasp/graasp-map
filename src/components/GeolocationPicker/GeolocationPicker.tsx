@@ -27,6 +27,7 @@ export type GeolocationPickerProps = {
   invisible?: boolean;
   initialValue?: string;
   endAdornment?: JSX.Element;
+  label?: string;
 };
 
 const GeolocationPicker = ({
@@ -35,6 +36,7 @@ const GeolocationPicker = ({
   useSuggestionsForAddress,
   invisible = false,
   initialValue = '',
+  label,
 }: GeolocationPickerProps): JSX.Element => {
   const { t } = useMapTranslation();
 
@@ -78,7 +80,7 @@ const GeolocationPicker = ({
       <TextField
         disabled={disabled}
         fullWidth
-        label="Location"
+        label={label ?? t(MAP.GEOLOCATION_PICKER_TITLE)}
         multiline
         placeholder={t(MAP.GEOLOCATION_PICKER_PLACEHOLDER)}
         onChange={onChange}
@@ -103,14 +105,15 @@ const GeolocationPicker = ({
           <LinearProgress />
         </Box>
       )}
-
       {showSuggestions && suggestions && !selectedAddress && (
         <List
           sx={{
             position: 'absolute',
             background: 'white',
-            top: 70,
+            top: 60,
             width: '100%',
+            zIndex: 2,
+            boxShadow: '0px 5px 6px rgba(0,0,0,0.3)',
           }}
         >
           {suggestions.map((r) => (

@@ -17,6 +17,7 @@ export type Country = {
   name: string;
   maxBoundary: [number, number];
   minBoundary: [number, number];
+  alpha2: string;
 };
 
 export type ParentCheck = {
