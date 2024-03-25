@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.5.0](https://github.com/graasp/graasp-map/compare/v1.4.0...v1.5.0) (2024-03-25)
+
+
+### Features
+
+* update components, helper label, permissions ([#88](https://github.com/graasp/graasp-map/issues/88)) ([0b45478](https://github.com/graasp/graasp-map/commit/0b45478bfccafbf91fe01c8069e9775d21119c75))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/query-client to v2.9.1 ([c1cdaf3](https://github.com/graasp/graasp-map/commit/c1cdaf3b10496dd36707596c6accb04e561c1034))
+* **deps:** update dependency @graasp/ui to v4.9.3 ([0ff9d72](https://github.com/graasp/graasp-map/commit/0ff9d72d6434ebf76f97ca36471f63ba3197daa0))
+* **deps:** update mui (non-major) ([0eb20a3](https://github.com/graasp/graasp-map/commit/0eb20a3839c806c7128460997fa8be995a5bf53e))
+
 ## [1.4.0](https://github.com/graasp/graasp-map/compare/v1.3.2...v1.4.0) (2024-03-11)
 
 
