@@ -2411,7 +2411,7 @@ __metadata:
     storybook: "npm:7.6.17"
     stylis-plugin-rtl: "npm:2.1.1"
     typescript: "npm:^5.3.3"
-    vite: "npm:5.1.6"
+    vite: "npm:5.1.7"
     vite-plugin-css-injected-by-js: "npm:3.4.0"
     vite-plugin-dts: "npm:3.7.3"
   peerDependencies:
@@ -5756,13 +5756,13 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.48":
-  version: 18.2.66
-  resolution: "@types/react@npm:18.2.66"
+  version: 18.2.70
+  resolution: "@types/react@npm:18.2.70"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/8a82bda6c254681536fa8348dc15d52345d8203d5d322406feef865f74ebfe2475ebde0be4e2f9a18ffbb587dac946dfb5d0974b598779ff282259aff7e8209a
+  checksum: 10/ddf235dfa6abe0075b40e66d3119ca3d0af330045cd12ebea8f335e07e6d71882535bfab2b7ae33c1709a6c1cf06eab2e5587c9d4c2333d25f781f9fd34c83e5
   languageName: node
   linkType: hard
 
@@ -9372,7 +9372,7 @@ __metadata:
     rollup-plugin-visualizer: "npm:5.12.0"
     stylis-plugin-rtl: "npm:2.1.1"
     typescript: "npm:^5.3.3"
-    vite: "npm:5.1.6"
+    vite: "npm:5.1.7"
     vite-plugin-css-injected-by-js: "npm:3.4.0"
     vite-plugin-dts: "npm:3.7.3"
   peerDependencies:
@@ -16640,9 +16640,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:5.1.6":
-  version: 5.1.6
-  resolution: "vite@npm:5.1.6"
+"vite@npm:5.1.7":
+  version: 5.1.7
+  resolution: "vite@npm:5.1.7"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -16676,7 +16676,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/f48073e93ead62fa58034398442de4517c824b3e50184f8b4059fb24077a26f2c04e910e29d7fb7ec51ea53eb61b9c7d94d56b14a38851de80c67480094cc79d
+  checksum: 10/f1b31e32699f33ba18501413a35e1f7ced20cbf39510543c59041c3482aa877a10970f2ad64623707671c112e3ef3ea3095f125911e65fcb165bdee5a4116263
   languageName: node
   linkType: hard
 
