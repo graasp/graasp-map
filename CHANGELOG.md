@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/graasp/graasp-map/compare/v1.5.0...v1.5.1) (2024-03-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-toastify to v10.0.5 ([96277bf](https://github.com/graasp/graasp-map/commit/96277bf669b2e0c31c01aa53329b4c44ead449e8))
+* **deps:** update mui (non-major) ([90366c4](https://github.com/graasp/graasp-map/commit/90366c40a17dcc99fc3d1c03f4801b295472182e))
+
 ## [1.5.0](https://github.com/graasp/graasp-map/compare/v1.4.0...v1.5.0) (2024-03-25)
 
 
