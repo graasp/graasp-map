@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@emotion/react": "11.11.4",
-    "@emotion/styled": "11.11.0",
+    "@emotion/styled": "11.11.5",
     "@graasp/query-client": "github:graasp/graasp-query-client#item-packed",
     "@graasp/sdk": "github:graasp/graasp-sdk#packed",
     "@graasp/translations": "1.23.0",
