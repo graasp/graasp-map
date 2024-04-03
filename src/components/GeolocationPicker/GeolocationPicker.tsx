@@ -86,7 +86,7 @@ const GeolocationPicker = ({
         onChange={onChange}
         onFocus={() => setShowSuggestions(true)}
         value={selectedAddress ?? query}
-        sx={{ minWidth: 250 }}
+        sx={{ minWidth: '30vw' }}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(invisible
           ? {

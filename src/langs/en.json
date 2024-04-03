@@ -7,5 +7,6 @@
   "DELETE_ITEM_EXPLANATION": "The item {{name}} will be put in your trash. Do you want to proceed?",
   "GEOLOCATION_PICKER_PLACEHOLDER": "Type your address here",
   "GEOLOCATION_PICKER_NO_ADDRESS": "Cannot find this address",
-  "GEOLOCATION_PICKER_TITLE": "Geolocation"
+  "GEOLOCATION_PICKER_TITLE": "Geolocation",
+  "Search here...": "Search here..."
 }
