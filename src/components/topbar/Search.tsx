@@ -1,5 +1,3 @@
-import { useTranslation } from 'react-i18next';
-
 import { Autocomplete, TextField } from '@mui/material';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
@@ -13,7 +11,6 @@ const Search = ({
   onChange: (newTags: string[]) => void;
 }): JSX.Element => {
   const { currentMember } = useQueryClientContext();
-  const { t } = useTranslation();
 
   const onChangeTags = (_e: unknown, newValue: string[]) => {
     onChange(newValue);

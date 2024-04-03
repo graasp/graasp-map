@@ -3,17 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { useMap } from 'react-leaflet';
 
 import AddIcon from '@mui/icons-material/Add';
-import { Box, Divider, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Fab from '@mui/material/Fab';
-import TextField from '@mui/material/TextField';
-
-import { useMobileView } from '@graasp/ui';
 
 import GeolocationPicker, {
   GeolocationPickerProps,
@@ -35,7 +30,6 @@ const MobileTopBar = ({ onChange, tags }: any): JSX.Element => {
   const handleClose = () => {
     setOpen(false);
   };
-  const { isMobile } = useMobileView();
 
   const onChangeOption: GeolocationPickerProps['onChangeOption'] = ({
     lat,
@@ -77,46 +71,5 @@ const MobileTopBar = ({ onChange, tags }: any): JSX.Element => {
       </Dialog>
     </>
   );
-
-  //   return (
-  //     <Box
-  //       sx={{
-  //         position: 'absolute',
-  //         top: 20,
-  //         left: '10%',
-  //         width: '80%',
-  //         zIndex: 450,
-  //       }}
-  //     >
-  //       <Stack justifyContent="center" alignItems="center" py={2}>
-  //         <Stack
-  //           sx={{
-  //             background: 'white',
-  //             borderRadius: '10px',
-  //             boxShadow: '0 3px 15px rgba(0,0,0,0.5)',
-  //           }}
-  //           direction="row"
-  //           gap={2}
-  //           p={2}
-  //         >
-  //           {currentMember && (
-  //             <>
-  //               <Stack>
-  //                 <GeolocationPicker
-  //                   useSuggestionsForAddress={useSuggestionsForAddress}
-  //                   onChangeOption={onChangeOption}
-  //                   invisible
-  //                 />
-  //               </Stack>
-  //               <Divider orientation="vertical" flexItem />
-  //             </>
-  //           )}
-  //           <Stack>
-  //             <Search tags={tags} onChange={onChange} />
-  //           </Stack>
-  //         </Stack>
-  //       </Stack>
-  //     </Box>
-  //   );
 };
 export default MobileTopBar;

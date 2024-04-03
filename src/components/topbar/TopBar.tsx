@@ -1,10 +1,8 @@
 import { useMap } from 'react-leaflet';
 
-import { Box, Divider, Stack, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Divider, Stack } from '@mui/material';
 
 import { useMobileView } from '@graasp/ui';
-
-import { isWidthUp } from '@material-ui/core/withWidth';
 
 import GeolocationPicker, {
   GeolocationPickerProps,
