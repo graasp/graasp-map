@@ -22,7 +22,6 @@ import Search from './Search';
 
 type Props = { onChange: () => void; tags: string[] };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const MobileTopBar = ({ onChange, tags }: Props): JSX.Element => {
   const map = useMap();
   const { useSuggestionsForAddress, currentMember } = useQueryClientContext();
