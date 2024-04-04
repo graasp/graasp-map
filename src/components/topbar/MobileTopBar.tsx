@@ -10,17 +10,24 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Fab from '@mui/material/Fab';
 
+import { COMMON } from '@graasp/translations';
+
+import { useCommonTranslation } from '@/config/i18n';
+
 import GeolocationPicker, {
   GeolocationPickerProps,
 } from '../GeolocationPicker/GeolocationPicker';
 import { useQueryClientContext } from '../context/QueryClientContext';
 import Search from './Search';
 
+type Props = { onChange: () => void; tags: string[] };
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const MobileTopBar = ({ onChange, tags }: any): JSX.Element => {
+const MobileTopBar = ({ onChange, tags }: Props): JSX.Element => {
   const map = useMap();
   const { useSuggestionsForAddress, currentMember } = useQueryClientContext();
   const { t } = useTranslation();
+  const { t: commonT } = useCommonTranslation();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -42,14 +49,14 @@ const MobileTopBar = ({ onChange, tags }: any): JSX.Element => {
     <>
       <Fab
         color="primary"
-        aria-label="filters"
+        aria-label={t('filters')}
         onClick={handleClickOpen}
         sx={{ position: 'absolute', bottom: 20, right: 20 }}
       >
         <AddIcon />
       </Fab>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Filters</DialogTitle>
+        <DialogTitle>{t('Filters')}</DialogTitle>
         <DialogContent>
           {currentMember && (
             <>
@@ -66,7 +73,7 @@ const MobileTopBar = ({ onChange, tags }: any): JSX.Element => {
           <br />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>{t('Close')}</Button>
+          <Button onClick={handleClose}>{commonT(COMMON.CLOSE_BUTTON)}</Button>
         </DialogActions>
       </Dialog>
     </>

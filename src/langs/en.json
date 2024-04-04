@@ -8,5 +8,8 @@
   "GEOLOCATION_PICKER_PLACEHOLDER": "Type your address here",
   "GEOLOCATION_PICKER_NO_ADDRESS": "Cannot find this address",
   "GEOLOCATION_PICKER_TITLE": "Geolocation",
-  "Search here...": "Search here..."
+  "Enter keywords here": "Enter keywords here",
+  "filters": "filters",
+  "Keywords": "Keywords",
+  "Filters": "Filters"
 }

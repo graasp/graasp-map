@@ -26,7 +26,7 @@ const TopBar = ({ onChange, tags }: any): JSX.Element => {
   };
 
   if (isMobile) {
-    return <MobileTopBar />;
+    return <MobileTopBar tags={tags} onChange={onChange} />;
   }
 
   return (

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { Autocomplete, TextField } from '@mui/material';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
@@ -5,12 +7,14 @@ import { useQueryClientContext } from '../context/QueryClientContext';
 const Search = ({
   onChange,
   invisible = false,
+  tags,
 }: {
   invisible?: boolean;
   tags: string[];
   onChange: (newTags: string[]) => void;
 }): JSX.Element => {
   const { currentMember } = useQueryClientContext();
+  const { t } = useTranslation();
 
   const onChangeTags = (_e: unknown, newValue: string[]) => {
     onChange(newValue);
@@ -20,14 +24,15 @@ const Search = ({
     <Autocomplete
       multiple
       freeSolo
-      aria-label="Filters"
+      aria-label="keywords"
+      value={tags}
       options={[]}
       renderInput={(params) => (
         <TextField
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...params}
-          // placeholder={t('Search here...')}
-          label="Filters"
+          placeholder={t('Enter keywords here')}
+          label={t('Keywords')}
           sx={{
             minWidth: currentMember ? '30vw' : '70vw',
             maxWidth: '100%',
