@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMap } from 'react-leaflet';
 
-import AddIcon from '@mui/icons-material/Add';
+import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -50,9 +50,10 @@ const MobileTopBar = ({ onChange, tags }: Props): JSX.Element => {
         color="primary"
         aria-label={t('filters')}
         onClick={handleClickOpen}
+        role="search"
         sx={{ position: 'absolute', bottom: 20, right: 20 }}
       >
-        <AddIcon />
+        <SearchIcon />
       </Fab>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{t('Filters')}</DialogTitle>
