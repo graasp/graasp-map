@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.0](https://github.com/graasp/graasp-map/compare/v1.5.0...v1.6.0) (2024-04-05)
+
+
+### Features
+
+* update map for mobile screens ([#100](https://github.com/graasp/graasp-map/issues/100)) ([6e8f5a1](https://github.com/graasp/graasp-map/commit/6e8f5a1c99b90cdf9a79721c68b0b4f5ab652e16))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @emotion/styled to v11.11.5 ([546ebb6](https://github.com/graasp/graasp-map/commit/546ebb6380a65fa01453a6d4f06b6b55d03087bb))
+* **deps:** update dependency react-toastify to v10.0.5 ([96277bf](https://github.com/graasp/graasp-map/commit/96277bf669b2e0c31c01aa53329b4c44ead449e8))
+* **deps:** update mui (non-major) ([90366c4](https://github.com/graasp/graasp-map/commit/90366c40a17dcc99fc3d1c03f4801b295472182e))
+
 ## [1.5.0](https://github.com/graasp/graasp-map/compare/v1.4.0...v1.5.0) (2024-03-25)
 
 
