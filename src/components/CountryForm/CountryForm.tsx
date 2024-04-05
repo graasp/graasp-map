@@ -49,7 +49,7 @@ const CountryForm = ({
         options={countries}
         getOptionKey={(o) => o.name}
         getOptionLabel={(o) => o.name}
-        sx={{ minWidth: 300 }}
+        sx={{ minWidth: 250 }}
         // set custom popper to force placement
         PopperComponent={CustomPopper({ placement })}
         componentsProps={
