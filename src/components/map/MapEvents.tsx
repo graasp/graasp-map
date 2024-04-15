@@ -21,7 +21,6 @@ const MapEvents = ({
       lng1: b.getSouthWest().lng,
       lng2: b.getNorthEast().lng,
     });
-    //   map.flyTo()
   };
 
   useEffect(() => {
@@ -41,14 +40,6 @@ const MapEvents = ({
       updateBounds();
     },
   });
-
-  //   const b = map.getBounds();
-  //   const bounds = {
-  //     lat1: b.getSouthWest().lat,
-  //     lat2: b.getNorthEast().lat,
-  //     lng1: b.getSouthWest().lng,
-  //     lng2: b.getNorthEast().lng,
-  //   };
 
   return null;
 };

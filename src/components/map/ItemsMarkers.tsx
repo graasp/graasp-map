@@ -4,7 +4,7 @@ import { FeatureGroup, Marker } from 'react-leaflet';
 import { DiscriminatedItem } from '@graasp/sdk';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
-import { iconsPerParent } from '../icons/icons';
+import { marker } from '../icons/icons';
 import MarkerPopup from './MarkerPopup';
 
 const ItemsMarkers = ({
@@ -28,23 +28,12 @@ const ItemsMarkers = ({
     keywords: tags,
   });
 
-  // initial view
-  // useEffect(() => {
-  //   if (itemId && itemGeolocations && groupRef) {
-  //     const group = groupRef.current; // get native featureGroup instance
-  //     if (group && group.getBounds().getNorthEast()) {
-  //       map.fitBounds(group.getBounds());
-  //     }
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [itemGeolocations]);
-
   return (
     <FeatureGroup ref={groupRef}>
       {itemGeolocations?.map((geoloc) => (
         <Marker
           key={geoloc.id}
-          icon={iconsPerParent.MyItems}
+          icon={marker}
           position={[geoloc.lat, geoloc.lng]}
         >
           <MarkerPopup geolocation={geoloc} />

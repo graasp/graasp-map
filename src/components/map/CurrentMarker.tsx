@@ -6,7 +6,7 @@ import { ItemGeolocation } from '@graasp/sdk';
 import { LatLng } from 'leaflet';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
-import { greenIcon } from '../icons/icons';
+import { pointer } from '../icons/icons';
 import CurrentMarkerPopupContent from './CurrentMarkerPopupContent';
 
 const CurrentMarker = (): JSX.Element | null => {
@@ -31,7 +31,7 @@ const CurrentMarker = (): JSX.Element | null => {
 
   return (
     <Marker
-      icon={greenIcon}
+      icon={pointer}
       eventHandlers={{
         popupclose: () => {
           setOpen(false);

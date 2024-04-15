@@ -29,6 +29,8 @@ const Map = ({
   usePostItem,
   viewItem,
   useDeleteItemGeolocation,
+  currentPosition,
+  handleAddOnClick,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
 
@@ -43,11 +45,13 @@ const Map = ({
       itemId={itemId}
       useSuggestionsForAddress={useSuggestionsForAddress}
       currentMember={currentMember}
+      currentPosition={currentPosition}
       useAddressFromGeolocation={useAddressFromGeolocation}
       useItemsInMap={useItemsInMap}
       useRecycleItems={useRecycleItems}
       usePostItem={usePostItem}
       viewItem={viewItem}
+      handleAddOnClick={handleAddOnClick}
       useDeleteItemGeolocation={useDeleteItemGeolocation}
     >
       <div
@@ -75,7 +79,7 @@ const Map = ({
           {/* focus on initial geoloc if item id is defined, cannot use useffect because of map updates */}
           <InitialSetup showMap={showMap} setShowMap={setShowMap} />
 
-          {!showMap ? (
+          {!showMap && !currentPosition ? (
             <CountryContent setShowMap={setShowMap} />
           ) : (
             <MapContent />

@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
-
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
-import {
-  Button,
-  CssBaseline,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  TextField,
-  Tooltip,
-} from '@mui/material';
+import { CssBaseline, IconButton, Tooltip } from '@mui/material';
 
-import { ItemGeolocation, ItemType } from '@graasp/sdk';
+import { ItemGeolocation } from '@graasp/sdk';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
 
@@ -21,36 +9,25 @@ type Props = {
   location: Pick<ItemGeolocation, 'lat' | 'lng'> &
     Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
 };
-const AddItemButton = ({ location }: Props): JSX.Element => {
-  const { usePostItem, itemId: parentId } = useQueryClientContext();
-  const { mutate: postItem } = usePostItem();
-  const [open, setOpen] = useState(false);
+const AddItemButton = ({ location }: Props): JSX.Element | null => {
+  const { handleAddOnClick } = useQueryClientContext();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const { name, description }: any = Object.fromEntries(formData);
-    if (location && name) {
-      await postItem({
-        parentId,
-        name,
-        description,
-        type: ItemType.FOLDER,
-        geolocation: location,
-      });
-    }
-    setOpen(false);
-  };
+  // no handler does not show the add button
+  if (!handleAddOnClick) {
+    // eslint-disable-next-line no-console
+    console.debug('no add handler is defined');
+    return null;
+  }
 
   return (
     <>
       <CssBaseline />
       <Tooltip title="Add a new item with this address">
-        <IconButton onClick={() => setOpen(true)}>
+        <IconButton onClick={() => handleAddOnClick({ location })}>
           <AddLocationAltIcon />
         </IconButton>
       </Tooltip>
-      <Dialog open={open}>
+      {/* <Dialog open={open}>
         <DialogTitle>Add New Folder at Location</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
@@ -82,7 +59,7 @@ const AddItemButton = ({ location }: Props): JSX.Element => {
             <Button type="submit">Confirm</Button>
           </DialogActions>
         </form>
-      </Dialog>
+      </Dialog> */}
     </>
   );
 };

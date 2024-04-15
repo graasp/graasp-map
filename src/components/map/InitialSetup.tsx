@@ -10,7 +10,7 @@ const InitialSetup = ({
   showMap: boolean;
   setShowMap: Dispatch<boolean>;
 }): null => {
-  const { useItemsInMap, itemId } = useQueryClientContext();
+  const { useItemsInMap, itemId, currentPosition } = useQueryClientContext();
   const [isInitial, setIsInitial] = useState(true);
   const map = useMap();
 
@@ -23,11 +23,20 @@ const InitialSetup = ({
     if (showMap || !isInitial) {
       return;
     }
-
-    if (itemGeolocations && isInitial) {
-      const c = itemGeolocations.map((g) => [g.lat, g.lng]);
-      if (c.length) {
-        map.fitBounds(c as any);
+    if (isInitial) {
+      // center on all visible points
+      if (itemGeolocations?.length) {
+        const c = itemGeolocations.map((g) => [g.lat, g.lng]);
+        if (c.length) {
+          map.fitBounds(c as any);
+        }
+        setShowMap(true);
+        setIsInitial(false);
+      }
+      // center on current position of user
+      else if (currentPosition) {
+        map.setZoom(11);
+        map.flyTo([currentPosition.lat, currentPosition.lng] as any);
         setShowMap(true);
         setIsInitial(false);
       }

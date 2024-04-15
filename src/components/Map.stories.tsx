@@ -124,3 +124,63 @@ export const MapSignOutMobile = {
   ],
   // cannot play inside an iframe
 } satisfies Story;
+
+export const MapWithCurrentLocation = {
+  args: {
+    viewItem: () => ({}) as any,
+    currentMember: null,
+    currentPosition: { lat: 46.51, lng: 6.5 },
+    useDeleteItemGeolocation: () => ({}) as any,
+    useItemsInMap: () => ({ data: [] }) as any,
+    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    usePostItem: () => ({}) as any,
+    useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  // cannot play inside an iframe
+} satisfies Story;
+
+export const MapWithCurrentLocationAndItems = {
+  args: {
+    viewItem: () => ({}) as any,
+    currentMember: null,
+    currentPosition: { lat: 46.51, lng: 6.499 },
+    useDeleteItemGeolocation: () => ({}) as any,
+    useItemsInMap: () =>
+      ({
+        data: [
+          {
+            lat: 46.51,
+            lng: 6.5,
+            addressLabel: 'EPFL',
+            item,
+          },
+          {
+            lat: 46.51,
+            lng: 6.4995,
+            addressLabel: 'EPFL',
+            item,
+          },
+        ],
+      }) as any,
+    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    usePostItem: () => ({}) as any,
+    useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  // cannot play inside an iframe
+} satisfies Story;
