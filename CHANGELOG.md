@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/graasp/graasp-map/compare/v1.6.0...v1.7.0) (2024-04-15)
+
+
+### Features
+
+* change icons, add item handler ([#106](https://github.com/graasp/graasp-map/issues/106)) ([32c0ebb](https://github.com/graasp/graasp-map/commit/32c0ebb56dbec14d2be73d839a3eb1a89145e33b))
+
+
+### Bug Fixes
+
+* **deps:** update mui (non-major) ([60fcb10](https://github.com/graasp/graasp-map/commit/60fcb10b90174338b2f2355013322cc2a5700451))
+
 ## [1.6.0](https://github.com/graasp/graasp-map/compare/v1.5.0...v1.6.0) (2024-04-05)
 
 
