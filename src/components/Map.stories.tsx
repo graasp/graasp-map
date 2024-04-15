@@ -32,10 +32,15 @@ export const Map = {
           },
         ],
       }) as any,
-    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    useAddressFromGeolocation: () =>
+      ({ data: { addressLabel: 'address', country: 'countryName' } }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    handleAddOnClick({ location }) {
+      // eslint-disable-next-line no-alert
+      alert(JSON.stringify(location));
+    },
   },
   decorators: [
     (Story) => (

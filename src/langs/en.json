@@ -12,5 +12,8 @@
   "filters": "filters",
   "Keywords": "Keywords",
   "Filters": "Filters",
-  "Current Location": "Current Location"
+  "Current Location": "Current Location",
+  "Description (optional)": "Description (optional)",
+  "Name": "Name",
+  "Add a new folder at this location": "Add a new folder at this location"
 }
