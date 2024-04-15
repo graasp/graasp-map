@@ -12,10 +12,11 @@
 
 - On load:
   - without item id:
-    - Without allowed geolocation: show the country form to choose a focus. Choosing a country will
-    - With allowed geolocation: show the current country (TBD)
+    - without allowed geolocation and geolocation disabled: show the country form to choose a focus. Choosing a country will prevent loading lots of item at the same time.
+    - with allowed geolocation: show the current position
   - with item id:
-    - without any geolocation: show country form
-    - with geolocation (current or children): fit bounds of the map
+    - the item does not have a geolocation and geolocation disabled: show country form
+    - the item has a geolocation (current or children): fit bounds of the map
+    - the item does not have a geolocation but geolocation enabled: show the current position
 
 If the user is logged out, geocoding and reverse geocoding are disabled.
