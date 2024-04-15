@@ -56,7 +56,7 @@
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.5",
-    "@graasp/sdk": "github:graasp/graasp-sdk#packed",
+    "@graasp/sdk": "4.7.1",
     "@graasp/translations": "1.23.0",
     "@graasp/ui": "4.9.3",
     "@mui/icons-material": "5.15.15",

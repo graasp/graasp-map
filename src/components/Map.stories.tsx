@@ -32,10 +32,15 @@ export const Map = {
           },
         ],
       }) as any,
-    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    useAddressFromGeolocation: () =>
+      ({ data: { addressLabel: 'address', country: 'countryName' } }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    handleAddOnClick({ location }) {
+      // eslint-disable-next-line no-alert
+      alert(JSON.stringify(location));
+    },
   },
   decorators: [
     (Story) => (
@@ -47,6 +52,8 @@ export const Map = {
   // cannot play inside an iframe
 } satisfies Story;
 
+// it shows the country form if localisation is disabled
+// it shows the current location otherwise
 export const MapSignedOut = {
   args: {
     itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
@@ -102,6 +109,8 @@ export const MapMobile = {
   // cannot play inside an iframe
 } satisfies Story;
 
+// it shows the country form if localisation is disabled
+// it shows the current location otherwise
 export const MapSignOutMobile = {
   parameters: { viewport: { defaultViewport: 'mobile1' } },
   args: {

@@ -2374,7 +2374,7 @@ __metadata:
     "@emotion/react": "npm:11.11.4"
     "@emotion/styled": "npm:11.11.5"
     "@graasp/query-client": "npm:2.9.1"
-    "@graasp/sdk": "github:graasp/graasp-sdk#packed"
+    "@graasp/sdk": "npm:4.7.1"
     "@graasp/translations": "npm:1.23.0"
     "@graasp/ui": "npm:4.9.3"
     "@mui/icons-material": "npm:5.15.15"
@@ -2500,6 +2500,20 @@ __metadata:
     uuid: "npm:9.0.1"
     validator: "npm:13.11.0"
   checksum: 10/dfbb9977904336214e411c93a33084fca8e07cb73145f655a070dfdb81a772d6a0412849ee07c8ee2e74497d59f960a8ef1989062a4e41d78ad5d22b24e8a8db
+  languageName: node
+  linkType: hard
+
+"@graasp/sdk@npm:4.7.1":
+  version: 4.7.1
+  resolution: "@graasp/sdk@npm:4.7.1"
+  dependencies:
+    "@faker-js/faker": "npm:8.4.1"
+    js-cookie: "npm:3.0.5"
+    validator: "npm:13.11.0"
+  peerDependencies:
+    date-fns: ^3
+    uuid: ^9
+  checksum: 10/182e2a33fbdf7ed2cac7fbdf5a01378a059415a753345cca501d2ddda4985b9448c81bb2931a7157dc34cd613412c5da42da38cb037e9a46438755707e4ea2aa
   languageName: node
   linkType: hard
 

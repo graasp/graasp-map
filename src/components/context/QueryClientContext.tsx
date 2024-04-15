@@ -1,7 +1,11 @@
 import { createContext, useContext, useMemo } from 'react';
 
 import type { configureQueryClient } from '@graasp/query-client';
-import { CompleteMember, DiscriminatedItem } from '@graasp/sdk';
+import {
+  CompleteMember,
+  DiscriminatedItem,
+  ItemGeolocation,
+} from '@graasp/sdk';
 
 type QueryClientHooks = ReturnType<typeof configureQueryClient>['hooks'];
 type QueryClientMutations = ReturnType<
@@ -11,6 +15,7 @@ type QueryClientMutations = ReturnType<
 export interface QueryClientContextInterface {
   itemId?: DiscriminatedItem['id'];
   currentMember?: CompleteMember | null;
+  currentPosition?: { lat: number; lng: number };
   useAddressFromGeolocation: QueryClientHooks['useAddressFromGeolocation'];
   useItemsInMap: QueryClientHooks['useItemsInMap'];
   useRecycleItems: QueryClientMutations['useRecycleItems'];
@@ -18,6 +23,12 @@ export interface QueryClientContextInterface {
   useDeleteItemGeolocation: QueryClientMutations['useDeleteItemGeolocation'];
   useSuggestionsForAddress: QueryClientHooks['useSuggestionsForAddress'];
   viewItem: (item: DiscriminatedItem) => void;
+  handleAddOnClick?: ({
+    location,
+  }: {
+    location: Pick<ItemGeolocation, 'lat' | 'lng'> &
+      Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
+  }) => void;
 }
 
 export const QueryClientContext = createContext<QueryClientContextInterface>({
@@ -45,6 +56,8 @@ export const QueryClientContextProvider = ({
   useSuggestionsForAddress,
   viewItem,
   itemId,
+  currentPosition,
+  handleAddOnClick,
 }: QueryClientContextInterface & { children: JSX.Element }): JSX.Element => {
   const value = useMemo(
     () => ({
@@ -57,6 +70,8 @@ export const QueryClientContextProvider = ({
       viewItem,
       itemId,
       useSuggestionsForAddress,
+      currentPosition,
+      handleAddOnClick,
     }),
     [
       currentMember,
@@ -68,6 +83,8 @@ export const QueryClientContextProvider = ({
       useSuggestionsForAddress,
       viewItem,
       itemId,
+      currentPosition,
+      handleAddOnClick,
     ],
   );
 

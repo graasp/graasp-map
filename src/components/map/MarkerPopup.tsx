@@ -42,12 +42,16 @@ const MarkerPopup = ({
       </Box>
       <Stack direction="row">
         <ViewButton item={item} />
-        {PermissionLevelCompare.gte(item.permission, PermissionLevel.Admin) && (
-          <>
-            <DeleteLocationButton item={item} />
-            <DeleteItemButton item={item} />
-          </>
-        )}
+        {item?.permission &&
+          PermissionLevelCompare.gte(
+            item.permission,
+            PermissionLevel.Admin,
+          ) && (
+            <>
+              <DeleteLocationButton item={item} />
+              <DeleteItemButton item={item} />
+            </>
+          )}
       </Stack>
     </Popup>
   );

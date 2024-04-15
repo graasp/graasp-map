@@ -7,7 +7,11 @@ import CurrentMarker from './CurrentMarker';
 import ItemsMarkers from './ItemsMarkers';
 import MapEvents from './MapEvents';
 
-const MapContent = (): JSX.Element => {
+const MapContent = ({
+  currentPosition,
+}: {
+  currentPosition?: { lat: number; lng: number };
+}): JSX.Element => {
   const { itemId } = useQueryClientContext();
   const [bounds, setBounds] = useState<{
     lat1: number;
@@ -24,11 +28,9 @@ const MapContent = (): JSX.Element => {
   return (
     <>
       <MapEvents setBounds={setBounds} />
-
       <TopBar tags={tags} onChange={onChangeTags} />
-      <CurrentLocationMarker />
       <ItemsMarkers tags={tags} itemId={itemId} bounds={bounds} />
-
+      <CurrentLocationMarker position={currentPosition} />
       <CurrentMarker />
     </>
   );
