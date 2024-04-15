@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { Skeleton } from '@mui/material';
 
 import { ItemGeolocation } from '@graasp/sdk';
@@ -12,6 +14,7 @@ const CurrentMarkerPopupContent = ({
   open: boolean;
   point: Pick<ItemGeolocation, 'lat' | 'lng'>;
 }): JSX.Element => {
+  const { t } = useTranslation();
   const { useAddressFromGeolocation, currentMember } = useQueryClientContext();
   const { data: address, isLoading } = useAddressFromGeolocation(point, {
     enabled: Boolean(currentMember) && open,
@@ -26,7 +29,7 @@ const CurrentMarkerPopupContent = ({
       return <Skeleton />;
     }
 
-    return 'This location does not match a specific address.';
+    return t('This location does not match a specific address.');
   };
 
   return (

@@ -16,7 +16,7 @@ const CurrentLocationMarker = ({
 
   return (
     <Marker icon={currentLocationMarker} position={position}>
-      <Popup>{t('Current location')}</Popup>
+      <Popup>{t('My Location')}</Popup>
     </Marker>
   );
 };
