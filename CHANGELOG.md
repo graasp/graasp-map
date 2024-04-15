@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/graasp/graasp-map/compare/v1.7.0...v1.8.0) (2024-04-15)
+
+
+### Features
+
+* update french translations ([#107](https://github.com/graasp/graasp-map/issues/107)) ([4c6d02d](https://github.com/graasp/graasp-map/commit/4c6d02d8e46f3b6660589f0641e041523801ab60))
+
 ## [1.7.0](https://github.com/graasp/graasp-map/compare/v1.6.0...v1.7.0) (2024-04-15)
 
 
