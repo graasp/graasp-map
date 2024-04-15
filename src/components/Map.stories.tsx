@@ -52,6 +52,8 @@ export const Map = {
   // cannot play inside an iframe
 } satisfies Story;
 
+// it shows the country form if localisation is disabled
+// it shows the current location otherwise
 export const MapSignedOut = {
   args: {
     itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
@@ -107,6 +109,8 @@ export const MapMobile = {
   // cannot play inside an iframe
 } satisfies Story;
 
+// it shows the country form if localisation is disabled
+// it shows the current location otherwise
 export const MapSignOutMobile = {
   parameters: { viewport: { defaultViewport: 'mobile1' } },
   args: {
@@ -115,66 +119,6 @@ export const MapSignOutMobile = {
     currentMember: null,
     useDeleteItemGeolocation: () => ({}) as any,
     useItemsInMap: () => ({ data: [] }) as any,
-    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
-    usePostItem: () => ({}) as any,
-    useRecycleItems: () => ({}) as any,
-    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  // cannot play inside an iframe
-} satisfies Story;
-
-export const MapWithCurrentLocation = {
-  args: {
-    viewItem: () => ({}) as any,
-    currentMember: null,
-    currentPosition: { lat: 46.51, lng: 6.5 },
-    useDeleteItemGeolocation: () => ({}) as any,
-    useItemsInMap: () => ({ data: [] }) as any,
-    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
-    usePostItem: () => ({}) as any,
-    useRecycleItems: () => ({}) as any,
-    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  // cannot play inside an iframe
-} satisfies Story;
-
-export const MapWithCurrentLocationAndItems = {
-  args: {
-    viewItem: () => ({}) as any,
-    currentMember: null,
-    currentPosition: { lat: 46.51, lng: 6.499 },
-    useDeleteItemGeolocation: () => ({}) as any,
-    useItemsInMap: () =>
-      ({
-        data: [
-          {
-            lat: 46.51,
-            lng: 6.5,
-            addressLabel: 'EPFL',
-            item,
-          },
-          {
-            lat: 46.51,
-            lng: 6.4995,
-            addressLabel: 'EPFL',
-            item,
-          },
-        ],
-      }) as any,
     useAddressFromGeolocation: () => ({ data: 'address' }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,

@@ -7,8 +7,12 @@ import CurrentMarker from './CurrentMarker';
 import ItemsMarkers from './ItemsMarkers';
 import MapEvents from './MapEvents';
 
-const MapContent = (): JSX.Element => {
-  const { itemId, currentPosition } = useQueryClientContext();
+const MapContent = ({
+  currentPosition,
+}: {
+  currentPosition?: { lat: number; lng: number };
+}): JSX.Element => {
+  const { itemId } = useQueryClientContext();
   const [bounds, setBounds] = useState<{
     lat1: number;
     lat2: number;

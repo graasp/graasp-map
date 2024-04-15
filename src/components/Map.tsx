@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
+import { Skeleton } from '@mui/material';
+
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import 'leaflet-easybutton/src/easy-button.css';
@@ -19,6 +21,12 @@ import MapContent from './map/MapContent';
 
 type Props = QueryClientContextInterface;
 
+const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0,
+};
+
 const Map = ({
   itemId,
   currentMember,
@@ -29,10 +37,16 @@ const Map = ({
   usePostItem,
   viewItem,
   useDeleteItemGeolocation,
-  currentPosition,
   handleAddOnClick,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
+  const [hasFetchedCurrentLocation, setHasFetchedCurrentLocation] =
+    useState<boolean>(false);
+
+  const [currentPosition, setCurrentPosition] = useState<{
+    lat: number;
+    lng: number;
+  }>();
 
   useEffect(() => {
     if (currentMember) {
@@ -40,12 +54,36 @@ const Map = ({
     }
   }, [currentMember]);
 
+  // get current location
+  useEffect(() => {
+    const success = (pos: {
+      coords: { latitude: number; longitude: number };
+    }) => {
+      const crd = pos.coords;
+      setCurrentPosition({ lat: crd.latitude, lng: crd.longitude });
+      setHasFetchedCurrentLocation(true);
+    };
+
+    navigator.geolocation.getCurrentPosition(
+      success,
+      (err: { code: number; message: string }) => {
+        // eslint-disable-next-line no-console
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+        setHasFetchedCurrentLocation(true);
+      },
+      options,
+    );
+  }, []);
+
+  if (!hasFetchedCurrentLocation) {
+    return <Skeleton width="100%" height="100%" />;
+  }
+
   return (
     <QueryClientContextProvider
       itemId={itemId}
       useSuggestionsForAddress={useSuggestionsForAddress}
       currentMember={currentMember}
-      currentPosition={currentPosition}
       useAddressFromGeolocation={useAddressFromGeolocation}
       useItemsInMap={useItemsInMap}
       useRecycleItems={useRecycleItems}
@@ -77,12 +115,16 @@ const Map = ({
           <LoggedOutWarning />
 
           {/* focus on initial geoloc if item id is defined, cannot use useffect because of map updates */}
-          <InitialSetup showMap={showMap} setShowMap={setShowMap} />
+          <InitialSetup
+            showMap={showMap}
+            setShowMap={setShowMap}
+            currentPosition={currentPosition}
+          />
 
           {!showMap && !currentPosition ? (
             <CountryContent setShowMap={setShowMap} />
           ) : (
-            <MapContent />
+            <MapContent currentPosition={currentPosition} />
           )}
         </MapContainer>
       </div>

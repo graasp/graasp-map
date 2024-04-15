@@ -6,11 +6,13 @@ import { useQueryClientContext } from '../context/QueryClientContext';
 const InitialSetup = ({
   showMap,
   setShowMap,
+  currentPosition,
 }: {
   showMap: boolean;
   setShowMap: Dispatch<boolean>;
+  currentPosition?: { lat: number; lng: number };
 }): null => {
-  const { useItemsInMap, itemId, currentPosition } = useQueryClientContext();
+  const { useItemsInMap, itemId } = useQueryClientContext();
   const [isInitial, setIsInitial] = useState(true);
   const map = useMap();
 
