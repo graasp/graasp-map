@@ -29,12 +29,7 @@ const ItemsMarkers = ({
   // color of clusters is defined by number of markers grouped together
   return (
     <FeatureGroup ref={groupRef}>
-      <MarkerClusterGroup
-        chunkedLoading
-        // hide polygon area
-        spiderLegPolylineOptions={{ opacity: 0 }}
-        icon
-      >
+      <MarkerClusterGroup chunkedLoading showCoverageOnHover={false}>
         {itemGeolocations?.map((geoloc) => (
           <Marker
             key={geoloc.id}

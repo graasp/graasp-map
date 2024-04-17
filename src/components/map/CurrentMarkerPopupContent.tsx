@@ -1,8 +1,8 @@
-import { useTranslation } from 'react-i18next';
-
 import { Skeleton } from '@mui/material';
 
 import { ItemGeolocation } from '@graasp/sdk';
+
+import { useMapTranslation } from '@/config/i18n';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
 import AddItemButton from './AddItemButton';
@@ -14,7 +14,7 @@ const CurrentMarkerPopupContent = ({
   open: boolean;
   point: Pick<ItemGeolocation, 'lat' | 'lng'>;
 }): JSX.Element => {
-  const { t } = useTranslation();
+  const { t } = useMapTranslation();
   const { useAddressFromGeolocation, currentMember } = useQueryClientContext();
   const { data: address, isLoading } = useAddressFromGeolocation(point, {
     enabled: Boolean(currentMember) && open,

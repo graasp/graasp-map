@@ -1,7 +1,24 @@
 import { Autocomplete, Popper, PopperProps, TextField } from '@mui/material';
 
+import countriesISO from 'i18n-iso-countries';
+import arTrans from 'i18n-iso-countries/langs/ar.json';
+import deTrans from 'i18n-iso-countries/langs/de.json';
+import enTrans from 'i18n-iso-countries/langs/en.json';
+import esTrans from 'i18n-iso-countries/langs/es.json';
+import frTrans from 'i18n-iso-countries/langs/fr.json';
+import itTrans from 'i18n-iso-countries/langs/it.json';
+
+import { useMapTranslation } from '@/config/i18n';
+
 import countries from '../../data/countries.json';
 import { Country } from '../../types';
+
+countriesISO.registerLocale(enTrans);
+countriesISO.registerLocale(frTrans);
+countriesISO.registerLocale(arTrans);
+countriesISO.registerLocale(esTrans);
+countriesISO.registerLocale(deTrans);
+countriesISO.registerLocale(itTrans);
 
 const CustomPopper = ({
   placement = 'auto',
@@ -25,6 +42,7 @@ export type CountryFormProps = {
   label?: string;
   placement?: PopperProps['placement'];
   initialValue?: string;
+  lang?: string;
 };
 
 const CountryForm = ({
@@ -32,12 +50,22 @@ const CountryForm = ({
   label = 'Select a country',
   placement = 'auto',
   initialValue,
+  lang = 'en',
 }: CountryFormProps): JSX.Element => {
+  const { t } = useMapTranslation();
+
   const handleOnChange = (_event: any, newValue: Country | null) => {
     if (newValue) {
       onChange?.(newValue);
     }
   };
+
+  const translatedCountries = countries
+    .map((c) => ({
+      ...c,
+      name: countriesISO.getName(c.alpha2, lang) ?? c.name,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div style={{ position: 'relative' }}>
@@ -46,8 +74,8 @@ const CountryForm = ({
         onChange={handleOnChange as any}
         disablePortal
         defaultValue={countries.find((c) => c.alpha2 === initialValue)}
-        options={countries}
-        getOptionKey={(o) => o.name}
+        options={translatedCountries}
+        getOptionKey={(o) => o.alpha2}
         getOptionLabel={(o) => o.name}
         sx={{ minWidth: 250 }}
         // set custom popper to force placement
@@ -78,7 +106,7 @@ const CountryForm = ({
               ...params.InputProps,
               sx: { borderRadius: '15px' },
             }}
-            label={label}
+            label={t(label)}
           />
         )}
       />

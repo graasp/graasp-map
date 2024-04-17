@@ -5,6 +5,7 @@ import { Skeleton } from '@mui/material';
 
 import { DEFAULT_LANG } from '@graasp/translations';
 
+// import countriesISO from 'i18n-iso-countries';
 import 'leaflet-easybutton/src/easy-button.css';
 import 'leaflet-geosearch/assets/css/leaflet.css';
 import 'leaflet/dist/leaflet.css';
@@ -18,6 +19,9 @@ import {
 import CountryContent from './map/CountryContent';
 import InitialSetup from './map/InitialSetup';
 import MapContent from './map/MapContent';
+
+// countriesISO.registerLocale(require('i18n-iso-countries/langs/en.json'));
+// countriesISO.registerLocale(require('i18n-iso-countries/langs/fr.json'));
 
 type Props = QueryClientContextInterface;
 

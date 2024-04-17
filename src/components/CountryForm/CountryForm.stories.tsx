@@ -51,3 +51,11 @@ export const TopPlacement = {
     ),
   ],
 } satisfies Story;
+
+// the popper can overflow
+export const French = {
+  args: {
+    onChange: fn(),
+    lang: 'fr',
+  },
+} satisfies Story;

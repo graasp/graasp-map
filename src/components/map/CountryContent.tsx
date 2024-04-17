@@ -3,6 +3,8 @@ import { useMap } from 'react-leaflet';
 
 import { Paper } from '@mui/material';
 
+import i18n from '@/config/i18n';
+
 import { Country } from '../../types';
 import CountryForm from '../CountryForm/CountryForm';
 
@@ -42,7 +44,11 @@ const CountryContent = ({
           borderRadius: 15,
         }}
       >
-        <CountryForm onChange={onChange} />
+        <CountryForm
+          onChange={onChange}
+          placement="bottom"
+          lang={i18n.language}
+        />
       </Paper>
     </div>
   );
