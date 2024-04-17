@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/graasp/graasp-map/compare/v1.8.0...v1.9.0) (2024-04-17)
+
+
+### Features
+
+* add clusters ([#109](https://github.com/graasp/graasp-map/issues/109)) ([0d9eb05](https://github.com/graasp/graasp-map/commit/0d9eb05d20240a64e7efeac58972b3b78c6f3c58))
+
 ## [1.8.0](https://github.com/graasp/graasp-map/compare/v1.7.0...v1.8.0) (2024-04-15)
 
 
