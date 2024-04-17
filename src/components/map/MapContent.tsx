@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useQueryClientContext } from '../context/QueryClientContext';
 import TopBar from '../topbar/TopBar';
 import CurrentLocationMarker from './CurrentLocationMarker';
 import CurrentMarker from './CurrentMarker';
@@ -12,7 +11,6 @@ const MapContent = ({
 }: {
   currentPosition?: { lat: number; lng: number };
 }): JSX.Element => {
-  const { itemId } = useQueryClientContext();
   const [bounds, setBounds] = useState<{
     lat1: number;
     lat2: number;
