@@ -29,7 +29,7 @@ const MapContent = ({
     <>
       <MapEvents setBounds={setBounds} />
       <TopBar tags={tags} onChange={onChangeTags} />
-      <ItemsMarkers tags={tags} itemId={itemId} bounds={bounds} />
+      <ItemsMarkers tags={tags} bounds={bounds} />
       <CurrentLocationMarker position={currentPosition} />
       <CurrentMarker />
     </>
