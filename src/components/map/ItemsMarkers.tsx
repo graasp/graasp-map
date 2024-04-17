@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { FeatureGroup, Marker } from 'react-leaflet';
-
-import { DiscriminatedItem } from '@graasp/sdk';
+import MarkerClusterGroup from 'react-leaflet-cluster';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
 import { marker } from '../icons/icons';
@@ -12,7 +11,6 @@ const ItemsMarkers = ({
   bounds,
 }: {
   tags: string[];
-  itemId?: DiscriminatedItem['id'];
   bounds?: {
     lat1: number;
     lat2: number;
@@ -28,17 +26,25 @@ const ItemsMarkers = ({
     keywords: tags,
   });
 
+  // color of clusters is defined by number of markers grouped together
   return (
     <FeatureGroup ref={groupRef}>
-      {itemGeolocations?.map((geoloc) => (
-        <Marker
-          key={geoloc.id}
-          icon={marker}
-          position={[geoloc.lat, geoloc.lng]}
-        >
-          <MarkerPopup geolocation={geoloc} />
-        </Marker>
-      ))}
+      <MarkerClusterGroup
+        chunkedLoading
+        // hide polygon area
+        spiderLegPolylineOptions={{ opacity: 0 }}
+        icon
+      >
+        {itemGeolocations?.map((geoloc) => (
+          <Marker
+            key={geoloc.id}
+            icon={marker}
+            position={[geoloc.lat, geoloc.lng]}
+          >
+            <MarkerPopup geolocation={geoloc} />
+          </Marker>
+        ))}
+      </MarkerClusterGroup>
     </FeatureGroup>
   );
 };
