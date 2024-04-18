@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/graasp/graasp-map/compare/v1.9.0...v1.10.0) (2024-04-18)
+
+
+### Features
+
+* update translations, translate countries ([#111](https://github.com/graasp/graasp-map/issues/111)) ([4f08bf7](https://github.com/graasp/graasp-map/commit/4f08bf75fb98e5382cf0852d6c07d4e4b32bf1a4))
+
 ## [1.9.0](https://github.com/graasp/graasp-map/compare/v1.8.0...v1.9.0) (2024-04-17)
 
 
