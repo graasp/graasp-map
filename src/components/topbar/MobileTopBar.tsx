@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { useMap } from 'react-leaflet';
 
 import SearchIcon from '@mui/icons-material/Search';
@@ -12,7 +11,7 @@ import Fab from '@mui/material/Fab';
 
 import { COMMON } from '@graasp/translations';
 
-import { useCommonTranslation } from '@/config/i18n';
+import { useCommonTranslation, useMapTranslation } from '@/config/i18n';
 
 import GeolocationPicker, {
   GeolocationPickerProps,
@@ -25,7 +24,7 @@ type Props = { onChange: () => void; tags: string[] };
 const MobileTopBar = ({ onChange, tags }: Props): JSX.Element => {
   const map = useMap();
   const { useSuggestionsForAddress, currentMember } = useQueryClientContext();
-  const { t } = useTranslation();
+  const { t } = useMapTranslation();
   const { t: commonT } = useCommonTranslation();
   const [open, setOpen] = React.useState(false);
 
