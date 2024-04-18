@@ -439,3 +439,25 @@ export const MapSignOutMobile = {
   ],
   // cannot play inside an iframe
 } satisfies Story;
+
+export const MapFrench = {
+  args: {
+    itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
+    viewItem: () => ({}) as any,
+    currentMember: MemberFactory({ extra: { lang: 'fr' } }),
+    useDeleteItemGeolocation: () => ({}) as any,
+    useItemsInMap: () => ({ data: [] }) as any,
+    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    usePostItem: () => ({}) as any,
+    useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  // cannot play inside an iframe
+} satisfies Story;

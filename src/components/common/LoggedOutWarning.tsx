@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { Alert } from '@mui/material';
 
+import { useMapTranslation } from '@/config/i18n';
+
 import { useQueryClientContext } from '../context/QueryClientContext';
 
 const LoggedOutWarning = (): JSX.Element | null => {
+  const { t } = useMapTranslation();
   const [open, setOpen] = useState(false);
   const { currentMember } = useQueryClientContext();
 
@@ -35,7 +38,7 @@ const LoggedOutWarning = (): JSX.Element | null => {
       severity="warning"
       onClose={onClose}
     >
-      Some functionalities are disabled for logged out users.
+      {t('Some functionalities are disabled for logged out users.')}
     </Alert>
   );
 };

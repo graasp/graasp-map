@@ -2410,6 +2410,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.5"
     eslint-plugin-storybook: "npm:0.8.0"
     http-server: "npm:14.1.1"
+    i18n-iso-countries: "npm:7.11.0"
     leaflet: "npm:^1.9.4"
     leaflet-easybutton: "npm:2.4.0"
     leaflet-geosearch: "npm:3.11.1"
@@ -8272,6 +8273,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"diacritics@npm:1.3.0":
+  version: 1.3.0
+  resolution: "diacritics@npm:1.3.0"
+  checksum: 10/c5a7d6843a3569f1c5aaf643d2e01aaaf695dd369d0f7868300a1c637b91157fe89cf78aa2e87224042d7f4fc87ab39d20aadb7e006c25e0a7c6a2ef92972e74
+  languageName: node
+  linkType: hard
+
 "diff-sequences@npm:^28.1.1":
   version: 28.1.1
   resolution: "diff-sequences@npm:28.1.1"
@@ -10626,6 +10634,15 @@ __metadata:
   version: 5.0.0
   resolution: "human-signals@npm:5.0.0"
   checksum: 10/30f8870d831cdcd2d6ec0486a7d35d49384996742052cee792854273fa9dd9e7d5db06bb7985d4953e337e10714e994e0302e90dc6848069171b05ec836d65b0
+  languageName: node
+  linkType: hard
+
+"i18n-iso-countries@npm:7.11.0":
+  version: 7.11.0
+  resolution: "i18n-iso-countries@npm:7.11.0"
+  dependencies:
+    diacritics: "npm:1.3.0"
+  checksum: 10/30f5ab51b58599854130f41d42bd51aa99027917711cd307984dee45684c2c4c3493ff39241ed5b89feca1d49d5e3f9b247f6b2c32c8768224b7975149eaa049
   languageName: node
   linkType: hard
 

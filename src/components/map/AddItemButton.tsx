@@ -1,5 +1,4 @@
 import { FormEvent, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import {
@@ -15,6 +14,9 @@ import {
 } from '@mui/material';
 
 import { ItemGeolocation, ItemType } from '@graasp/sdk';
+import { COMMON } from '@graasp/translations';
+
+import { useCommonTranslation, useMapTranslation } from '@/config/i18n';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
 
@@ -28,8 +30,9 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
     usePostItem,
     itemId: parentId,
   } = useQueryClientContext();
+  const { t: commonT } = useCommonTranslation();
   const { mutate: postItem } = usePostItem();
-  const { t } = useTranslation();
+  const { t } = useMapTranslation();
   const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -58,7 +61,7 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
   return (
     <>
       <CssBaseline />
-      <Tooltip title={t('Add a new folder at this location')}>
+      <Tooltip title={t('Add a new item at this location')}>
         <IconButton onClick={handleAddItem}>
           <AddLocationAltIcon />
         </IconButton>
@@ -66,7 +69,7 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
       {/* fallback form to add an item */}
       {!handleAddOnClick && (
         <Dialog open={open}>
-          <DialogTitle>{t('Add a new folder at this location')}</DialogTitle>
+          <DialogTitle>{t('Add a new item at this location')}</DialogTitle>
           <form onSubmit={handleSubmit}>
             <DialogContent>
               <TextField
@@ -77,12 +80,13 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
                 fullWidth
                 name="name"
                 variant="standard"
+                required
               />
               <TextField
                 autoFocus
                 margin="dense"
                 id="description"
-                label={t('Description (optional)')}
+                label={t('Description')}
                 fullWidth
                 name="description"
                 variant="standard"
@@ -92,9 +96,11 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
             </DialogContent>
             <DialogActions>
               <Button autoFocus onClick={() => setOpen(false)}>
-                {t('Cancel')}
+                {commonT(COMMON.CANCEL_BUTTON)}
               </Button>
-              <Button type="submit">{t('Save')}</Button>
+              <Button type="submit" variant="contained">
+                {commonT(COMMON.SAVE_BUTTON)}
+              </Button>
             </DialogActions>
           </form>
         </Dialog>

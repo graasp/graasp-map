@@ -13,8 +13,9 @@
   "Keywords": "Keywords",
   "Filters": "Filters",
   "My Location": "My Location",
-  "Description (optional)": "Description (optional)",
+  "Description": "Description",
   "Name": "Name",
   "Add a new folder at this location": "Add a new folder at this location",
-  "This location does not match a specific address.": "This location does not match a specific address."
+  "This location does not match a specific address.": "This location does not match a specific address.",
+  "Select a country": "Select a country"
 }
