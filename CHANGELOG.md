@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/graasp/graasp-map/compare/v1.10.0...v1.11.0) (2024-04-22)
+
+
+### Features
+
+* fix config ref, disable autopan ([ea34bab](https://github.com/graasp/graasp-map/commit/ea34bab988a8188a25d9232e8be01a90999607de))
+
+
+### Bug Fixes
+
+* translate filters title ([fbc0370](https://github.com/graasp/graasp-map/commit/fbc03706a748dba65b52f5a843732852c0f0113a))
+
 ## [1.10.0](https://github.com/graasp/graasp-map/compare/v1.9.0...v1.10.0) (2024-04-18)
 
 
