@@ -2,8 +2,7 @@ import { Skeleton } from '@mui/material';
 
 import { ItemGeolocation } from '@graasp/sdk';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import { useQueryClientContext } from '../context/QueryClientContext';
 import AddItemButton from './AddItemButton';
 

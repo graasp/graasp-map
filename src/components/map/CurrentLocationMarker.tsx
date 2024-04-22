@@ -1,7 +1,6 @@
 import { Marker, Popup } from 'react-leaflet';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import { currentLocationMarker } from '../icons/icons';
 
 const CurrentLocationMarker = ({
@@ -17,7 +16,7 @@ const CurrentLocationMarker = ({
 
   return (
     <Marker icon={currentLocationMarker} position={position}>
-      <Popup>{t('My Location')}</Popup>
+      <Popup autoPan={false}>{t('My Location')}</Popup>
     </Marker>
   );
 };

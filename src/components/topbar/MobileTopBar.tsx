@@ -11,8 +11,7 @@ import Fab from '@mui/material/Fab';
 
 import { COMMON } from '@graasp/translations';
 
-import { useCommonTranslation, useMapTranslation } from '@/config/i18n';
-
+import { useCommonTranslation, useMapTranslation } from '../../config/i18n';
 import GeolocationPicker, {
   GeolocationPickerProps,
 } from '../GeolocationPicker/GeolocationPicker';

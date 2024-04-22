@@ -1,7 +1,6 @@
 import { Autocomplete, TextField } from '@mui/material';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import { useQueryClientContext } from '../context/QueryClientContext';
 
 const Search = ({

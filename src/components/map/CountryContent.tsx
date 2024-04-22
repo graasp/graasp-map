@@ -3,8 +3,7 @@ import { useMap } from 'react-leaflet';
 
 import { Paper } from '@mui/material';
 
-import i18n from '@/config/i18n';
-
+import i18n from '../../config/i18n';
 import { Country } from '../../types';
 import CountryForm from '../CountryForm/CountryForm';
 

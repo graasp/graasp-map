@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Alert } from '@mui/material';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import { useQueryClientContext } from '../context/QueryClientContext';
 
 const LoggedOutWarning = (): JSX.Element | null => {

@@ -16,8 +16,7 @@ import {
 import { ItemGeolocation, ItemType } from '@graasp/sdk';
 import { COMMON } from '@graasp/translations';
 
-import { useCommonTranslation, useMapTranslation } from '@/config/i18n';
-
+import { useCommonTranslation, useMapTranslation } from '../../config/i18n';
 import { useQueryClientContext } from '../context/QueryClientContext';
 
 type Props = {

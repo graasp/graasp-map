@@ -20,7 +20,7 @@ const MarkerPopup = ({
   const { item } = geolocation;
 
   return (
-    <Popup>
+    <Popup autoPan={false}>
       <Typography variant="h5">{item.name}</Typography>
       {/* TODO: slice and show html  */}
       {item.description && (

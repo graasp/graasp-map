@@ -43,7 +43,7 @@ const CurrentMarker = (): JSX.Element | null => {
       position={[clickedPoint.lat, clickedPoint.lng]}
     >
       {currentMember && (
-        <Popup>
+        <Popup autoPan={false}>
           <CurrentMarkerPopupContent open={open} point={clickedPoint} />
         </Popup>
       )}

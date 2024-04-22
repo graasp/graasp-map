@@ -8,8 +8,7 @@ import esTrans from 'i18n-iso-countries/langs/es.json';
 import frTrans from 'i18n-iso-countries/langs/fr.json';
 import itTrans from 'i18n-iso-countries/langs/it.json';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import countries from '../../data/countries.json';
 import { Country } from '../../types';
 
