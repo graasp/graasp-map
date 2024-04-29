@@ -38,6 +38,7 @@ const Map = ({
   viewItem,
   useDeleteItemGeolocation,
   handleAddOnClick,
+  isMobile,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
   const [hasFetchedCurrentLocation, setHasFetchedCurrentLocation] =
@@ -91,6 +92,7 @@ const Map = ({
       viewItem={viewItem}
       handleAddOnClick={handleAddOnClick}
       useDeleteItemGeolocation={useDeleteItemGeolocation}
+      isMobile={isMobile}
     >
       <div
         style={{

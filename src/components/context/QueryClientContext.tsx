@@ -29,6 +29,7 @@ export interface QueryClientContextInterface {
     location: Pick<ItemGeolocation, 'lat' | 'lng'> &
       Partial<Pick<ItemGeolocation, 'country' | 'addressLabel'>>;
   }) => void;
+  isMobile?: boolean;
 }
 
 export const QueryClientContext = createContext<QueryClientContextInterface>({
@@ -43,6 +44,7 @@ export const QueryClientContext = createContext<QueryClientContextInterface>({
   usePostItem: () => ({}) as any,
   useDeleteItemGeolocation: () => ({}) as any,
   viewItem: () => ({}) as any,
+  isMobile: false,
 });
 
 export const QueryClientContextProvider = ({
@@ -58,6 +60,7 @@ export const QueryClientContextProvider = ({
   itemId,
   currentPosition,
   handleAddOnClick,
+  isMobile,
 }: QueryClientContextInterface & { children: JSX.Element }): JSX.Element => {
   const value = useMemo(
     () => ({
@@ -72,6 +75,7 @@ export const QueryClientContextProvider = ({
       useSuggestionsForAddress,
       currentPosition,
       handleAddOnClick,
+      isMobile,
     }),
     [
       currentMember,
@@ -85,6 +89,7 @@ export const QueryClientContextProvider = ({
       itemId,
       currentPosition,
       handleAddOnClick,
+      isMobile,
     ],
   );
 
