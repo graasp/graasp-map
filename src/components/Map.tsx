@@ -76,9 +76,9 @@ const Map = ({
     );
   }, []);
 
-  if (!hasFetchedCurrentLocation) {
-    return <Skeleton width="100%" height="100%" />;
-  }
+  // if (!hasFetchedCurrentLocation) {
+  //   return <Skeleton width="100%" height="100%" />;
+  // }
 
   return (
     <QueryClientContextProvider
