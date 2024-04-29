@@ -10,10 +10,10 @@ type Props = {
 };
 
 const ViewButton = ({ item }: Props): JSX.Element => {
-  const { viewItem, isMobile } = useQueryClientContext();
+  const { viewItem, isMobileApp } = useQueryClientContext();
 
   const onClick = () => {
-    if (!isMobile) {
+    if (!isMobileApp) {
       viewItem(item);
     } else {
       // todo: replace with universal/deep link? not sure it works inside iframe..

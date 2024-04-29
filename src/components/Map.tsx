@@ -37,7 +37,7 @@ const Map = ({
   viewItem,
   useDeleteItemGeolocation,
   handleAddOnClick,
-  isMobile,
+  isMobileApp,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -94,7 +94,7 @@ const Map = ({
       viewItem={viewItem}
       handleAddOnClick={handleAddOnClick}
       useDeleteItemGeolocation={useDeleteItemGeolocation}
-      isMobile={isMobile}
+      isMobileApp={isMobileApp}
     >
       <div
         style={{
