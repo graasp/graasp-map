@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-import { Skeleton } from '@mui/material';
-
+// import { Skeleton } from '@mui/material';
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import 'leaflet-easybutton/src/easy-button.css';
@@ -41,6 +40,7 @@ const Map = ({
   isMobile,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [hasFetchedCurrentLocation, setHasFetchedCurrentLocation] =
     useState<boolean>(false);
 
