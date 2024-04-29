@@ -44,6 +44,8 @@ const Map = ({
   const [hasFetchedCurrentLocation, setHasFetchedCurrentLocation] =
     useState<boolean>(false);
 
+  console.log(hasFetchedCurrentLocation);
+
   const [currentPosition, setCurrentPosition] = useState<{
     lat: number;
     lng: number;
