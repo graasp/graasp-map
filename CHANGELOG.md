@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/graasp/graasp-map/compare/v1.11.0...v1.11.1) (2024-04-30)
+
+
+### Bug Fixes
+
+* open in player mobile ([#115](https://github.com/graasp/graasp-map/issues/115)) ([7cea75a](https://github.com/graasp/graasp-map/commit/7cea75a0f40d1204a58533e0610ff5f722b19c7a))
+
 ## [1.11.0](https://github.com/graasp/graasp-map/compare/v1.10.0...v1.11.0) (2024-04-22)
 
 
