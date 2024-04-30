@@ -101,6 +101,7 @@ const CountryForm = ({
           <TextField
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...params}
+            sx={{ background: 'transparent' }}
             InputProps={{
               ...params.InputProps,
               sx: { borderRadius: '15px' },

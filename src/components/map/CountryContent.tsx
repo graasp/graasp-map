@@ -39,7 +39,6 @@ const CountryContent = ({
           transform: 'translate(-50%, -50%)',
           position: 'absolute',
           zIndex: 450,
-          background: 'white',
           borderRadius: 15,
         }}
       >

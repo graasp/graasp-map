@@ -11,9 +11,14 @@ type Props = {
 
 const ViewButton = ({ item }: Props): JSX.Element => {
   const { viewItem } = useQueryClientContext();
+
   return (
     <Tooltip title="View item in Graasp Player">
-      <IconButton onClick={() => viewItem(item)}>
+      <IconButton
+        onClick={() => {
+          viewItem(item);
+        }}
+      >
         <VisibilityIcon />
       </IconButton>
     </Tooltip>
