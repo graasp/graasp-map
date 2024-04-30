@@ -10,25 +10,15 @@ type Props = {
 };
 
 const ViewButton = ({ item }: Props): JSX.Element => {
-  const { viewItem, isMobileApp } = useQueryClientContext();
-
-  const onClick = () => {
-    if (!isMobileApp) {
-      viewItem(item);
-    } else {
-      // todo: replace with universal/deep link? not sure it works inside iframe..
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      window.ReactNativeWebView.postMessage(
-        JSON.stringify({ itemId: item.id, action: 'open-player' }),
-        '*',
-      );
-    }
-  };
+  const { viewItem } = useQueryClientContext();
 
   return (
     <Tooltip title="View item in Graasp Player">
-      <IconButton onClick={onClick}>
+      <IconButton
+        onClick={() => {
+          viewItem(item);
+        }}
+      >
         <VisibilityIcon />
       </IconButton>
     </Tooltip>
