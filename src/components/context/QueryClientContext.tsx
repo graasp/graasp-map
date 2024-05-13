@@ -5,6 +5,7 @@ import {
   CompleteMember,
   DiscriminatedItem,
   ItemGeolocation,
+  PackedItem,
 } from '@graasp/sdk';
 
 type QueryClientHooks = ReturnType<typeof configureQueryClient>['hooks'];
@@ -13,7 +14,7 @@ type QueryClientMutations = ReturnType<
 >['mutations'];
 
 export interface QueryClientContextInterface {
-  itemId?: DiscriminatedItem['id'];
+  item?: PackedItem;
   currentMember?: CompleteMember | null;
   currentPosition?: { lat: number; lng: number };
   useAddressFromGeolocation: QueryClientHooks['useAddressFromGeolocation'];
@@ -55,7 +56,7 @@ export const QueryClientContextProvider = ({
   useDeleteItemGeolocation,
   useSuggestionsForAddress,
   viewItem,
-  itemId,
+  item,
   currentPosition,
   handleAddOnClick,
 }: QueryClientContextInterface & { children: JSX.Element }): JSX.Element => {
@@ -68,7 +69,7 @@ export const QueryClientContextProvider = ({
       usePostItem,
       useDeleteItemGeolocation,
       viewItem,
-      itemId,
+      item,
       useSuggestionsForAddress,
       currentPosition,
       handleAddOnClick,
@@ -82,7 +83,7 @@ export const QueryClientContextProvider = ({
       useDeleteItemGeolocation,
       useSuggestionsForAddress,
       viewItem,
-      itemId,
+      item,
       currentPosition,
       handleAddOnClick,
     ],

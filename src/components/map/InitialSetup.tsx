@@ -12,13 +12,13 @@ const InitialSetup = ({
   setShowMap: Dispatch<boolean>;
   currentPosition?: { lat: number; lng: number };
 }): null => {
-  const { useItemsInMap, itemId } = useQueryClientContext();
+  const { useItemsInMap, item } = useQueryClientContext();
   const [isInitial, setIsInitial] = useState(true);
   const map = useMap();
 
   // central point
   const { data: itemGeolocations } = useItemsInMap({
-    parentItemId: itemId,
+    parentItemId: item?.id,
   });
 
   useEffect(() => {

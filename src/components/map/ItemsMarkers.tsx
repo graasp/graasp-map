@@ -19,10 +19,10 @@ const ItemsMarkers = ({
   };
 }): JSX.Element | JSX.Element[] | undefined => {
   const groupRef = useRef<any>(null);
-  const { useItemsInMap, itemId } = useQueryClientContext();
+  const { useItemsInMap, item } = useQueryClientContext();
   const { data: itemGeolocations } = useItemsInMap({
     ...bounds,
-    parentItemId: itemId,
+    parentItemId: item?.id,
     keywords: tags,
   });
 

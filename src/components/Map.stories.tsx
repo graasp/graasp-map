@@ -1,4 +1,8 @@
-import { FolderItemFactory, MemberFactory } from '@graasp/sdk';
+import {
+  MemberFactory,
+  PackedFolderItemFactory,
+  PermissionLevel,
+} from '@graasp/sdk';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -13,11 +17,11 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const item = FolderItemFactory();
+const item = PackedFolderItemFactory();
 
 export const Map = {
   args: {
-    itemId: item.id,
+    item,
     viewItem: () => ({}) as any,
     currentMember: MemberFactory(),
     useDeleteItemGeolocation: () => ({}) as any,
@@ -362,7 +366,7 @@ export const Map = {
 // it shows the current location otherwise
 export const MapSignedOut = {
   args: {
-    itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
+    item: PackedFolderItemFactory(),
     viewItem: () => ({}) as any,
     currentMember: null,
     useDeleteItemGeolocation: () => ({}) as any,
@@ -385,7 +389,7 @@ export const MapSignedOut = {
 export const MapMobile = {
   parameters: { viewport: { defaultViewport: 'mobile1' } },
   args: {
-    itemId: item.id,
+    item,
     viewItem: () => ({}) as any,
     currentMember: MemberFactory(),
     useDeleteItemGeolocation: () => ({}) as any,
@@ -420,7 +424,7 @@ export const MapMobile = {
 export const MapSignOutMobile = {
   parameters: { viewport: { defaultViewport: 'mobile1' } },
   args: {
-    itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
+    item: PackedFolderItemFactory(),
     viewItem: () => ({}) as any,
     currentMember: null,
     useDeleteItemGeolocation: () => ({}) as any,
@@ -442,11 +446,43 @@ export const MapSignOutMobile = {
 
 export const MapFrench = {
   args: {
-    itemId: 'd5a1c73d-cd4d-4f20-8a91-3c689ee87ea4',
+    item: PackedFolderItemFactory(),
     viewItem: () => ({}) as any,
     currentMember: MemberFactory({ extra: { lang: 'fr' } }),
     useDeleteItemGeolocation: () => ({}) as any,
     useItemsInMap: () => ({ data: [] }) as any,
+    useAddressFromGeolocation: () => ({ data: 'address' }) as any,
+    usePostItem: () => ({}) as any,
+    useRecycleItems: () => ({}) as any,
+    useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: 'auto', width: '95vw', height: '95vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  // cannot play inside an iframe
+} satisfies Story;
+
+export const MapRead = {
+  args: {
+    item: PackedFolderItemFactory({}, { permission: PermissionLevel.Read }),
+    viewItem: () => ({}) as any,
+    currentMember: MemberFactory({ extra: { lang: 'fr' } }),
+    useDeleteItemGeolocation: () => ({}) as any,
+    useItemsInMap: () =>
+      ({
+        data: [
+          {
+            lat: 46.51,
+            lng: 6.5,
+            addressLabel: 'EPFL',
+            item,
+          },
+        ],
+      }) as any,
     useAddressFromGeolocation: () => ({ data: 'address' }) as any,
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,

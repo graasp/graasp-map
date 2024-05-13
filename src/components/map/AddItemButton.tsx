@@ -27,7 +27,7 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
   const {
     handleAddOnClick,
     usePostItem,
-    itemId: parentId,
+    item: parent,
   } = useQueryClientContext();
   const { t: commonT } = useCommonTranslation();
   const { mutate: postItem } = usePostItem();
@@ -40,7 +40,7 @@ const AddItemButton = ({ location }: Props): JSX.Element | null => {
     const { name, description }: any = Object.fromEntries(formData);
     if (location && name) {
       await postItem({
-        parentId,
+        parentId: parent?.id,
         name,
         description,
         type: ItemType.FOLDER,
