@@ -25,17 +25,16 @@ const DeleteItemButton = ({ item }: Props): JSX.Element => {
 
   const { name, id } = item;
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const onDelete = () => {
     recycleItems([id]);
+    handleClose();
   };
   const onClick = () => {
     setOpen(true);
-  };
-
-  const handleClose = () => {
-    // onClose(selectedValue);
-    setOpen(false);
-    // setSelectedValue(selectedValue);
   };
 
   return (
@@ -47,7 +46,7 @@ const DeleteItemButton = ({ item }: Props): JSX.Element => {
           {t(MAP.DELETE_ITEM_EXPLANATION, { name })}
         </DialogContent>
         <DialogActions>
-          <Button variant="text" onClick={() => setOpen(false)}>
+          <Button variant="text" onClick={handleClose}>
             {translateCommon(COMMON.CANCEL_BUTTON)}
           </Button>
           <Button color="error" onClick={onDelete}>
