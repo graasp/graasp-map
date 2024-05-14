@@ -20,7 +20,7 @@ import MapContent from './map/MapContent';
 type Props = QueryClientContextInterface;
 
 const Map = ({
-  itemId,
+  item,
   currentMember,
   useAddressFromGeolocation,
   useItemsInMap,
@@ -42,7 +42,7 @@ const Map = ({
 
   return (
     <QueryClientContextProvider
-      itemId={itemId}
+      item={item}
       useSuggestionsForAddress={useSuggestionsForAddress}
       currentMember={currentMember}
       useAddressFromGeolocation={useAddressFromGeolocation}
