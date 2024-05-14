@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/graasp/graasp-map/compare/v1.11.1...v1.12.0) (2024-05-14)
+
+
+### Features
+
+* get item and does not show current marker on read ([#117](https://github.com/graasp/graasp-map/issues/117)) ([a70a580](https://github.com/graasp/graasp-map/commit/a70a5806adcb0d49b02496cf6bc56198999a0f40))
+
 ## [1.11.1](https://github.com/graasp/graasp-map/compare/v1.11.0...v1.11.1) (2024-04-30)
 
 
