@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.1](https://github.com/graasp/graasp-map/compare/v1.12.0...v1.12.1) (2024-05-14)
+
+
+### Bug Fixes
+
+* close modal on delete item ([8c96496](https://github.com/graasp/graasp-map/commit/8c9649631001ad44b725de92ecdf324630198b7d))
+
 ## [1.12.0](https://github.com/graasp/graasp-map/compare/v1.11.1...v1.12.0) (2024-05-14)
 
 
