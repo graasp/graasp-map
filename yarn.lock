@@ -2420,7 +2420,7 @@ __metadata:
     prettier: "npm:3.2.5"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    react-i18next: "npm:14.0.8"
+    react-i18next: "npm:14.1.2"
     react-leaflet: "npm:^4.2.1"
     react-leaflet-cluster: "npm:2.1.0"
     react-router-dom: "npm:6.22.3"
@@ -9661,7 +9661,7 @@ __metadata:
     prettier: "npm:3.2.5"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    react-i18next: "npm:14.0.8"
+    react-i18next: "npm:14.1.2"
     react-leaflet: "npm:^4.2.1"
     react-router-dom: "npm:6.22.3"
     react-toastify: "npm:10.0.5"
@@ -14521,9 +14521,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:14.0.8":
-  version: 14.0.8
-  resolution: "react-i18next@npm:14.0.8"
+"react-i18next@npm:14.1.2":
+  version: 14.1.2
+  resolution: "react-i18next@npm:14.1.2"
   dependencies:
     "@babel/runtime": "npm:^7.23.9"
     html-parse-stringify: "npm:^3.0.1"
@@ -14535,7 +14535,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/5481cafa322476663e339d6eed2e4fb13e14fcb575bce9fc205bbc71da6d3a3392a1377d7eb59371357d14994b147d36214ec319ca2f7d85cd3526abfda54705
+  checksum: 10/ec18d6d252380ae15cea32988e23f2c533fb0d629e04e7af157ae2ab73e9a030c400cee7efef5e10e3c781d7cb8f3e6284e2c70667785fa3efb9ac0e6caab6d7
   languageName: node
   linkType: hard
 
