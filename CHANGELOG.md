@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.1](https://github.com/graasp/graasp-map/compare/v1.13.0...v1.13.1) (2024-05-24)
+
+
+### Bug Fixes
+
+* fix lang ([8d42fcc](https://github.com/graasp/graasp-map/commit/8d42fcce4c040d226f5336b91e24293d7e8d6975))
+
 ## [1.13.0](https://github.com/graasp/graasp-map/compare/v1.12.1...v1.13.0) (2024-05-24)
 
 
