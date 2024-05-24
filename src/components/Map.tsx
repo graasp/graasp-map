@@ -37,8 +37,10 @@ const Map = ({
   useEffect(() => {
     if (currentMember) {
       i18n.changeLanguage(currentMember.extra.lang ?? DEFAULT_LANG);
+    } else {
+      i18n.changeLanguage(navigator.language ?? DEFAULT_LANG);
     }
-  }, [currentMember]);
+  }, [currentMember, lang]);
 
   return (
     <QueryClientContextProvider
