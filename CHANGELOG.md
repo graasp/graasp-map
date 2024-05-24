@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/graasp/graasp-map/compare/v1.12.1...v1.13.0) (2024-05-24)
+
+
+### Features
+
+* use browser lang ([#121](https://github.com/graasp/graasp-map/issues/121)) ([e9badab](https://github.com/graasp/graasp-map/commit/e9badabe6d57f3560d99f5c772300c2d21fecf41))
+
 ## [1.12.1](https://github.com/graasp/graasp-map/compare/v1.12.0...v1.12.1) (2024-05-14)
 
 
