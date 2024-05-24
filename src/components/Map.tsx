@@ -40,7 +40,7 @@ const Map = ({
     } else {
       i18n.changeLanguage(navigator.language ?? DEFAULT_LANG);
     }
-  }, [currentMember, lang]);
+  }, [currentMember]);
 
   return (
     <QueryClientContextProvider
