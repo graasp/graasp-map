@@ -39,7 +39,7 @@ const Map = ({
     if (currentMember) {
       i18n.changeLanguage(currentMember.extra.lang ?? DEFAULT_LANG);
     } else {
-      i18n.changeLanguage(lang ?? DEFAULT_LANG);
+      i18n.changeLanguage(navigator.language ?? DEFAULT_LANG);
     }
   }, [currentMember, lang]);
 
