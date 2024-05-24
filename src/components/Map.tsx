@@ -31,7 +31,6 @@ const Map = ({
   useDeleteItemGeolocation,
   handleAddOnClick,
   currentPosition,
-  lang,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
 

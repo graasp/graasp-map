@@ -15,7 +15,6 @@ type QueryClientMutations = ReturnType<
 
 export interface QueryClientContextInterface {
   item?: PackedItem;
-  lang?: string;
   currentMember?: CompleteMember | null;
   currentPosition?: { lat: number; lng: number };
   useAddressFromGeolocation: QueryClientHooks['useAddressFromGeolocation'];
