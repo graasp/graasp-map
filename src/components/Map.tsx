@@ -31,6 +31,7 @@ const Map = ({
   useDeleteItemGeolocation,
   handleAddOnClick,
   currentPosition,
+  viewItemInBuilder,
 }: Props): JSX.Element => {
   const [showMap, setShowMap] = useState<boolean>(false);
 
@@ -44,17 +45,18 @@ const Map = ({
 
   return (
     <QueryClientContextProvider
-      item={item}
-      useSuggestionsForAddress={useSuggestionsForAddress}
       currentMember={currentMember}
-      useAddressFromGeolocation={useAddressFromGeolocation}
-      useItemsInMap={useItemsInMap}
-      useRecycleItems={useRecycleItems}
-      usePostItem={usePostItem}
-      viewItem={viewItem}
-      handleAddOnClick={handleAddOnClick}
-      useDeleteItemGeolocation={useDeleteItemGeolocation}
       currentPosition={currentPosition}
+      handleAddOnClick={handleAddOnClick}
+      item={item}
+      useAddressFromGeolocation={useAddressFromGeolocation}
+      useDeleteItemGeolocation={useDeleteItemGeolocation}
+      useItemsInMap={useItemsInMap}
+      usePostItem={usePostItem}
+      useRecycleItems={useRecycleItems}
+      useSuggestionsForAddress={useSuggestionsForAddress}
+      viewItem={viewItem}
+      viewItemInBuilder={viewItemInBuilder}
     >
       <div
         style={{
