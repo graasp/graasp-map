@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/graasp/graasp-map/compare/v1.13.1...v1.14.0) (2024-05-29)
+
+
+### Features
+
+* add view item in Builder ([#124](https://github.com/graasp/graasp-map/issues/124)) ([968b38e](https://github.com/graasp/graasp-map/commit/968b38e97ed30a0f771e4d1c0818e7826d5da6f3))
+
 ## [1.13.1](https://github.com/graasp/graasp-map/compare/v1.13.0...v1.13.1) (2024-05-24)
 
 
