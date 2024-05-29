@@ -23,7 +23,7 @@ const Search = ({
     <Autocomplete
       multiple
       freeSolo
-      aria-label="keywords"
+      aria-label={t('Keywords')}
       value={tags}
       options={[]}
       renderInput={(params) => (

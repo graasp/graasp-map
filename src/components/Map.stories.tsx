@@ -1,4 +1,5 @@
 import {
+  DiscriminatedItem,
   MemberFactory,
   PackedFolderItemFactory,
   PermissionLevel,
@@ -470,6 +471,10 @@ export const MapRead = {
   args: {
     item: PackedFolderItemFactory({}, { permission: PermissionLevel.Read }),
     viewItem: () => ({}) as any,
+    viewItemInBuilder: (it: DiscriminatedItem) => {
+      // eslint-disable-next-line no-console
+      console.log(it.id);
+    },
     currentMember: MemberFactory({ extra: { lang: 'fr' } }),
     useDeleteItemGeolocation: () => ({}) as any,
     useItemsInMap: () =>
