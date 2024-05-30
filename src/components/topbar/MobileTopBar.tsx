@@ -40,6 +40,7 @@ const MobileTopBar = ({ onChange, tags }: Props): JSX.Element => {
     lng,
   }) => {
     map.flyTo({ lat, lng }, 10);
+    setOpen(false);
   };
 
   return (
@@ -67,7 +68,6 @@ const MobileTopBar = ({ onChange, tags }: Props): JSX.Element => {
             </>
           )}
           <Search tags={tags} onChange={onChange} />
-          <br />
           <br />
         </DialogContent>
         <DialogActions>

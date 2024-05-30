@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import { Autocomplete, TextField } from '@mui/material';
 
 import { useMapTranslation } from '../../config/i18n';
@@ -12,6 +14,7 @@ const Search = ({
   tags: string[];
   onChange: (newTags: string[]) => void;
 }): JSX.Element => {
+  const ref = useRef();
   const { currentMember } = useQueryClientContext();
   const { t } = useMapTranslation();
 
@@ -26,8 +29,16 @@ const Search = ({
       aria-label={t('Keywords')}
       value={tags}
       options={[]}
+      clearOnBlur
       renderInput={(params) => (
         <TextField
+          onBlur={(e) => {
+            const startedKeyword = e.target.value;
+            if (startedKeyword) {
+              onChangeTags(e, [...tags, startedKeyword]);
+            }
+          }}
+          inputRef={ref}
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...params}
           placeholder={t('Enter keywords here')}

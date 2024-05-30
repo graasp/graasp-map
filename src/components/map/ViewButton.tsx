@@ -3,8 +3,7 @@ import { IconButton, Tooltip } from '@mui/material';
 
 import { DiscriminatedItem } from '@graasp/sdk';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import { useQueryClientContext } from '../context/QueryClientContext';
 
 type Props = {
