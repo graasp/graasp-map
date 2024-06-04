@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/graasp/graasp-map/compare/v1.14.0...v1.15.0) (2024-06-04)
+
+
+### Features
+
+* add tag on blur, show loading ([#126](https://github.com/graasp/graasp-map/issues/126)) ([239815b](https://github.com/graasp/graasp-map/commit/239815b8fa4a8335a9a0f456255ed7f6fc48dbe5))
+
 ## [1.14.0](https://github.com/graasp/graasp-map/compare/v1.13.1...v1.14.0) (2024-05-29)
 
 
