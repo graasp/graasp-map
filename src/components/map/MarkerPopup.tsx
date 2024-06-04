@@ -8,8 +8,7 @@ import {
   PermissionLevelCompare,
 } from '@graasp/sdk';
 
-import { useMapTranslation } from '@/config/i18n';
-
+import { useMapTranslation } from '../../config/i18n';
 import { useQueryClientContext } from '../context/QueryClientContext';
 import DeleteItemButton from './DeleteItemButton';
 import DeleteLocationButton from './DeleteLocationButton';
