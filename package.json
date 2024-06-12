@@ -62,7 +62,7 @@
     "@mui/icons-material": "5.15.15",
     "@mui/lab": "5.0.0-alpha.170",
     "@mui/material": "5.15.15",
-    "i18n-iso-countries": "7.11.0",
+    "i18n-iso-countries": "7.11.2",
     "leaflet": "^1.9.4",
     "leaflet-easybutton": "2.4.0",
     "leaflet-geosearch": "3.11.1",
