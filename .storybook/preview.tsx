@@ -4,7 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/system';
 
-import buildI18n from '@graasp/translations';
+import { buildI18n } from '@graasp/translations';
 import { theme } from '@graasp/ui';
 
 import type { Preview } from '@storybook/react';
