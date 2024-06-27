@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.16.0](https://github.com/graasp/graasp-map/compare/v1.15.0...v1.16.0) (2024-06-27)
+
+
+### Features
+
+* update deps ([#140](https://github.com/graasp/graasp-map/issues/140)) ([60d2d5f](https://github.com/graasp/graasp-map/commit/60d2d5f88ea761f04d816befd88d33a179f2d03b))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/sdk to v4.7.6 ([fb209a4](https://github.com/graasp/graasp-map/commit/fb209a470ab54edaac290b71d9441522907254a7))
+* **deps:** update dependency i18n-iso-countries to v7.11.2 ([351996c](https://github.com/graasp/graasp-map/commit/351996c282d58fd03888bdd298b77a350e7a57d3))
+* **deps:** update mui (non-major) to v5.15.20 ([17d5398](https://github.com/graasp/graasp-map/commit/17d53986586a0a647fd8d309042728736ef7ae18))
+
 ## [1.15.0](https://github.com/graasp/graasp-map/compare/v1.14.0...v1.15.0) (2024-06-04)
 
 
