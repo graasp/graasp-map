@@ -29,6 +29,7 @@ const Map = ({
   usePostItem,
   viewItem,
   useDeleteItemGeolocation,
+  useItemThumbnailUrl,
   handleAddOnClick,
   currentPosition,
   viewItemInBuilder,
@@ -49,6 +50,7 @@ const Map = ({
       currentPosition={currentPosition}
       handleAddOnClick={handleAddOnClick}
       item={item}
+      useItemThumbnailUrl={useItemThumbnailUrl}
       useAddressFromGeolocation={useAddressFromGeolocation}
       useDeleteItemGeolocation={useDeleteItemGeolocation}
       useItemsInMap={useItemsInMap}
