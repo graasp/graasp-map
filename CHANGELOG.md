@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/graasp/graasp-map/compare/v1.16.0...v1.17.0) (2024-07-24)
+
+
+### Features
+
+* show item thumbnails ([#141](https://github.com/graasp/graasp-map/issues/141)) ([bbdafa3](https://github.com/graasp/graasp-map/commit/bbdafa33aa9f0ae29e8f20a95ee6cb7e05003b65))
+
 ## [1.16.0](https://github.com/graasp/graasp-map/compare/v1.15.0...v1.16.0) (2024-06-27)
 
 
