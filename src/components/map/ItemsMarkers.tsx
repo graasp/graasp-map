@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { FeatureGroup, Marker, useMap } from 'react-leaflet';
+import { FeatureGroup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 
 import { Box, CircularProgress, Stack } from '@mui/material';
 
 import { useQueryClientContext } from '../context/QueryClientContext';
-import { marker } from '../icons/icons';
-import MarkerPopup from './MarkerPopup';
+import ItemMarker from './ItemMarker';
 
 const ItemsMarkers = ({
   tags,
@@ -69,13 +68,7 @@ const ItemsMarkers = ({
     <FeatureGroup ref={groupRef}>
       <MarkerClusterGroup chunkedLoading showCoverageOnHover={false}>
         {itemGeolocations?.map((geoloc) => (
-          <Marker
-            key={geoloc.id}
-            icon={marker}
-            position={[geoloc.lat, geoloc.lng]}
-          >
-            <MarkerPopup geolocation={geoloc} />
-          </Marker>
+          <ItemMarker key={geoloc.id} geolocation={geoloc} />
         ))}
       </MarkerClusterGroup>
     </FeatureGroup>

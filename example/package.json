@@ -21,8 +21,8 @@
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.5",
-    "@graasp/query-client": "github:graasp/graasp-query-client#item-packed",
-    "@graasp/sdk": "github:graasp/graasp-sdk#packed",
+    "@graasp/query-client": "3.17.0",
+    "@graasp/sdk": "4.20.0",
     "@graasp/translations": "1.23.0",
     "@graasp/ui": "4.5.1",
     "@mui/icons-material": "5.15.20",
