@@ -26,6 +26,7 @@ export const Map = {
     viewItem: () => ({}) as any,
     currentMember: MemberFactory(),
     useDeleteItemGeolocation: () => ({}) as any,
+    useItemThumbnailUrl: () => ({}) as any,
     useItemsInMap: () =>
       ({
         data: [
@@ -376,6 +377,7 @@ export const MapSignedOut = {
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    useItemThumbnailUrl: () => ({}) as any,
   },
   decorators: [
     (Story) => (
@@ -409,6 +411,7 @@ export const MapMobile = {
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    useItemThumbnailUrl: () => ({}) as any,
   },
   decorators: [
     (Story) => (
@@ -434,6 +437,7 @@ export const MapSignOutMobile = {
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    useItemThumbnailUrl: () => ({}) as any,
   },
   decorators: [
     (Story) => (
@@ -456,6 +460,7 @@ export const MapFrench = {
     usePostItem: () => ({}) as any,
     useRecycleItems: () => ({}) as any,
     useSuggestionsForAddress: MOCK_USE_SUGGESTIONS as any,
+    useItemThumbnailUrl: () => ({}) as any,
   },
   decorators: [
     (Story) => (
@@ -477,6 +482,7 @@ export const MapRead = {
     },
     currentMember: MemberFactory({ extra: { lang: 'fr' } }),
     useDeleteItemGeolocation: () => ({}) as any,
+    useItemThumbnailUrl: () => ({}) as any,
     useItemsInMap: () =>
       ({
         data: [
