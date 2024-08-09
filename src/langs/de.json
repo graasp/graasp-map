@@ -1,1 +1,23 @@
-{}
+{
+  "DELETE_ITEM_LOCATION_TITLE": "Artikelstandort löschen",
+  "DELETE_ITEM_LOCATION_BUTTON": "Löschen",
+  "DELETE_ITEM_LOCATION_EXPLANATION": "Der Standort von {{name}} wird von der Karte entfernt, der Artikel ist jedoch weiterhin zugänglich.",
+  "DELETE_ITEM_BUTTON": "Müll",
+  "DELETE_ITEM_TITLE": "Artikel in den Papierkorb legen",
+  "DELETE_ITEM_EXPLANATION": "Der Artikel {{name}} wird in Ihren Papierkorb gelegt. Möchten Sie fortfahren?",
+  "GEOLOCATION_PICKER_PLACEHOLDER": "Geben Sie hier Ihre Adresse ein",
+  "GEOLOCATION_PICKER_NO_ADDRESS": "Diese Adresse kann nicht gefunden werden",
+  "GEOLOCATION_PICKER_TITLE": "Geolokalisierung",
+  "Enter keywords here": "Geben Sie hier Schlüsselwörter ein",
+  "filters": "Filter",
+  "Keywords": "Schlagwörter",
+  "Filters": "Filter",
+  "My Location": "Mein Standort",
+  "Description": "Beschreibung",
+  "Name": "Name",
+  "Add a new folder at this location": "Fügen Sie an diesem Speicherort einen neuen Ordner hinzu",
+  "This location does not match a specific address.": "Dieser Standort entspricht keiner bestimmten Adresse.",
+  "Select a country": "Land auswählen",
+  "VIEW_ITEM_BUILDER_TOOLTIP": "Artikel im Graasp Builder anzeigen",
+  "VIEW_ITEM_PLAYER_TOOLTIP": "Artikel im Graasp Player anzeigen"
+}
