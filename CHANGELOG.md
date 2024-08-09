@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/graasp/graasp-map/compare/v1.17.0...v1.18.0) (2024-08-09)
+
+
+### Features
+
+* translate fr.json via GitLocalize ([#143](https://github.com/graasp/graasp-map/issues/143)) ([95330c9](https://github.com/graasp/graasp-map/commit/95330c9c6ef722a41432b394f24c0f4eeb39a5c6))
+
 ## [1.17.0](https://github.com/graasp/graasp-map/compare/v1.16.0...v1.17.0) (2024-07-24)
 
 
