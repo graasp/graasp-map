@@ -2,20 +2,21 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { UserConfigExport, defineConfig } from 'vite';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import dts from 'vite-plugin-dts';
 
 export default (): UserConfigExport =>
   defineConfig({
-    plugins: [react(), dts({ entryRoot: 'src' }), cssInjectedByJsPlugin()],
+    server: { open: false },
+    plugins: [react(), dts({ tsconfigPath: './tsconfig.build.json' })],
+    optimizeDeps: {
+      exclude: ['node_modules/.cache'],
+    },
     build: {
       lib: {
         // Could also be a dictionary or array of multiple entry points
         entry: resolve(__dirname, 'src/index.ts'),
         name: 'graasp-map',
-        formats: ['cjs', 'es'],
-        // the proper extensions will be added
-        fileName: 'index',
+        formats: ['es'],
       },
       rollupOptions: {
         // make sure to externalize deps that shouldn't be bundled
