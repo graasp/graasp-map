@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.18.0](https://github.com/graasp/graasp-map/compare/v1.17.0...v1.18.0) (2024-09-18)
+
+
+### Features
+
+* add arabic translations ([#144](https://github.com/graasp/graasp-map/issues/144)) ([9a93aa7](https://github.com/graasp/graasp-map/commit/9a93aa70f028d969c7a9c3e6280119cf68fbf212))
+* add german translations ([b8f5615](https://github.com/graasp/graasp-map/commit/b8f5615a26da16576189c1cff41815aa67a6af76))
+* add german translations ([#145](https://github.com/graasp/graasp-map/issues/145)) ([b8f5615](https://github.com/graasp/graasp-map/commit/b8f5615a26da16576189c1cff41815aa67a6af76))
+* translate es.json via GitLocalize ([#146](https://github.com/graasp/graasp-map/issues/146)) ([84c87a2](https://github.com/graasp/graasp-map/commit/84c87a272a80af941daeca6949657c4903997d13))
+* translate fr.json via GitLocalize ([#143](https://github.com/graasp/graasp-map/issues/143)) ([95330c9](https://github.com/graasp/graasp-map/commit/95330c9c6ef722a41432b394f24c0f4eeb39a5c6))
+* translate it.json via GitLocalize ([#147](https://github.com/graasp/graasp-map/issues/147)) ([994090d](https://github.com/graasp/graasp-map/commit/994090dd192d326cf86a76061e0882570e40bfcf))
+* update sdk ([#151](https://github.com/graasp/graasp-map/issues/151)) ([89b1195](https://github.com/graasp/graasp-map/commit/89b1195aee33ef0ba0f694f4a80c33d1912f331d))
+
+
+### Bug Fixes
+
+* update translations ([c68e786](https://github.com/graasp/graasp-map/commit/c68e7865cfff2caa08e9604fcaecc6d0ef366f53))
+
 ## [1.17.0](https://github.com/graasp/graasp-map/compare/v1.16.0...v1.17.0) (2024-07-24)
 
 
