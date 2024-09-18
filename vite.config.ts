@@ -2,12 +2,17 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { UserConfigExport, defineConfig } from 'vite';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import dts from 'vite-plugin-dts';
 
 export default (): UserConfigExport =>
   defineConfig({
     server: { open: false },
-    plugins: [react(), dts({ tsconfigPath: './tsconfig.build.json' })],
+    plugins: [
+      react(),
+      dts({ tsconfigPath: './tsconfig.build.json' }),
+      cssInjectedByJsPlugin(),
+    ],
     optimizeDeps: {
       exclude: ['node_modules/.cache'],
     },
