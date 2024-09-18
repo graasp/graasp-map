@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
+import { AccountType } from '@graasp/sdk';
 import { DEFAULT_LANG } from '@graasp/translations';
 
 import 'leaflet-easybutton/src/easy-button.css';
@@ -19,7 +20,7 @@ import MapContent from './map/MapContent';
 
 type Props = QueryClientContextInterface;
 
-const Map = ({
+const MapComponent = ({
   item,
   currentMember,
   useAddressFromGeolocation,
@@ -37,7 +38,7 @@ const Map = ({
   const [showMap, setShowMap] = useState<boolean>(false);
 
   useEffect(() => {
-    if (currentMember) {
+    if (currentMember?.type === AccountType.Individual) {
       i18n.changeLanguage(currentMember.extra.lang ?? DEFAULT_LANG);
     } else {
       i18n.changeLanguage(navigator.language ?? DEFAULT_LANG);
@@ -100,4 +101,4 @@ const Map = ({
   );
 };
 
-export default Map;
+export default MapComponent;

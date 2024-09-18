@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo } from 'react';
 
 import type { configureQueryClient } from '@graasp/query-client';
 import {
-  CompleteMember,
+  CurrentAccount,
   DiscriminatedItem,
   ItemGeolocation,
   PackedItem,
@@ -15,7 +15,7 @@ type QueryClientMutations = ReturnType<
 
 export interface QueryClientContextInterface {
   item?: PackedItem;
-  currentMember?: CompleteMember | null;
+  currentMember?: CurrentAccount | null;
   currentPosition?: { lat: number; lng: number };
   useAddressFromGeolocation: QueryClientHooks['useAddressFromGeolocation'];
   useItemsInMap: QueryClientHooks['useItemsInMap'];
