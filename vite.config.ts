@@ -11,6 +11,7 @@ export default (): UserConfigExport =>
     plugins: [
       react(),
       dts({ tsconfigPath: './tsconfig.build.json' }),
+      // necessary because of leaflet map
       cssInjectedByJsPlugin(),
     ],
     optimizeDeps: {
