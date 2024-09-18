@@ -63,8 +63,8 @@
     "react-toastify": "10.0.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "17.8.1",
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/config-conventional": "19.5.0",
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.5",
     "@graasp/query-client": "3.17.0",
