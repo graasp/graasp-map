@@ -31,7 +31,6 @@ const App = (): JSX.Element => {
           useSuggestionsForAddress={hooks.useSuggestionsForAddress}
           usePostItem={mutations.usePostItem}
           useRecycleItems={mutations.useRecycleItems}
-          useItemThumbnailUrl={hooks.useItemThumbnailUrl}
           lang="fr"
         />
       </I18nextProvider>

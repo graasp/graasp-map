@@ -1,10 +1,9 @@
 import { Marker } from 'react-leaflet';
 
-import { ItemGeolocation, ThumbnailSize } from '@graasp/sdk';
+import { ItemGeolocation } from '@graasp/sdk';
 
 import L from 'leaflet';
 
-import { useQueryClientContext } from '../context/QueryClientContext';
 import { marker } from '../icons/icons';
 import MarkerPopup from './MarkerPopup';
 
@@ -13,11 +12,7 @@ const ItemMarker = ({
 }: {
   geolocation: ItemGeolocation;
 }): JSX.Element => {
-  const { useItemThumbnailUrl } = useQueryClientContext();
-  const { data: thumbnailUrl } = useItemThumbnailUrl({
-    item: geolocation.item,
-    size: ThumbnailSize.Small,
-  });
+  const thumbnailUrl = geolocation.item.thumbnails?.small;
 
   return (
     <Marker
