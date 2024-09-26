@@ -6,7 +6,6 @@ import {
   ItemGeolocation,
   PermissionLevel,
   PermissionLevelCompare,
-  ThumbnailSize,
 } from '@graasp/sdk';
 
 import { useMapTranslation } from '../../config/i18n';
@@ -21,12 +20,9 @@ const MarkerPopup = ({
   geolocation: ItemGeolocation;
 }): JSX.Element => {
   const { item } = geolocation;
-  const { viewItemInBuilder, useItemThumbnailUrl } = useQueryClientContext();
+  const { viewItemInBuilder } = useQueryClientContext();
   const { t } = useMapTranslation();
-  const { data: thumbnailUrl } = useItemThumbnailUrl({
-    item: geolocation.item,
-    size: ThumbnailSize.Small,
-  });
+  const thumbnailUrl = geolocation.item.thumbnails?.small;
 
   return (
     <Popup autoPan={false}>
