@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/graasp/graasp-map/compare/v1.18.0...v1.19.0) (2024-09-26)
+
+
+### Features
+
+* use thumbnails from PackedItem ([1afa0dd](https://github.com/graasp/graasp-map/commit/1afa0dddd9e222d383529a0d0037b1282a54d615))
+
 ## [1.18.0](https://github.com/graasp/graasp-map/compare/v1.17.0...v1.18.0) (2024-09-18)
 
 
